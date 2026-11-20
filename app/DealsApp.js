@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { CATEGORIES, PRICE_RANGES, PILLS, FASHION_FIRST, dealScore } from "@/lib/deals";
+import { BagsAndTag } from "./Doodles";
 
 const EMPTY = { q: "", category: null, minPct: 0, price: null, maxPrice: null, endsToday: false, endsOn: null, hasCode: false, sort: "featured" };
 
@@ -120,9 +121,15 @@ export default function DealsApp({ initialDeals }) {
     const out = [];
     const start = new Date(`${today}T12:00:00`);
     const last = new Date(`${now.getFullYear()}-12-02T12:00:00`);
+    // Black Friday = day after the 4th Thursday of November; Cyber Monday = 3 days later.
+    const nov1 = new Date(now.getFullYear(), 10, 1, 12);
+    const thanksgiving = 1 + ((4 - nov1.getDay() + 7) % 7) + 21;
+    const bfDate = new Date(now.getFullYear(), 10, thanksgiving + 1, 12);
+    const cmDate = new Date(now.getFullYear(), 10, thanksgiving + 4, 12);
+    const bf = localDay(bfDate), cm = localDay(cmDate);
     for (let d = new Date(start); d <= last && out.length < 14; d.setDate(d.getDate() + 1)) {
       const key = localDay(d);
-      out.push({ key, count: all.filter((x) => x.ends === key).length });
+      out.push({ key, count: all.filter((x) => x.ends === key).length, event: key === bf ? "Black Friday" : key === cm ? "Cyber Monday" : null });
     }
     return out;
   }, [all, today, now]);
@@ -134,7 +141,10 @@ export default function DealsApp({ initialDeals }) {
       const r = await fetch("/api/search", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ q: f.q }) });
       const j = await r.json();
       const fresh = (j.deals || []).map((d, i) => ({ ...d, id: `live-${Date.now()}-${i}`, fresh: true }));
-      setLive((l) => ({ status: "done", deals: [...l.deals, ...fresh], msg: j.error || (fresh.length ? `Found ${fresh.length} more on the web.` : "Nothing new turned up on the web.") }));
+      const priced = fresh.filter((d) => d.sale_price != null).length;
+      // Product searches come back with prices: show the cheapest first.
+      if (fresh.length && priced >= fresh.length / 2) set({ sort: "price" });
+      setLive((l) => ({ status: "done", deals: [...l.deals, ...fresh], msg: j.error || (fresh.length ? (priced >= fresh.length / 2 ? `Found ${fresh.length} prices on the web, cheapest first.` : `Found ${fresh.length} more on the web.`) : "Nothing new turned up on the web.") }));
     } catch {
       setLive((l) => ({ ...l, status: "done", msg: "The hunt hit a snag. Try again in a minute." }));
     }
@@ -151,6 +161,7 @@ export default function DealsApp({ initialDeals }) {
   return (
     <main className="wrap">
       <header className="hero">
+        <BagsAndTag className="hero-art" />
         <p className="eyebrow">Updated twice daily</p>
         <h1>Black Friday <span>Hunter</span></h1>
         <p className="sub">Every Black Friday deal in one place. Search it, filter it, and know exactly when it ends.</p>
@@ -176,9 +187,10 @@ export default function DealsApp({ initialDeals }) {
           {days.map((d) => (
             <button
               key={d.key}
-              className={`day ${f.endsOn === d.key ? "on" : ""} ${d.count ? "" : "quiet"}`}
+              className={`day ${f.endsOn === d.key ? "on" : ""} ${d.count ? "" : "quiet"} ${d.event ? "event" : ""}`}
               onClick={() => set({ endsOn: f.endsOn === d.key ? null : d.key, endsToday: false })}
             >
+              {d.event && <span className="devent">{d.event}</span>}
               <span className="dname">{d.key === today ? "Today" : fmtDay(d.key).split(",")[0]}</span>
               <span className="ddate">{fmtDay(d.key).split(", ")[1]}</span>
               <span className="dcount">{d.count ? `${d.count} end${d.count === 1 ? "s" : ""}` : "–"}</span>

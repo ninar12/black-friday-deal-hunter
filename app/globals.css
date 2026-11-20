@@ -160,3 +160,20 @@ body { background: var(--cream); }
 .card h3 { font-size: 21px; }
 .card h3 .pct { color: var(--berry); font-weight: 800; font-size: 1.25em; letter-spacing: -.01em; white-space: nowrap; }
 .card.urgent h3 .pct { color: var(--cocoa); background: linear-gradient(transparent 60%, #f3d9b0 60%); }
+
+/* Hero illustration */
+.hero { position: relative; }
+.hero-art { position: absolute; right: 2%; top: 150px; transform: rotate(4deg); pointer-events: none; }
+.hero-art .swing-tag { transform-origin: 104px 52px; animation: tag-sway 5s ease-in-out infinite; }
+@keyframes tag-sway { 0%, 100% { transform: rotate(-4deg); } 50% { transform: rotate(5deg); } }
+@media (max-width: 1060px) { .hero-art { right: -10px; top: 6px; width: 84px; height: 84px; opacity: .9; } }
+@media (max-width: 520px) { .hero-art { width: 64px; height: 64px; right: -6px; top: 4px; } }
+@media (prefers-reduced-motion: reduce) { .hero-art .swing-tag { animation: none; } }
+
+/* Black Friday and Cyber Monday stand out in the calendar */
+.day.event { overflow: visible; background: var(--cocoa); border-color: var(--cocoa); color: var(--cream); flex-basis: 96px; }
+.day.event .dname { color: #f1d9b5; }
+.day.event .dcount { color: #f1d9b5; }
+.day.event.quiet .dcount { color: rgba(241, 217, 181, .5); }
+.devent { white-space: nowrap; background: var(--berry); color: #fff; font-size: 9px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 2px 6px; border-radius: 3px; margin-bottom: 2px; }
+.day.event.on { outline: 2px solid var(--berry); outline-offset: 2px; }

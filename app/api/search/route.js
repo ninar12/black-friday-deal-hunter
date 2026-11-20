@@ -23,8 +23,10 @@ export async function POST(req) {
   if (hit && Date.now() - hit.at < TTL) return NextResponse.json({ deals: hit.deals, cached: true });
   try {
     const deals = await findDeals(
-      `Find the best current Black Friday ${new Date().getFullYear()} deals for: "${q}". Up to 8 deals, best first.`,
-      { maxSearches: 3 }
+      `Find current Black Friday ${new Date().getFullYear()} deals for: "${q}".
+If this is a specific product (like "AirPods Pro 2" or "Dyson Airwrap"), compare its current sale price at major retailers (Amazon, Best Buy, Target, Walmart, the brand's own store, Costco and others you find), one deal per retailer, with sale_price and original_price in USD, cheapest first.
+Otherwise, list the best deals for it, biggest real savings first. Up to 8 deals.`,
+      { maxSearches: 5 }
     );
     cache.set(key, { at: Date.now(), deals });
     return NextResponse.json({ deals });
