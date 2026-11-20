@@ -3,7 +3,6 @@
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { CATEGORIES, PRICE_RANGES, PILLS, FASHION_FIRST, dealScore } from "@/lib/deals";
-import { BagsAndTag } from "./Doodles";
 
 const EMPTY = { q: "", category: null, minPct: 0, price: null, maxPrice: null, endsToday: false, endsOn: null, hasCode: false, sort: "featured" };
 
@@ -21,7 +20,7 @@ function timeLeft(ends, now) {
   const h = Math.floor(ms / 3.6e6);
   const d = Math.floor(h / 24);
   if (d >= 1) return `Ends in ${d}d ${h % 24}h`;
-  return `Ends tonight · ${h}h left`;
+  return h >= 1 ? `Ends tonight · ${h}h left` : `Ends tonight · ${Math.max(1, Math.floor(ms / 6e4))}m left`;
 }
 
 // Puts the discount front and center in the title, e.g. "Up to **60% off** sitewide".
@@ -159,17 +158,27 @@ export default function DealsApp({ initialDeals }) {
   const active = JSON.stringify({ ...f, q: "", sort: "featured" }) !== JSON.stringify({ ...EMPTY });
 
   return (
+    <>
+    <nav className="topbar">
+      <div className="tb-left">
+        <a href="#deals">Deals</a>
+        <a href="#calendar">Calendar</a>
+      </div>
+      <Link href="/" className="wordmark" aria-label="Black Friday Hunter home">BLACKFRIDAY<span>hunter</span></Link>
+      <div className="tb-right">
+        <button type="button" onClick={() => document.getElementById("q")?.focus()}>Search</button>
+        <Link href="/about">About</Link>
+      </div>
+    </nav>
     <main className="wrap">
       <header className="hero">
-        <BagsAndTag className="hero-art" />
-        <p className="eyebrow">Updated twice daily</p>
-        <h1>Black Friday <span>Hunter</span></h1>
-        <p className="sub">Every Black Friday deal in one place. Search it, filter it, and know exactly when it ends.</p>
+        <p className="eyebrow">Black Friday & Cyber Monday {now.getFullYear()} · Updated twice daily</p>
         <form className="search" onSubmit={(e) => { e.preventDefault(); if (results.length < 3) huntWeb(); }}>
           <input
+            id="q"
             value={f.q}
             onChange={(e) => set({ q: e.target.value })}
-            placeholder='Try "50%", "Lululemon" or "leggings"'
+            placeholder="Search brands, products or 50%"
             aria-label="Search deals"
           />
           {f.q && <button type="button" className="clear" onClick={() => set({ q: "" })} aria-label="Clear search">×</button>}
@@ -181,7 +190,7 @@ export default function DealsApp({ initialDeals }) {
         </div>
       </header>
 
-      <section className="calendar" aria-label="When deals end">
+      <section className="calendar" id="calendar" aria-label="When deals end">
         <h2>When deals end</h2>
         <div className="strip">
           {days.map((d) => (
@@ -230,10 +239,16 @@ export default function DealsApp({ initialDeals }) {
 
       <p className="count">{results.length} deal{results.length === 1 ? "" : "s"}{f.category ? ` in ${f.category}` : ""}{f.endsOn ? ` ending ${fmtDay(f.endsOn)}` : ""}</p>
 
-      <section className="grid">
+      <section className="grid" id="deals">
         {results.map((d) => (
           <article key={d.id} className={`card ${d.ends === today ? "urgent" : ""}`}>
-            <p className="retailer">{d.retailer}{d.fresh && <em className="new">just found</em>}</p>
+            <div className="card-top">
+              <p className="retailer">{d.retailer}{d.fresh && <em className="new">New</em>}</p>
+              {d.ends === today && <span className="flag">Ends tonight</span>}
+            </div>
+            <div className="card-hero">
+              {d.discount_pct ? <>{/up to/i.test(d.title) && <span className="upto">Up to</span>}<span className="big">{d.discount_pct}%</span><span className="off">Off</span></> : <span className="big sm">Sale</span>}
+            </div>
             <h3><DealTitle d={d} /></h3>
             {(d.sale_price || d.original_price) && (
               <p className="price">{d.sale_price && <b>${d.sale_price}</b>} {d.original_price && <s>${d.original_price}</s>}</p>
@@ -242,8 +257,8 @@ export default function DealsApp({ initialDeals }) {
             {d.notes && <p className="note">{d.notes}</p>}
             <p className={`ends ${d.ends ? "" : "unknown"}`}>{timeLeft(d.ends, now)}{d.ends && <span> · {fmtDay(d.ends)}</span>}</p>
             <div className="actions">
-              <a className="go" href={d.link} target="_blank" rel="noopener noreferrer sponsored">Shop the sale</a>
-              {d.ends && <button className="cal" onClick={() => icsFor(d)}>Add to my calendar</button>}
+              <a className="go" href={d.link} target="_blank" rel="noopener noreferrer sponsored">Shop <span aria-hidden="true">→</span></a>
+              {d.ends && <button className="cal" onClick={() => icsFor(d)}>Add to calendar</button>}
             </div>
             <p className="meta">
               Found by AI, confirm at the retailer · <span style={{ whiteSpace: "nowrap" }}>checked {d.last_checked}</span> · <a href={d.source} target="_blank" rel="noopener noreferrer">source</a> ·{" "}
@@ -268,5 +283,6 @@ export default function DealsApp({ initialDeals }) {
         <Link href="/about">About Black Friday Hunter</Link>
       </footer>
     </main>
+    </>
   );
 }
