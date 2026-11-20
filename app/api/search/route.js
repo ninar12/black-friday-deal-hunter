@@ -9,7 +9,7 @@ const runSearch = (q) => findDeals(
     `Find current Black Friday ${new Date().getFullYear()} deals for: "${q}".
 If this is a specific product (like "AirPods Pro 2" or "Dyson Airwrap"), compare its current sale price at major retailers (Amazon, Best Buy, Target, Walmart, the brand's own store and others you find), one deal per retailer, with sale_price and original_price in USD, cheapest first.
 Otherwise, list the best deals for it, biggest real savings first. Up to 6 deals. Be quick: use at most 2 searches and keep titles short.`,
-    { maxSearches: 2, maxTokens: 4000, strict: false }
+    { maxSearches: 2, maxTokens: 4000, strict: false, fast: true }
 );
 const search = unstable_cache(
   async (q) => {
@@ -17,7 +17,7 @@ const search = unstable_cache(
     if (!deals.length) throw new Error("EMPTY"); // don't cache an empty answer
     return deals;
   },
-  ["live-search-v3"],
+  ["live-search-v4"],
   { revalidate: 3 * 60 * 60 }
 );
 
