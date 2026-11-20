@@ -894,22 +894,6 @@
     "found_by": "ai"
   },
   {
-    "retailer": "KitchenAid",
-    "category": "Home & Kitchen",
-    "title": "Black Friday savings on select major appliances",
-    "discount_pct": 34,
-    "original_price": null,
-    "sale_price": null,
-    "code": null,
-    "starts": "2026-11-04",
-    "ends": "2026-12-02",
-    "link": "https://www.kitchenaid.com/sale/major-appliances/black-friday.html",
-    "source": "https://www.kitchenaid.com/sale/major-appliances/black-friday.html",
-    "last_checked": "2026-11-20",
-    "notes": null,
-    "found_by": "ai"
-  },
-  {
     "retailer": "Breville",
     "category": "Home & Kitchen",
     "title": "Up to 29% off selected espresso machines",

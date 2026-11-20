@@ -53,6 +53,10 @@ for (const c of CATEGORIES) {
 console.log(`Running ${tasks.length} searches for ${active.length} brands + ${CATEGORIES.length} categories...`);
 const found = await pool(tasks, PARALLEL);
 
+// Deals Nina has marked wrong are never re-added.
+const hidden = fs.existsSync("data/hidden.json") ? JSON.parse(fs.readFileSync("data/hidden.json", "utf8")) : [];
+const isHidden = (d) => hidden.some((h) => d.retailer.toLowerCase() === h.retailer.toLowerCase() && (!h.title_contains || d.title.toLowerCase().includes(h.title_contains.toLowerCase())));
+for (let i = found.length - 1; i >= 0; i--) if (isHidden(found[i])) found.splice(i, 1);
 const existing = JSON.parse(fs.readFileSync(DEALS, "utf8"));
 const key = (d) => `${d.retailer}|${d.title}`.toLowerCase();
 const byKey = new Map(existing.map((d) => [key(d), d]));
@@ -64,7 +68,7 @@ for (const d of found) {
 }
 // Drop deals that ended more than 2 days ago.
 const cutoff = new Date(Date.now() - 2 * 864e5).toISOString().slice(0, 10);
-const merged = [...byKey.values()].filter((d) => !d.ends || d.ends >= cutoff);
+const merged = [...byKey.values()].filter((d) => (!d.ends || d.ends >= cutoff) && !isHidden(d));
 fs.writeFileSync(DEALS, JSON.stringify(merged, null, 2) + "\n");
 
 const known = new Set(brands.map((b) => b.brand.toLowerCase()));
