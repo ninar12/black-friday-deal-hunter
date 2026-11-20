@@ -1,0 +1,249 @@
+"use client";
+
+import { useEffect, useMemo, useState } from "react";
+import Link from "next/link";
+import { CATEGORIES, PRICE_RANGES, PILLS, dealScore } from "@/lib/deals";
+
+const EMPTY = { q: "", category: null, minPct: 0, price: null, maxPrice: null, endsToday: false, endsOn: null, hasCode: false, sort: "score" };
+
+const localDay = (d = new Date()) => {
+  const z = new Date(d.getTime() - d.getTimezoneOffset() * 60000);
+  return z.toISOString().slice(0, 10);
+};
+const parseDay = (s) => new Date(`${s}T23:59:59`);
+const fmtDay = (s) => new Date(`${s}T12:00:00`).toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric" });
+
+function timeLeft(ends, now) {
+  if (!ends) return "End date not announced";
+  const ms = parseDay(ends) - now;
+  if (ms <= 0) return "Ended";
+  const h = Math.floor(ms / 3.6e6);
+  const d = Math.floor(h / 24);
+  if (d >= 1) return `Ends in ${d}d ${h % 24}h`;
+  return `Ends tonight · ${h}h left`;
+}
+
+function priceOf(d) {
+  return d.sale_price ?? null;
+}
+
+function icsFor(d) {
+  const day = d.ends.replaceAll("-", "");
+  const next = new Date(`${d.ends}T12:00:00`);
+  next.setDate(next.getDate() + 1);
+  const end = localDay(next).replaceAll("-", "");
+  const esc = (s) => String(s).replace(/[,;\\]/g, (m) => "\\" + m);
+  const body = [
+    "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Black Friday Hunter//EN", "BEGIN:VEVENT",
+    `UID:${d.id.replace(/\W/g, "")}-${day}@blackfridayhunter`,
+    `DTSTAMP:${new Date().toISOString().replace(/[-:]/g, "").slice(0, 15)}Z`,
+    `DTSTART;VALUE=DATE:${day}`, `DTEND;VALUE=DATE:${end}`,
+    `SUMMARY:${esc(`Last day: ${d.retailer} ${d.discount_pct ? d.discount_pct + "% off" : "sale"}`)}`,
+    `DESCRIPTION:${esc(`${d.title}${d.code ? " · code " + d.code : ""} · ${d.link}`)}`,
+    "BEGIN:VALARM", "TRIGGER:-PT12H", "ACTION:DISPLAY", "DESCRIPTION:Sale ends soon", "END:VALARM",
+    "END:VEVENT", "END:VCALENDAR",
+  ].join("\r\n");
+  const url = URL.createObjectURL(new Blob([body], { type: "text/calendar" }));
+  const a = Object.assign(document.createElement("a"), { href: url, download: `${d.retailer}-sale.ics` });
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+export default function DealsApp({ initialDeals }) {
+  const [f, setF] = useState(EMPTY);
+  const [now, setNow] = useState(() => new Date());
+  const [live, setLive] = useState({ status: "idle", deals: [], msg: "" });
+  const [reported, setReported] = useState([]);
+
+  useEffect(() => {
+    const t = setInterval(() => setNow(new Date()), 60000);
+    try { setReported(JSON.parse(localStorage.getItem("bfh-reported") || "[]")); } catch {}
+    return () => clearInterval(t);
+  }, []);
+
+  const today = localDay(now);
+  const set = (patch) => setF((p) => ({ ...p, ...patch }));
+
+  const all = useMemo(() => {
+    const seen = new Set();
+    return [...initialDeals, ...live.deals]
+      .filter((d) => !(d.ends && d.ends < today))
+      .filter((d) => !reported.includes(d.id))
+      .filter((d) => {
+        const k = `${d.retailer}|${d.title}`.toLowerCase();
+        if (seen.has(k)) return false;
+        seen.add(k);
+        return true;
+      })
+      .map((d) => ({ ...d, score: dealScore(d) }));
+  }, [initialDeals, live.deals, today, reported]);
+
+  const results = useMemo(() => {
+    const words = f.q.toLowerCase().split(/\s+/).filter(Boolean);
+    const range = PRICE_RANGES.find((r) => r.id === f.price);
+    let list = all.filter((d) => {
+      const hay = `${d.retailer} ${d.title} ${d.category} ${d.discount_pct ?? ""}% ${d.code ?? ""}`.toLowerCase();
+      if (words.length && !words.every((w) => hay.includes(w.replace(/%$/, "")))) return false;
+      if (f.category && d.category !== f.category) return false;
+      if (f.minPct && (d.discount_pct ?? 0) < f.minPct) return false;
+      if (f.hasCode && !d.code) return false;
+      if (f.endsToday && d.ends !== today) return false;
+      if (f.endsOn && d.ends !== f.endsOn) return false;
+      const p = priceOf(d);
+      if (range && (p == null || p < range.min || p >= range.max)) return false;
+      if (f.maxPrice && (p == null || p > f.maxPrice)) return false;
+      return true;
+    });
+    const by = {
+      score: (a, b) => b.score - a.score,
+      pct: (a, b) => (b.discount_pct ?? 0) - (a.discount_pct ?? 0),
+      price: (a, b) => (priceOf(a) ?? 1e9) - (priceOf(b) ?? 1e9),
+      ending: (a, b) => (a.ends ?? "9999") .localeCompare(b.ends ?? "9999"),
+    }[f.sort];
+    return [...list].sort(by);
+  }, [all, f, today]);
+
+  // Ending calendar: today through Dec 2.
+  const days = useMemo(() => {
+    const out = [];
+    const start = new Date(`${today}T12:00:00`);
+    const last = new Date(`${now.getFullYear()}-12-02T12:00:00`);
+    for (let d = new Date(start); d <= last && out.length < 14; d.setDate(d.getDate() + 1)) {
+      const key = localDay(d);
+      out.push({ key, count: all.filter((x) => x.ends === key).length });
+    }
+    return out;
+  }, [all, today, now]);
+
+  async function huntWeb() {
+    if (!f.q.trim()) return;
+    setLive((l) => ({ ...l, status: "loading", msg: "" }));
+    try {
+      const r = await fetch("/api/search", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ q: f.q }) });
+      const j = await r.json();
+      const fresh = (j.deals || []).map((d, i) => ({ ...d, id: `live-${Date.now()}-${i}`, fresh: true }));
+      setLive((l) => ({ status: "done", deals: [...l.deals, ...fresh], msg: j.error || (fresh.length ? `Found ${fresh.length} more on the web.` : "Nothing new turned up on the web.") }));
+    } catch {
+      setLive((l) => ({ ...l, status: "done", msg: "The hunt hit a snag. Try again in a minute." }));
+    }
+  }
+
+  function report(d) {
+    const next = [...reported, d.id];
+    setReported(next);
+    try { localStorage.setItem("bfh-reported", JSON.stringify(next)); } catch {}
+  }
+
+  const active = JSON.stringify({ ...f, q: "", sort: "score" }) !== JSON.stringify({ ...EMPTY });
+
+  return (
+    <main className="wrap">
+      <header className="hero">
+        <p className="eyebrow">Fresh from the oven · updated daily</p>
+        <h1>Black Friday <span>Hunter</span></h1>
+        <p className="sub">Every Black Friday deal in one place. Search it, filter it, and know exactly when it ends.</p>
+        <form className="search" onSubmit={(e) => { e.preventDefault(); if (results.length < 3) huntWeb(); }}>
+          <input
+            value={f.q}
+            onChange={(e) => set({ q: e.target.value })}
+            placeholder='Try "50%", "Lululemon" or "leggings"'
+            aria-label="Search deals"
+          />
+          {f.q && <button type="button" className="clear" onClick={() => set({ q: "" })} aria-label="Clear search">×</button>}
+        </form>
+        <div className="pills" role="list">
+          {PILLS.map((p) => (
+            <button key={p.label} className="pill" onClick={() => setF({ ...EMPTY, q: f.q, ...p.f })}>{p.label}</button>
+          ))}
+        </div>
+      </header>
+
+      <section className="calendar" aria-label="When deals end">
+        <h2>When deals end</h2>
+        <div className="strip">
+          {days.map((d) => (
+            <button
+              key={d.key}
+              className={`day ${f.endsOn === d.key ? "on" : ""} ${d.count ? "" : "quiet"}`}
+              onClick={() => set({ endsOn: f.endsOn === d.key ? null : d.key, endsToday: false })}
+            >
+              <span className="dname">{d.key === today ? "Today" : fmtDay(d.key).split(",")[0]}</span>
+              <span className="ddate">{fmtDay(d.key).split(", ")[1]}</span>
+              <span className="dcount">{d.count ? `${d.count} end${d.count === 1 ? "s" : ""}` : "–"}</span>
+            </button>
+          ))}
+        </div>
+      </section>
+
+      <section className="filters" aria-label="Filters">
+        <div className="chips">
+          <button className={`chip ${!f.category ? "on" : ""}`} onClick={() => set({ category: null })}>All</button>
+          {CATEGORIES.map((c) => (
+            <button key={c} className={`chip ${f.category === c ? "on" : ""}`} onClick={() => set({ category: f.category === c ? null : c })}>{c}</button>
+          ))}
+        </div>
+        <div className="row">
+          <label>Discount
+            <select value={f.minPct} onChange={(e) => set({ minPct: +e.target.value })}>
+              <option value={0}>Any</option><option value={30}>30%+</option><option value={50}>50%+</option><option value={70}>70%+</option>
+            </select>
+          </label>
+          <label>Price
+            <select value={f.price ?? ""} onChange={(e) => set({ price: e.target.value || null, maxPrice: null })}>
+              <option value="">Any</option>
+              {PRICE_RANGES.map((r) => <option key={r.id} value={r.id}>{r.label}</option>)}
+            </select>
+          </label>
+          <label>Sort
+            <select value={f.sort} onChange={(e) => set({ sort: e.target.value })}>
+              <option value="score">Best deal</option><option value="pct">Biggest discount</option>
+              <option value="price">Lowest price</option><option value="ending">Ending soonest</option>
+            </select>
+          </label>
+          {active && <button className="reset" onClick={() => setF({ ...EMPTY, q: f.q })}>Clear filters</button>}
+        </div>
+      </section>
+
+      <p className="count">{results.length} deal{results.length === 1 ? "" : "s"}{f.category ? ` in ${f.category}` : ""}{f.endsOn ? ` ending ${fmtDay(f.endsOn)}` : ""}</p>
+
+      <section className="grid">
+        {results.map((d) => (
+          <article key={d.id} className={`card ${d.ends === today ? "urgent" : ""}`}>
+            <div className="tag">{d.discount_pct ? <><b>{d.discount_pct}%</b><small>off</small></> : <b className="sm">Sale</b>}</div>
+            <p className="retailer">{d.retailer}{d.fresh && <em className="new">just found</em>}</p>
+            <h3>{d.title}</h3>
+            {(d.sale_price || d.original_price) && (
+              <p className="price">{d.sale_price && <b>${d.sale_price}</b>} {d.original_price && <s>${d.original_price}</s>}</p>
+            )}
+            {d.code && <p className="code">Code <button onClick={() => navigator.clipboard?.writeText(d.code)} title="Copy code">{d.code}</button></p>}
+            {d.notes && <p className="note">{d.notes}</p>}
+            <p className={`ends ${d.ends ? "" : "unknown"}`}>{timeLeft(d.ends, now)}{d.ends && <span> · {fmtDay(d.ends)}</span>}</p>
+            <div className="actions">
+              <a className="go" href={d.link} target="_blank" rel="noopener noreferrer sponsored">Shop the sale</a>
+              {d.ends && <button className="cal" onClick={() => icsFor(d)}>Add to my calendar</button>}
+            </div>
+            <p className="meta">
+              Found by AI, confirm at the retailer · <span style={{ whiteSpace: "nowrap" }}>checked {d.last_checked}</span> · <a href={d.source} target="_blank" rel="noopener noreferrer">source</a> ·{" "}
+              <button className="link" onClick={() => report(d)}>Report wrong deal</button>
+            </p>
+          </article>
+        ))}
+      </section>
+
+      {(results.length < 3 && f.q.trim()) || live.status !== "idle" ? (
+        <section className="hunt">
+          <p>{results.length ? "Want more?" : "No saved deals match that yet."}</p>
+          <button onClick={huntWeb} disabled={live.status === "loading" || !f.q.trim()}>
+            {live.status === "loading" ? "Hunting the web…" : `Hunt the web for “${f.q.trim() || "…"}”`}
+          </button>
+          {live.msg && <p className="msg">{live.msg}</p>}
+        </section>
+      ) : null}
+
+      <footer className="foot">
+        <p>Deals are found by AI from public pages and may change. Always check the retailer’s site. Some links may be affiliate links.</p>
+        <Link href="/about">About Black Friday Hunter</Link>
+      </footer>
+    </main>
+  );
+}

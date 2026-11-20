@@ -1,0 +1,17 @@
+{
+  "name": "blackfridayhunter",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "collect": "node scripts/collect.mjs"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "1.12.0",
+    "next": "15.5.29",
+    "react": "19.2.9",
+    "react-dom": "19.2.9"
+  }
+}
