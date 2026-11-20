@@ -23,6 +23,17 @@ function timeLeft(ends, now) {
   return `Ends tonight · ${h}h left`;
 }
 
+// Puts the discount front and center in the title, e.g. "Up to **60% off** sitewide".
+function DealTitle({ d }) {
+  const m = d.title.match(/(up to\s+)?\d+\s*%(\s*off)?/i);
+  if (m) {
+    const i = m.index;
+    return (<>{d.title.slice(0, i)}<span className="pct">{m[0]}</span>{d.title.slice(i + m[0].length)}</>);
+  }
+  if (d.discount_pct) return (<><span className="pct">{d.discount_pct}% off</span> {d.title}</>);
+  return d.title;
+}
+
 function priceOf(d) {
   return d.sale_price ?? null;
 }
@@ -210,9 +221,8 @@ export default function DealsApp({ initialDeals }) {
       <section className="grid">
         {results.map((d) => (
           <article key={d.id} className={`card ${d.ends === today ? "urgent" : ""}`}>
-            <div className="tag">{d.discount_pct ? <><b>{d.discount_pct}%</b><small>off</small></> : <b className="sm">Sale</b>}</div>
             <p className="retailer">{d.retailer}{d.fresh && <em className="new">just found</em>}</p>
-            <h3>{d.title}</h3>
+            <h3><DealTitle d={d} /></h3>
             {(d.sale_price || d.original_price) && (
               <p className="price">{d.sale_price && <b>${d.sale_price}</b>} {d.original_price && <s>${d.original_price}</s>}</p>
             )}
