@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { CATEGORIES, PRICE_RANGES, PILLS, dealScore } from "@/lib/deals";
+import { HunterCupcake, TagCookie, PieSlice, Donut, Sparkle } from "./Doodles";
 
 const EMPTY = { q: "", category: null, minPct: 0, price: null, maxPrice: null, endsToday: false, endsOn: null, hasCode: false, sort: "score" };
 
@@ -139,6 +140,8 @@ export default function DealsApp({ initialDeals }) {
   return (
     <main className="wrap">
       <header className="hero">
+        <HunterCupcake className="doodle cupcake" size={130} />
+        <TagCookie className="doodle cookie" size={104} />
         <p className="eyebrow">Fresh from the oven · updated daily</p>
         <h1>Black Friday <span>Hunter</span></h1>
         <p className="sub">Every Black Friday deal in one place. Search it, filter it, and know exactly when it ends.</p>
@@ -159,7 +162,7 @@ export default function DealsApp({ initialDeals }) {
       </header>
 
       <section className="calendar" aria-label="When deals end">
-        <h2>When deals end</h2>
+        <h2><Sparkle size={16} /> When deals end</h2>
         <div className="strip">
           {days.map((d) => (
             <button
@@ -232,6 +235,7 @@ export default function DealsApp({ initialDeals }) {
 
       {(results.length < 3 && f.q.trim()) || live.status !== "idle" ? (
         <section className="hunt">
+          <PieSlice className="hunt-pie" size={84} />
           <p>{results.length ? "Want more?" : "No saved deals match that yet."}</p>
           <button onClick={huntWeb} disabled={live.status === "loading" || !f.q.trim()}>
             {live.status === "loading" ? "Hunting the web…" : `Hunt the web for “${f.q.trim() || "…"}”`}
@@ -241,6 +245,7 @@ export default function DealsApp({ initialDeals }) {
       ) : null}
 
       <footer className="foot">
+        <Donut className="foot-donut" size={56} />
         <p>Deals are found by AI from public pages and may change. Always check the retailer’s site. Some links may be affiliate links.</p>
         <Link href="/about">About Black Friday Hunter</Link>
       </footer>
