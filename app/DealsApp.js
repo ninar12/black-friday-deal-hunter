@@ -86,7 +86,11 @@ export default function DealsApp({ initialDeals }) {
         seen.add(k);
         return true;
       })
-      .map((d) => ({ ...d, score: dealScore(d) }));
+      .map((d) => {
+        const pct = d.discount_pct ?? (d.original_price > d.sale_price && d.sale_price != null ? Math.round(((d.original_price - d.sale_price) / d.original_price) * 100) : null);
+        const x = { ...d, discount_pct: pct };
+        return { ...x, score: dealScore(x) };
+      });
   }, [initialDeals, live.deals, today, reported]);
 
   const results = useMemo(() => {
@@ -140,6 +144,7 @@ export default function DealsApp({ initialDeals }) {
       const r = await fetch("/api/search", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ q: f.q }) });
       const j = await r.json();
       const fresh = (j.deals || []).map((d, i) => ({ ...d, id: `live-${Date.now()}-${i}`, fresh: true }));
+      if (fresh.length) setTimeout(() => document.getElementById("deals")?.scrollIntoView({ behavior: "smooth", block: "start" }), 50);
       const priced = fresh.filter((d) => d.sale_price != null).length;
       // Product searches come back with prices: show the cheapest first.
       if (fresh.length && priced >= fresh.length / 2) set({ sort: "price" });
@@ -188,6 +193,19 @@ export default function DealsApp({ initialDeals }) {
             <button key={p.label} className="pill" onClick={() => setF({ ...EMPTY, q: f.q, ...p.f })}>{p.label}</button>
           ))}
         </div>
+        {f.q.trim() && (results.length < 3 || live.status === "loading") && (
+          <div className="inline-hunt" aria-live="polite">
+            {live.status === "loading" ? (
+              <p>Hunting the web for “{f.q.trim()}”<span className="dots" /></p>
+            ) : (
+              <>
+                <p>{results.length ? `Only ${results.length} saved deal${results.length === 1 ? "" : "s"} for “${f.q.trim()}”.` : `No saved deals for “${f.q.trim()}” yet.`}</p>
+                <button onClick={huntWeb}>Hunt the web</button>
+              </>
+            )}
+          </div>
+        )}
+        {live.msg && live.status === "done" && <p className="inline-msg">{live.msg}</p>}
       </header>
 
       <section className="calendar" id="calendar" aria-label="When deals end">
@@ -268,7 +286,7 @@ export default function DealsApp({ initialDeals }) {
         ))}
       </section>
 
-      {(results.length < 3 && f.q.trim()) || live.status !== "idle" ? (
+      {results.length >= 3 && f.q.trim() && live.status !== "loading" ? (
         <section className="hunt">
           <p>{results.length ? "Want more?" : "No saved deals match that yet."}</p>
           <button onClick={huntWeb} disabled={live.status === "loading" || !f.q.trim()}>
