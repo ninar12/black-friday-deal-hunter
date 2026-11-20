@@ -97,7 +97,7 @@ export default function DealsApp({ initialDeals }) {
     const words = f.q.toLowerCase().split(/\s+/).filter(Boolean);
     const range = PRICE_RANGES.find((r) => r.id === f.price);
     let list = all.filter((d) => {
-      const hay = `${d.retailer} ${d.title} ${d.category} ${d.discount_pct ?? ""}% ${d.code ?? ""}`.toLowerCase();
+      const hay = `${d.retailer} ${d.via ?? ""} ${d.title} ${d.category} ${d.discount_pct ?? ""}% ${d.code ?? ""}`.toLowerCase();
       if (words.length && !words.every((w) => hay.includes(w.replace(/%$/, "")))) return false;
       if (f.category && d.category !== f.category) return false;
       if (f.minPct && (d.discount_pct ?? 0) < f.minPct) return false;
@@ -261,7 +261,7 @@ export default function DealsApp({ initialDeals }) {
         {results.map((d) => (
           <article key={d.id} className={`card ${d.ends === today ? "urgent" : ""}`}>
             <div className="card-top">
-              <p className="retailer">{d.retailer}{d.fresh && <em className="new">New</em>}</p>
+              <p className="retailer">{d.retailer}{d.via && <span className="via"> via {d.via}</span>}{d.fresh && <em className="new">New</em>}</p>
               {d.ends === today && <span className="flag">Ends tonight</span>}
             </div>
             <div className="card-hero">

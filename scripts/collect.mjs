@@ -4,6 +4,7 @@
 // Run: ANTHROPIC_API_KEY=... node scripts/collect.mjs
 import fs from "node:fs";
 import { findDeals, CATEGORIES } from "../lib/claude.mjs";
+import { makeNormalizer, isJunk, dedupe } from "../lib/normalize.mjs";
 
 const DEALS = "data/deals.json";
 const BRANDS = "data/brands.csv";
@@ -57,7 +58,9 @@ const found = await pool(tasks, PARALLEL);
 const hidden = fs.existsSync("data/hidden.json") ? JSON.parse(fs.readFileSync("data/hidden.json", "utf8")) : [];
 const isHidden = (d) => hidden.some((h) => d.retailer.toLowerCase() === h.retailer.toLowerCase() && (!h.title_contains || d.title.toLowerCase().includes(h.title_contains.toLowerCase())));
 for (let i = found.length - 1; i >= 0; i--) if (isHidden(found[i])) found.splice(i, 1);
-const existing = JSON.parse(fs.readFileSync(DEALS, "utf8"));
+const normalize = makeNormalizer(brands);
+for (let i = 0; i < found.length; i++) found[i] = normalize(found[i]);
+const existing = JSON.parse(fs.readFileSync(DEALS, "utf8")).map(normalize);
 const key = (d) => `${d.retailer}|${d.title}`.toLowerCase();
 const byKey = new Map(existing.map((d) => [key(d), d]));
 let added = 0, updated = 0;
@@ -68,13 +71,13 @@ for (const d of found) {
 }
 // Drop deals that ended more than 2 days ago.
 const cutoff = new Date(Date.now() - 2 * 864e5).toISOString().slice(0, 10);
-const merged = [...byKey.values()].filter((d) => (!d.ends || d.ends >= cutoff) && !isHidden(d));
+const merged = dedupe([...byKey.values()].filter((d) => (!d.ends || d.ends >= cutoff) && !isHidden(d) && !isJunk(d)));
 fs.writeFileSync(DEALS, JSON.stringify(merged, null, 2) + "\n");
 
 const known = new Set(brands.map((b) => b.brand.toLowerCase()));
 const discovered = [];
-for (const d of found) {
-  const name = d.retailer.replace(/\s+at\s+.*$/i, "").trim();
+for (const d of found.filter((d) => !isJunk(d))) {
+  const name = d.retailer;
   if (!known.has(name.toLowerCase())) { known.add(name.toLowerCase()); discovered.push({ brand: name, category: d.category, active: "discovered", website: "" }); }
 }
 if (discovered.length) writeBrands([...brands, ...discovered]);

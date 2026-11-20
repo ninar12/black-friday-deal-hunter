@@ -142,3 +142,4 @@ a { color: inherit; text-decoration: none; }
 .dots::after { content: ""; animation: dots 1.2s steps(4) infinite; }
 @keyframes dots { 0% { content: ""; } 25% { content: "."; } 50% { content: ".."; } 75% { content: "..."; } }
 #deals { scroll-margin-top: 64px; }
+.retailer .via { color: var(--mute); text-transform: none; letter-spacing: 0; }
