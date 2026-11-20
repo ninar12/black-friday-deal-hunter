@@ -2,10 +2,9 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { CATEGORIES, PRICE_RANGES, PILLS, dealScore } from "@/lib/deals";
-import { HunterCupcake, TagCookie, PieSlice, Donut, Sparkle } from "./Doodles";
+import { CATEGORIES, PRICE_RANGES, PILLS, FASHION_FIRST, dealScore } from "@/lib/deals";
 
-const EMPTY = { q: "", category: null, minPct: 0, price: null, maxPrice: null, endsToday: false, endsOn: null, hasCode: false, sort: "score" };
+const EMPTY = { q: "", category: null, minPct: 0, price: null, maxPrice: null, endsToday: false, endsOn: null, hasCode: false, sort: "featured" };
 
 const localDay = (d = new Date()) => {
   const z = new Date(d.getTime() - d.getTimezoneOffset() * 60000);
@@ -96,6 +95,7 @@ export default function DealsApp({ initialDeals }) {
       return true;
     });
     const by = {
+      featured: (a, b) => (FASHION_FIRST.includes(b.category) - FASHION_FIRST.includes(a.category)) || b.score - a.score,
       score: (a, b) => b.score - a.score,
       pct: (a, b) => (b.discount_pct ?? 0) - (a.discount_pct ?? 0),
       price: (a, b) => (priceOf(a) ?? 1e9) - (priceOf(b) ?? 1e9),
@@ -135,14 +135,12 @@ export default function DealsApp({ initialDeals }) {
     try { localStorage.setItem("bfh-reported", JSON.stringify(next)); } catch {}
   }
 
-  const active = JSON.stringify({ ...f, q: "", sort: "score" }) !== JSON.stringify({ ...EMPTY });
+  const active = JSON.stringify({ ...f, q: "", sort: "featured" }) !== JSON.stringify({ ...EMPTY });
 
   return (
     <main className="wrap">
       <header className="hero">
-        <HunterCupcake className="doodle cupcake" size={130} />
-        <TagCookie className="doodle cookie" size={104} />
-        <p className="eyebrow">Fresh from the oven · updated daily</p>
+        <p className="eyebrow">Updated twice daily</p>
         <h1>Black Friday <span>Hunter</span></h1>
         <p className="sub">Every Black Friday deal in one place. Search it, filter it, and know exactly when it ends.</p>
         <form className="search" onSubmit={(e) => { e.preventDefault(); if (results.length < 3) huntWeb(); }}>
@@ -162,7 +160,7 @@ export default function DealsApp({ initialDeals }) {
       </header>
 
       <section className="calendar" aria-label="When deals end">
-        <h2><Sparkle size={16} /> When deals end</h2>
+        <h2>When deals end</h2>
         <div className="strip">
           {days.map((d) => (
             <button
@@ -199,7 +197,7 @@ export default function DealsApp({ initialDeals }) {
           </label>
           <label>Sort
             <select value={f.sort} onChange={(e) => set({ sort: e.target.value })}>
-              <option value="score">Best deal</option><option value="pct">Biggest discount</option>
+              <option value="featured">Featured</option><option value="score">Best deal</option><option value="pct">Biggest discount</option>
               <option value="price">Lowest price</option><option value="ending">Ending soonest</option>
             </select>
           </label>
@@ -235,7 +233,6 @@ export default function DealsApp({ initialDeals }) {
 
       {(results.length < 3 && f.q.trim()) || live.status !== "idle" ? (
         <section className="hunt">
-          <PieSlice className="hunt-pie" size={84} />
           <p>{results.length ? "Want more?" : "No saved deals match that yet."}</p>
           <button onClick={huntWeb} disabled={live.status === "loading" || !f.q.trim()}>
             {live.status === "loading" ? "Hunting the web…" : `Hunt the web for “${f.q.trim() || "…"}”`}
@@ -245,7 +242,6 @@ export default function DealsApp({ initialDeals }) {
       ) : null}
 
       <footer className="foot">
-        <Donut className="foot-donut" size={56} />
         <p>Deals are found by AI from public pages and may change. Always check the retailer’s site. Some links may be affiliate links.</p>
         <Link href="/about">About Black Friday Hunter</Link>
       </footer>
