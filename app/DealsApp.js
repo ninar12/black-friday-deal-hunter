@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { shopUrl } from "@/lib/shop";
-import { CATEGORIES, PRICE_RANGES, PILLS, FASHION_FIRST, dealScore } from "@/lib/deals";
+import { CATEGORIES, PRICE_RANGES, POPULAR, FASHION_FIRST, dealScore } from "@/lib/deals";
 
 const EMPTY = { q: "", category: null, minPct: 0, price: null, maxPrice: null, endsToday: false, endsOn: null, hasCode: false, sort: "featured" };
 
@@ -105,6 +105,10 @@ export default function DealsApp({ initialDeals, sites = {} }) {
   const [reported, setReported] = useState([]);
   const hunted = useRef(new Set());
   const moreRound = useRef(0);
+  // A random mix of popular searches, picked after load so every visit differs.
+  const [pills, setPills] = useState(() => POPULAR.slice(0, 8));
+  const shufflePills = () => setPills([...POPULAR].sort(() => Math.random() - 0.5).slice(0, 8));
+  useEffect(() => { shufflePills(); }, []);
   // The "When deals end" strip starts folded away; the choice is remembered.
   const [calOpen, setCalOpen] = useState(false);
   useEffect(() => { try { setCalOpen(localStorage.getItem("bfh-cal") === "open"); } catch {} }, []);
@@ -247,12 +251,10 @@ export default function DealsApp({ initialDeals, sites = {} }) {
           {f.q && <button type="button" className="clear" onClick={() => set({ q: "" })} aria-label="Clear search">×</button>}
         </form>
         <div className="pills" role="list">
-          {PILLS.map((p) => (
-            <button key={p.label} className={`pill ${p.q ? "pill-search" : ""}`} onClick={() => {
-              if (p.q) { setF({ ...EMPTY, q: p.q }); hunted.current.delete(norm(p.q)); huntWeb(p.q, true); }
-              else setF({ ...EMPTY, q: f.q, ...p.f });
-            }}>{p.q && <svg className="caticon" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M10.5 17a6.5 6.5 0 110-13 6.5 6.5 0 010 13zM15.5 15.5L20 20" /></svg>}{p.label}</button>
+          {pills.map((q) => (
+            <button key={q} className="pill" onClick={() => { setF({ ...EMPTY, q }); hunted.current.delete(norm(q)); huntWeb(q, true); }}>{q}</button>
           ))}
+          <button className="pill pill-shuffle" onClick={shufflePills} aria-label="Show other popular searches">↻</button>
         </div>
         {f.q.trim() && (results.length < 3 || live.status === "loading") && (
           <div className="inline-hunt" aria-live="polite">
@@ -347,15 +349,13 @@ export default function DealsApp({ initialDeals, sites = {} }) {
             )}
             {d.code && <p className="code">Code <button onClick={() => navigator.clipboard?.writeText(d.code)} title="Copy code">{d.code}</button></p>}
             {d.notes && <p className="note">{d.notes}</p>}
-            <p className={`ends ${d.ends ? "" : "unknown"}`}>{timeLeft(d.ends, now)}{d.ends && <span> · {fmtDay(d.ends)}</span>}</p>
-            <div className="actions">
-              <a className="go" href={shopUrl(d, sites)} target="_blank" rel="noopener noreferrer sponsored">Shop <span aria-hidden="true">→</span></a>
-              {d.ends && <button className="cal" onClick={() => icsFor(d)}>Add to calendar</button>}
+            {d.ends ? <p className="ends">{timeLeft(d.ends, now)}<span> · {fmtDay(d.ends)}</span></p> : <p className="ends unknown">End date not announced</p>}
+            <div className="card-foot">
+              <span className="go">Shop <span aria-hidden="true">→</span></span>
+              {d.ends && <button className="mini" onClick={() => icsFor(d)} title="Add the last day to your calendar">+ Calendar</button>}
+              <a className="mini" href={d.source} target="_blank" rel="noopener noreferrer" title="Where this deal was found">Source</a>
+              <button className="mini" onClick={() => report(d)} title="Hide this deal and flag it as wrong">Wrong?</button>
             </div>
-            <p className="meta">
-              Found by AI, confirm at the retailer · <span style={{ whiteSpace: "nowrap" }}>checked {d.last_checked}</span> · <a href={d.source} target="_blank" rel="noopener noreferrer">source</a> ·{" "}
-              <button className="link" onClick={() => report(d)}>Report wrong deal</button>
-            </p>
           </article>
         ))}
       </section>
