@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { CATEGORIES, PRICE_RANGES, PILLS, FASHION_FIRST, dealScore } from "@/lib/deals";
 
@@ -24,14 +24,32 @@ function timeLeft(ends, now) {
 }
 
 // Puts the discount front and center in the title, e.g. "Up to **60% off** sitewide".
+// Each category gets its own soft tint and a small line icon.
+const CAT_STYLE = {
+  "Fashion": { tint: "#f5e4df", icon: "M9 3l3 2 3-2 5 3-2 4-2-1v11H8V9L6 10 4 6z" },
+  "Athleisure": { tint: "#dfeaf4", icon: "M4 15c3 0 4-2 6-2s3 2 6 2h4v3H4zM10 13l2-6 4 2" },
+  "Shoes & Accessories": { tint: "#eee7d8", icon: "M3 16V11l4 1 3-3 3 4c2 1 5 1 8 2v3z" },
+  "Beauty": { tint: "#f6e1ea", icon: "M10 3h4v6h-4zM8 9h8v12H8z" },
+  "Tech": { tint: "#e1e7ef", icon: "M4 5h16v11H4zM2 19h20" },
+  "Home & Kitchen": { tint: "#e8eadc", icon: "M4 11l8-7 8 7v9H4zM10 20v-5h4v5" },
+  "Baking & Food": { tint: "#f6ebd2", icon: "M5 14a7 4 0 0014 0zM5 14V11h14v3M9 8c0-2 2-2 2-4M13 8c0-2 2-2 2-4" },
+  "Toys & Kids": { tint: "#e0efe4", icon: "M7 4h10v6H7zM5 10h14v10H5zM9 14h6" },
+  "Outdoor": { tint: "#dde8dc", icon: "M3 20l7-12 4 6 2-3 5 9z" },
+  "Horror & Pop Culture": { tint: "#e6e0f0", icon: "M12 3a7 7 0 00-7 7v11l2-2 2 2 3-2 3 2 2-2 2 2V10a7 7 0 00-7-7zM9 10h.01M15 10h.01" },
+};
+function CatIcon({ cat }) {
+  const c = CAT_STYLE[cat];
+  if (!c) return null;
+  return (<svg className="caticon" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d={c.icon} /></svg>);
+}
+
 function DealTitle({ d }) {
   const m = d.title.match(/(up to\s+)?\d+\s*%(\s*off)?/i);
   if (m) {
     const i = m.index;
     return (<>{d.title.slice(0, i)}<span className="pct">{m[0]}</span>{d.title.slice(i + m[0].length)}</>);
   }
-  if (d.discount_pct) return (<><span className="pct">{d.discount_pct}% off</span> {d.title}</>);
-  return d.title;
+  return d.title; // the % is already shown above the title
 }
 
 function priceOf(d) {
@@ -60,11 +78,31 @@ function icsFor(d) {
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
 
+// Search matching: ignore filler words, accept plurals and common synonyms,
+// so "espresso maker" finds "espresso machine".
+const STOP = new Set(["the", "a", "an", "and", "or", "for", "of", "on", "in", "at", "to", "with", "best", "deal", "deals", "sale", "sales", "black", "friday", "cyber", "monday", "cheap", "cheapest", "good", "top", "buy", "find", "me", "show", "off"]);
+const SYN = [
+  ["maker", "machine", "brewer"], ["tee", "t-shirt", "tshirt", "top"], ["sneaker", "shoe", "trainer", "runner"],
+  ["legging", "tight"], ["tv", "television"], ["headphone", "earbud", "airpod"], ["laptop", "notebook", "macbook"],
+  ["sweatshirt", "hoodie", "crewneck"], ["jean", "denim"], ["bag", "tote", "purse", "handbag"], ["coat", "jacket", "puffer", "outerwear"],
+  ["perfume", "fragrance", "cologne", "scent"], ["skincare", "serum", "moisturizer", "cream"], ["makeup", "foundation", "concealer", "mascara", "lipstick"],
+];
+const stem = (w) => w.replace(/[^a-z0-9%.-]/g, "").replace(/(ies)$/, "y").replace(/(es|s)$/, "");
+function terms(q) {
+  return q.toLowerCase().split(/\s+/).map(stem).filter((w) => w && !STOP.has(w));
+}
+function matches(hay, w) {
+  const alts = SYN.find((g) => g.includes(w)) || [w];
+  return alts.some((a) => hay.includes(a.replace(/%$/, "")));
+}
+const norm = (q) => q.trim().toLowerCase();
+
 export default function DealsApp({ initialDeals }) {
   const [f, setF] = useState(EMPTY);
   const [now, setNow] = useState(() => new Date());
   const [live, setLive] = useState({ status: "idle", deals: [], msg: "" });
   const [reported, setReported] = useState([]);
+  const hunted = useRef(new Set());
 
   useEffect(() => {
     const t = setInterval(() => setNow(new Date()), 60000);
@@ -94,11 +132,13 @@ export default function DealsApp({ initialDeals }) {
   }, [initialDeals, live.deals, today, reported]);
 
   const results = useMemo(() => {
-    const words = f.q.toLowerCase().split(/\s+/).filter(Boolean);
+    const words = terms(f.q);
     const range = PRICE_RANGES.find((r) => r.id === f.price);
     let list = all.filter((d) => {
-      const hay = `${d.retailer} ${d.via ?? ""} ${d.title} ${d.category} ${d.discount_pct ?? ""}% ${d.code ?? ""}`.toLowerCase();
-      if (words.length && !words.every((w) => hay.includes(w.replace(/%$/, "")))) return false;
+      const hay = `${d.retailer} ${d.via ?? ""} ${d.title} ${d.category} ${d.notes ?? ""} ${d.discount_pct ?? ""}% ${d.code ?? ""}`.toLowerCase();
+      // Web results were already found for this exact search, so they always show.
+      const fromThisSearch = d.forQ && d.forQ === norm(f.q);
+      if (words.length && !fromThisSearch && !words.every((w) => matches(hay, w))) return false;
       if (f.category && d.category !== f.category) return false;
       if (f.minPct && (d.discount_pct ?? 0) < f.minPct) return false;
       if (f.hasCode && !d.code) return false;
@@ -119,6 +159,16 @@ export default function DealsApp({ initialDeals }) {
     return [...list].sort(by);
   }, [all, f, today]);
 
+  // When a search turns up fewer than 3 saved deals, search the web on its own
+  // once typing pauses, so nobody has to press a button.
+  useEffect(() => {
+    const q = f.q.trim();
+    if (q.length < 3 || results.length >= 3 || hunted.current.has(norm(q))) return;
+    const t = setTimeout(() => huntWeb(q), 900);
+    return () => clearTimeout(t);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [f.q, results.length]);
+
   // Ending calendar: today through Dec 2.
   const days = useMemo(() => {
     const out = [];
@@ -137,19 +187,21 @@ export default function DealsApp({ initialDeals }) {
     return out;
   }, [all, today, now]);
 
-  async function huntWeb() {
-    if (!f.q.trim()) return;
+  async function huntWeb(q = f.q, scroll = false) {
+    if (!q.trim() || hunted.current.has(norm(q))) return;
+    hunted.current.add(norm(q));
     setLive((l) => ({ ...l, status: "loading", msg: "" }));
     try {
-      const r = await fetch("/api/search", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ q: f.q }) });
+      const r = await fetch("/api/search", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ q }) });
       const j = await r.json();
-      const fresh = (j.deals || []).map((d, i) => ({ ...d, id: `live-${Date.now()}-${i}`, fresh: true }));
-      if (fresh.length) setTimeout(() => document.getElementById("deals")?.scrollIntoView({ behavior: "smooth", block: "start" }), 50);
+      const fresh = (j.deals || []).map((d, i) => ({ ...d, id: `live-${Date.now()}-${i}`, fresh: true, forQ: norm(q) }));
+      if (fresh.length && scroll) setTimeout(() => document.getElementById("deals")?.scrollIntoView({ behavior: "smooth", block: "start" }), 50);
       const priced = fresh.filter((d) => d.sale_price != null).length;
       // Product searches come back with prices: show the cheapest first.
       if (fresh.length && priced >= fresh.length / 2) set({ sort: "price" });
       setLive((l) => ({ status: "done", deals: [...l.deals, ...fresh], msg: j.error || (fresh.length ? (priced >= fresh.length / 2 ? `Found ${fresh.length} prices on the web, cheapest first.` : `Found ${fresh.length} more on the web.`) : "Nothing new turned up on the web.") }));
     } catch {
+      hunted.current.delete(norm(q));
       setLive((l) => ({ ...l, status: "done", msg: "The hunt hit a snag. Try again in a minute." }));
     }
   }
@@ -178,7 +230,7 @@ export default function DealsApp({ initialDeals }) {
     <main className="wrap">
       <header className="hero">
         <p className="eyebrow">Black Friday & Cyber Monday {now.getFullYear()} · Updated twice daily</p>
-        <form className="search" onSubmit={(e) => { e.preventDefault(); if (results.length < 3) huntWeb(); }}>
+        <form className="search" onSubmit={(e) => { e.preventDefault(); hunted.current.delete(norm(f.q)); huntWeb(f.q, true); }}>
           <input
             id="q"
             value={f.q}
@@ -200,7 +252,7 @@ export default function DealsApp({ initialDeals }) {
             ) : (
               <>
                 <p>{results.length ? `Only ${results.length} saved deal${results.length === 1 ? "" : "s"} for “${f.q.trim()}”.` : `No saved deals for “${f.q.trim()}” yet.`}</p>
-                <button onClick={huntWeb}>Hunt the web</button>
+                <button onClick={() => { hunted.current.delete(norm(f.q)); huntWeb(f.q, true); }}>Hunt the web</button>
               </>
             )}
           </div>
@@ -230,7 +282,7 @@ export default function DealsApp({ initialDeals }) {
         <div className="chips">
           <button className={`chip ${!f.category ? "on" : ""}`} onClick={() => set({ category: null })}>All</button>
           {CATEGORIES.map((c) => (
-            <button key={c} className={`chip ${f.category === c ? "on" : ""}`} onClick={() => set({ category: f.category === c ? null : c })}>{c}</button>
+            <button key={c} className={`chip ${f.category === c ? "on" : ""}`} onClick={() => set({ category: f.category === c ? null : c })}><CatIcon cat={c} />{c}</button>
           ))}
         </div>
         <div className="row">
@@ -260,14 +312,16 @@ export default function DealsApp({ initialDeals }) {
       <section className="grid" id="deals">
         {results.map((d) => (
           <article key={d.id} className={`card ${d.ends === today ? "urgent" : ""}`}>
-            <div className="card-top">
-              <p className="retailer">{d.retailer}{d.via && <span className="via"> via {d.via}</span>}{d.fresh && <em className="new">New</em>}</p>
-              {d.ends === today && <span className="flag">Ends tonight</span>}
+            <div className="card-hero" style={{ background: CAT_STYLE[d.category]?.tint }}>
+              <div className="hero-top">
+                <span className="cat"><CatIcon cat={d.category} />{d.category}</span>
+                {d.ends === today ? <span className="flag">Ends tonight</span> : d.fresh ? <em className="new">New</em> : null}
+              </div>
+              <p className="brand">{d.retailer}</p>
+              {d.via && <p className="via">at {d.via}</p>}
+              <p className="offer">{d.discount_pct ? <>{/up to/i.test(d.title) && "Up to "}{d.discount_pct}% off</> : "On sale"}</p>
             </div>
-            <div className="card-hero">
-              {d.discount_pct ? <>{/up to/i.test(d.title) && <span className="upto">Up to</span>}<span className="big">{d.discount_pct}%</span><span className="off">Off</span></> : <span className="big sm">Sale</span>}
-            </div>
-            <h3><DealTitle d={d} /></h3>
+            <h3><a className="stretch" href={d.link} target="_blank" rel="noopener noreferrer sponsored"><DealTitle d={d} /></a></h3>
             {(d.sale_price || d.original_price) && (
               <p className="price">{d.sale_price && <b>${d.sale_price}</b>} {d.original_price && <s>${d.original_price}</s>}</p>
             )}
@@ -289,7 +343,7 @@ export default function DealsApp({ initialDeals }) {
       {results.length >= 3 && f.q.trim() && live.status !== "loading" ? (
         <section className="hunt">
           <p>{results.length ? "Want more?" : "No saved deals match that yet."}</p>
-          <button onClick={huntWeb} disabled={live.status === "loading" || !f.q.trim()}>
+          <button onClick={() => { hunted.current.delete(norm(f.q)); huntWeb(f.q, true); }} disabled={live.status === "loading" || !f.q.trim()}>
             {live.status === "loading" ? "Hunting the web…" : `Hunt the web for “${f.q.trim() || "…"}”`}
           </button>
           {live.msg && <p className="msg">{live.msg}</p>}
