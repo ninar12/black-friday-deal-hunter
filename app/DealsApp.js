@@ -257,7 +257,7 @@ export default function DealsApp({ initialDeals, sites = {}, picks = [] }) {
         <a href="#deals">Deals</a>
         <a href="#calendar" onClick={() => { if (!calOpen) toggleCal(); }}>Calendar</a>
       </div>
-      <Link href="/" className="wordmark" aria-label="Black Friday Hunter home">BLACKFRIDAY<span>hunter</span></Link>
+      <Link href="/" className="wordmark" aria-label="Black Friday Hunter home"><svg className="logo" viewBox="0 0 32 32" aria-hidden="true"><g transform="rotate(-24 16 16)"><path d="M11 6h14.5a3 3 0 0 1 3 3v14a3 3 0 0 1-3 3H11L3.5 16z" fill="#14b8a6" stroke="#0f766e" strokeWidth="1.6" strokeLinejoin="round" /><circle cx="10" cy="16" r="1.9" fill="#fff" stroke="#0f766e" strokeWidth="1.2" /><path d="M19.5 20.2s-4.3-2.6-4.3-5.3a2.2 2.2 0 0 1 4.3-.7 2.2 2.2 0 0 1 4.3.7c0 2.7-4.3 5.3-4.3 5.3z" fill="#fff" /></g></svg><b className="wm-text">BLACKFRIDAY<span>hunter</span></b></Link>
       <div className="tb-right">
         <button type="button" onClick={() => document.getElementById("q")?.focus()}>Search</button>
         <Link href="/about">About</Link>

@@ -237,3 +237,8 @@ a { color: inherit; text-decoration: none; }
 .card-hero .cat { color: var(--cat); }
 .chip-cat.on { color: var(--cat); border-bottom-color: var(--cat); }
 .cat .pick { margin-left: 6px; }
+.wordmark { display: inline-flex; align-items: center; gap: 8px; }
+.wordmark .logo { width: 34px; height: 34px; flex: none; transition: transform .25s ease; }
+.wordmark:hover .logo { transform: rotate(-10deg) scale(1.08); }
+@media (max-width: 640px) { .wordmark .logo { width: 26px; height: 26px; } .wordmark { gap: 6px; justify-content: center; } }
+.wm-text { font-weight: inherit; }
