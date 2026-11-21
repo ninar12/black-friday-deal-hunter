@@ -27,16 +27,16 @@ function timeLeft(ends, now) {
 // Puts the discount front and center in the title, e.g. "Up to **60% off** sitewide".
 // Each category gets a small line icon in its own muted color.
 const CAT_STYLE = {
-  "Fashion": { tint: "#a8768f", icon: "M9 3l3 2 3-2 5 3-2 4-2-1v11H8V9L6 10 4 6z" },
-  "Athleisure": { tint: "#4b5a78", icon: "M4 15c3 0 4-2 6-2s3 2 6 2h4v3H4zM10 13l2-6 4 2" },
-  "Shoes & Accessories": { tint: "#6e5f5c", icon: "M3 16V11l4 1 3-3 3 4c2 1 5 1 8 2v3z" },
-  "Beauty": { tint: "#a079b0", icon: "M10 3h4v6h-4zM8 9h8v12H8z" },
-  "Tech": { tint: "#5b5e66", icon: "M4 5h16v11H4zM2 19h20" },
-  "Home & Kitchen": { tint: "#8f8792", icon: "M4 11l8-7 8 7v9H4zM10 20v-5h4v5" },
-  "Baking & Food": { tint: "#8c4a6e", icon: "M5 14a7 4 0 0014 0zM5 14V11h14v3M9 8c0-2 2-2 2-4M13 8c0-2 2-2 2-4" },
-  "Toys & Kids": { tint: "#6f8c79", icon: "M7 4h10v6H7zM5 10h14v10H5zM9 14h6" },
-  "Outdoor": { tint: "#4f6250", icon: "M3 20l7-12 4 6 2-3 5 9z" },
-  "Horror & Pop Culture": { tint: "#3e2540", icon: "M12 3a7 7 0 00-7 7v11l2-2 2 2 3-2 3 2 2-2 2 2V10a7 7 0 00-7-7zM9 10h.01M15 10h.01" },
+  "Fashion": { tint: "#b5737a", icon: "M9 3l3 2 3-2 5 3-2 4-2-1v11H8V9L6 10 4 6z" },
+  "Athleisure": { tint: "#4a5d6b", icon: "M4 15c3 0 4-2 6-2s3 2 6 2h4v3H4zM10 13l2-6 4 2" },
+  "Shoes & Accessories": { tint: "#6d6a63", icon: "M3 16V11l4 1 3-3 3 4c2 1 5 1 8 2v3z" },
+  "Beauty": { tint: "#c2868c", icon: "M10 3h4v6h-4zM8 9h8v12H8z" },
+  "Tech": { tint: "#55636b", icon: "M4 5h16v11H4zM2 19h20" },
+  "Home & Kitchen": { tint: "#8a9499", icon: "M4 11l8-7 8 7v9H4zM10 20v-5h4v5" },
+  "Baking & Food": { tint: "#9a4b52", icon: "M5 14a7 4 0 0014 0zM5 14V11h14v3M9 8c0-2 2-2 2-4M13 8c0-2 2-2 2-4" },
+  "Toys & Kids": { tint: "#6d8a80", icon: "M7 4h10v6H7zM5 10h14v10H5zM9 14h6" },
+  "Outdoor": { tint: "#2e4a4c", icon: "M3 20l7-12 4 6 2-3 5 9z" },
+  "Horror & Pop Culture": { tint: "#3a3f4a", icon: "M12 3a7 7 0 00-7 7v11l2-2 2 2 3-2 3 2 2-2 2 2V10a7 7 0 00-7-7zM9 10h.01M15 10h.01" },
 };
 function CatIcon({ cat }) {
   const c = CAT_STYLE[cat];
@@ -104,6 +104,10 @@ export default function DealsApp({ initialDeals, sites = {} }) {
   const [live, setLive] = useState({ status: "idle", deals: [], msg: "" });
   const [reported, setReported] = useState([]);
   const hunted = useRef(new Set());
+  // The "When deals end" strip starts folded away; the choice is remembered.
+  const [calOpen, setCalOpen] = useState(false);
+  useEffect(() => { try { setCalOpen(localStorage.getItem("bfh-cal") === "open"); } catch {} }, []);
+  const toggleCal = () => setCalOpen((o) => { try { localStorage.setItem("bfh-cal", o ? "closed" : "open"); } catch {} return !o; });
 
   useEffect(() => {
     const t = setInterval(() => setNow(new Date()), 60000);
@@ -220,7 +224,7 @@ export default function DealsApp({ initialDeals, sites = {} }) {
     <nav className="topbar">
       <div className="tb-left">
         <a href="#deals">Deals</a>
-        <a href="#calendar">Calendar</a>
+        <a href="#calendar" onClick={() => { if (!calOpen) toggleCal(); }}>Calendar</a>
       </div>
       <Link href="/" className="wordmark" aria-label="Black Friday Hunter home">BLACKFRIDAY<span>hunter</span></Link>
       <div className="tb-right">
@@ -266,8 +270,18 @@ export default function DealsApp({ initialDeals, sites = {} }) {
       </header>
 
       <section className="calendar" id="calendar" aria-label="When deals end">
-        <h2>When deals end</h2>
-        <div className="strip">
+        <button type="button" className="cal-toggle" aria-expanded={calOpen} onClick={toggleCal}>
+          <h2>When deals end</h2>
+          {!calOpen && (
+            <span className="cal-sum">
+              {days.filter((d) => d.event).map((d) => `${d.event} ${fmtDay(d.key).split(", ")[1]}`).join(" · ")}
+              {" · "}{days.reduce((n, d) => n + d.count, 0)} deals end in the next two weeks
+              {f.endsOn && <> · showing {fmtDay(f.endsOn).split(", ")[1]}</>}
+            </span>
+          )}
+          <span className="cal-chev" aria-hidden="true">{calOpen ? "Hide −" : "Show +"}</span>
+        </button>
+        {calOpen && <div className="strip">
           {days.map((d) => (
             <button
               key={d.key}
@@ -280,7 +294,7 @@ export default function DealsApp({ initialDeals, sites = {} }) {
               <span className="dcount">{d.count ? `${d.count} end${d.count === 1 ? "s" : ""}` : "–"}</span>
             </button>
           ))}
-        </div>
+        </div>}
       </section>
 
       <section className="filters" aria-label="Filters">
