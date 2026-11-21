@@ -48,7 +48,9 @@ const brands = [...readBrands(), ...readBrands(DISCOVERED)];
 const saved = fs.existsSync(DEALS) ? JSON.parse(fs.readFileSync(DEALS, "utf8")) : [];
 const recent = new Date(Date.now() - 3 * 864e5).toISOString().slice(0, 10);
 const covered = new Set(saved.filter((d) => (d.last_checked || "") >= recent && (!d.ends || d.ends >= today)).map((d) => String(d.retailer).toLowerCase()));
-const active = readBrands().filter((b) => b.active !== "no" && !covered.has(b.brand.toLowerCase()));
+// ONLY_BRANDS="A,B" runs a quick, cheap hunt for just those brands (for newly added ones).
+const only = (process.env.ONLY_BRANDS || "").split(",").map((s) => s.trim().toLowerCase()).filter(Boolean);
+const active = readBrands().filter((b) => b.active !== "no" && (only.length ? only.includes(b.brand.toLowerCase()) : !covered.has(b.brand.toLowerCase())));
 const opts = { maxSearches: 3, maxTokens: 8000, fast: true };
 const tasks = [];
 for (let i = 0; i < active.length; i += BATCH) {
@@ -63,7 +65,7 @@ const ANGLES = [
   (c) => `Find specific ${c} products with big Black Friday ${year} price drops right now, with sale and original prices. Up to 10 deals.`,
 ];
 const dayNo = Math.floor(Date.now() / 864e5);
-CATEGORIES.forEach((c, i) => tasks.push(() => findDeals(ANGLES[(dayNo + i) % ANGLES.length](c), opts)));
+if (!only.length) CATEGORIES.forEach((c, i) => tasks.push(() => findDeals(ANGLES[(dayNo + i) % ANGLES.length](c), opts)));
 
 console.log(`Running ${tasks.length} searches for ${active.length} brands without a current deal + ${CATEGORIES.length} categories...`);
 const found = await pool(tasks, PARALLEL);

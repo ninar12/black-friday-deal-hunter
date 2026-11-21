@@ -2,7 +2,12 @@ name: Daily deal hunt
 on:
   schedule:
     - cron: "0 13 * * *"   # once a day, 5 AM Pacific
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      brands:
+        description: "Only hunt these brands (comma separated). Leave empty for the full daily hunt."
+        required: false
+        default: ""
 permissions:
   contents: write
 concurrency:
@@ -22,6 +27,7 @@ jobs:
       - run: node scripts/collect.mjs
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ONLY_BRANDS: ${{ github.event.inputs.brands }}
       - name: Check shop links and brand websites
         run: node scripts/sites.mjs
         continue-on-error: true
