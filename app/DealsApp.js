@@ -27,16 +27,16 @@ function timeLeft(ends, now) {
 // Puts the discount front and center in the title, e.g. "Up to **60% off** sitewide".
 // Each category gets a small line icon in its own muted color.
 const CAT_STYLE = {
-  "Fashion": { tint: "#e11d48", bar: "#fb7185", bg: "#fff1f2", icon: "M9 3l3 2 3-2 5 3-2 4-2-1v11H8V9L6 10 4 6z" },
-  "Athleisure": { tint: "#0284c7", bar: "#38bdf8", bg: "#f0f9ff", icon: "M4 15c3 0 4-2 6-2s3 2 6 2h4v3H4zM10 13l2-6 4 2" },
-  "Shoes & Accessories": { tint: "#d97706", bar: "#fbbf24", bg: "#fffbeb", icon: "M3 16V11l4 1 3-3 3 4c2 1 5 1 8 2v3z" },
-  "Beauty": { tint: "#db2777", bar: "#f472b6", bg: "#fdf2f8", icon: "M10 3h4v6h-4zM8 9h8v12H8z" },
-  "Tech": { tint: "#4f46e5", bar: "#818cf8", bg: "#eef2ff", icon: "M4 5h16v11H4zM2 19h20" },
-  "Home & Kitchen": { tint: "#059669", bar: "#34d399", bg: "#ecfdf5", icon: "M4 11l8-7 8 7v9H4zM10 20v-5h4v5" },
-  "Baking & Food": { tint: "#ea580c", bar: "#fb923c", bg: "#fff7ed", icon: "M5 14a7 4 0 0014 0zM5 14V11h14v3M9 8c0-2 2-2 2-4M13 8c0-2 2-2 2-4" },
-  "Toys & Kids": { tint: "#7c3aed", bar: "#a78bfa", bg: "#f5f3ff", icon: "M7 4h10v6H7zM5 10h14v10H5zM9 14h6" },
-  "Outdoor": { tint: "#0d9488", bar: "#2dd4bf", bg: "#f0fdfa", icon: "M3 20l7-12 4 6 2-3 5 9z" },
-  "Horror & Pop Culture": { tint: "#9333ea", bar: "#c084fc", bg: "#faf5ff", icon: "M12 3a7 7 0 00-7 7v11l2-2 2 2 3-2 3 2 2-2 2 2V10a7 7 0 00-7-7zM9 10h.01M15 10h.01" },
+  "Fashion": { tint: "#0d9488", bar: "#2dd4bf", bg: "#f0fdfa", icon: "M9 3l3 2 3-2 5 3-2 4-2-1v11H8V9L6 10 4 6z" },
+  "Athleisure": { tint: "#0891b2", bar: "#22d3ee", bg: "#ecfeff", icon: "M4 15c3 0 4-2 6-2s3 2 6 2h4v3H4zM10 13l2-6 4 2" },
+  "Shoes & Accessories": { tint: "#0284c7", bar: "#38bdf8", bg: "#f0f9ff", icon: "M3 16V11l4 1 3-3 3 4c2 1 5 1 8 2v3z" },
+  "Beauty": { tint: "#059669", bar: "#34d399", bg: "#ecfdf5", icon: "M10 3h4v6h-4zM8 9h8v12H8z" },
+  "Tech": { tint: "#2563eb", bar: "#60a5fa", bg: "#eff6ff", icon: "M4 5h16v11H4zM2 19h20" },
+  "Home & Kitchen": { tint: "#16a34a", bar: "#4ade80", bg: "#f0fdf4", icon: "M4 11l8-7 8 7v9H4zM10 20v-5h4v5" },
+  "Baking & Food": { tint: "#65a30d", bar: "#a3e635", bg: "#f7fee7", icon: "M5 14a7 4 0 0014 0zM5 14V11h14v3M9 8c0-2 2-2 2-4M13 8c0-2 2-2 2-4" },
+  "Toys & Kids": { tint: "#4f46e5", bar: "#818cf8", bg: "#eef2ff", icon: "M7 4h10v6H7zM5 10h14v10H5zM9 14h6" },
+  "Outdoor": { tint: "#047857", bar: "#059669", bg: "#ecfdf5", icon: "M3 20l7-12 4 6 2-3 5 9z" },
+  "Horror & Pop Culture": { tint: "#334155", bar: "#64748b", bg: "#f1f5f9", icon: "M12 3a7 7 0 00-7 7v11l2-2 2 2 3-2 3 2 2-2 2 2V10a7 7 0 00-7-7zM9 10h.01M15 10h.01" },
 };
 function CatIcon({ cat }) {
   const c = CAT_STYLE[cat];
