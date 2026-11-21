@@ -10,11 +10,12 @@ const ANGLES = [
 Otherwise, list the biggest real Black Friday sales for it from well-known brands and stores.`,
   `If this is a specific product, find its sale price at OTHER stores than Amazon, Walmart, Target, Best Buy and Costco (e.g. Kohl's, Macy's, Nordstrom, Dick's, REI, Ulta, Sephora, Zappos, Urban Outfitters, specialty shops), one deal per store (retailer = the store name, via = null), with sale_price and original_price in USD. Also include close variants or bundles of it on sale.
 Otherwise, find Black Friday sales for it from smaller, indie and trending brands and shops that big lists miss.`,
+  `Search Black Friday deal roundups and deal sites (e.g. Slickdeals, Good Housekeeping, People, Today, The Strategist, Buzzfeed, Reddit) for it and pull every specific US deal they list, one row per store or brand.`,
 ];
 const runOne = (q, exclude, angle) => findDeals(
     `Find current Black Friday ${new Date().getFullYear()} deals for: "${q}".
 ${angle}
-Always run a web search first, and never answer [] without searching. Up to 10 deals, biggest real savings first. Be quick: use at most 3 searches and keep titles short.${exclude.length ? `\nSkip these brands and stores, we already have them: ${exclude.join(", ")}.` : ""}`,
+Always run a web search first, and never answer [] without searching. Return at least 8 deals if you can find them (up to 12), biggest real savings first. Be quick: use at most 3 searches and keep titles short.${exclude.length ? `\nSkip these brands and stores, we already have them: ${exclude.join(", ")}.` : ""}`,
     { maxSearches: 3, maxTokens: 6000, strict: false, fast: true }
 );
 async function runSearch(q, exclude = []) {
