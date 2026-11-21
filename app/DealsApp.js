@@ -198,7 +198,7 @@ export default function DealsApp({ initialDeals, sites = {}, picks = [] }) {
   // once typing pauses, so nobody has to press a button.
   useEffect(() => {
     const q = f.q.trim();
-    if (q.length < 3 || results.length >= 3 || hunted.current.has(norm(q))) return;
+    if (q.length < 3 || results.length >= 6 || hunted.current.has(norm(q))) return;
     const t = setTimeout(() => huntWeb(q), 900);
     return () => clearTimeout(t);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -390,7 +390,6 @@ export default function DealsApp({ initialDeals, sites = {}, picks = [] }) {
               <span className="go">Shop <span aria-hidden="true">→</span></span>
               {d.ends && <button className="mini" onClick={() => icsFor(d)} title="Add the last day to your calendar">+ Calendar</button>}
               <a className="mini" href={d.source} target="_blank" rel="noopener noreferrer" title="Where this deal was found">Source</a>
-              <button className="mini" onClick={() => report(d)} title="Hide this deal: it's sold out, over, or wrong">Sold out?</button>
             </div>
           </article>
         ))}

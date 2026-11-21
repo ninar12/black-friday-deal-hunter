@@ -3,13 +3,30 @@ import { findDeals, lastRun } from "@/lib/claude.mjs";
 
 // Live web search for things the saved deals don't cover.
 // Good results are cached for 3 hours, so a repeat search is instant.
-const runSearch = (q, exclude = []) => findDeals(
+// Two hunts run side by side with different angles, then get merged, so a
+// search returns 2-3x more deals in about the same time.
+const ANGLES = [
+  `If this is a specific product (like "AirPods Pro 2" or "Owala bottle"), compare its sale price at the brand's own store and the big retailers (Amazon, Walmart, Target, Best Buy, Costco), one deal per store (retailer = the store name, via = null), with sale_price and original_price in USD.
+Otherwise, list the biggest real Black Friday sales for it from well-known brands and stores.`,
+  `If this is a specific product, find its sale price at OTHER stores than Amazon, Walmart, Target, Best Buy and Costco (e.g. Kohl's, Macy's, Nordstrom, Dick's, REI, Ulta, Sephora, Zappos, Urban Outfitters, specialty shops), one deal per store (retailer = the store name, via = null), with sale_price and original_price in USD. Also include close variants or bundles of it on sale.
+Otherwise, find Black Friday sales for it from smaller, indie and trending brands and shops that big lists miss.`,
+];
+const runOne = (q, exclude, angle) => findDeals(
     `Find current Black Friday ${new Date().getFullYear()} deals for: "${q}".
-If this is a specific product (like "AirPods Pro 2" or "Dyson Airwrap"), compare its current sale price at major retailers (Amazon, Best Buy, Target, Walmart, the brand's own store and others you find), up to 8 stores, one deal per store (retailer = the store name, like "Walmart", via = null), with sale_price and original_price in USD, cheapest first.
-Always run a web search first, even for broad terms like "espresso maker" or "winter coats", and never answer [] without searching.
-Otherwise, list the best deals for it, biggest real savings first. Up to 8 deals. Be quick: use at most 3 searches and keep titles short.${exclude.length ? `\nSkip these brands, we already have them: ${exclude.join(", ")}.` : ""}`,
-    { maxSearches: 3, maxTokens: 5000, strict: false, fast: true }
+${angle}
+Always run a web search first, and never answer [] without searching. Up to 10 deals, biggest real savings first. Be quick: use at most 3 searches and keep titles short.${exclude.length ? `\nSkip these brands and stores, we already have them: ${exclude.join(", ")}.` : ""}`,
+    { maxSearches: 3, maxTokens: 6000, strict: false, fast: true }
 );
+async function runSearch(q, exclude = []) {
+  const runs = await Promise.allSettled(ANGLES.map((a) => runOne(q, exclude, a)));
+  const out = [], seen = new Set();
+  for (const r of runs) for (const d of r.status === "fulfilled" ? r.value : []) {
+    const k = `${d.retailer}|${d.via || ""}|${d.sale_price ?? d.discount_pct ?? d.title}`.toLowerCase();
+    if (seen.has(k)) continue;
+    seen.add(k); out.push(d);
+  }
+  return out;
+}
 const cache = new Map();
 const TTL = 3 * 60 * 60 * 1000;
 async function search(q, exclude) {
