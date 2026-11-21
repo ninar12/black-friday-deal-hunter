@@ -5,18 +5,19 @@ import { findDeals, lastRun } from "@/lib/claude.mjs";
 // Good results are cached for 3 hours, so a repeat search is instant.
 const runSearch = (q, exclude = []) => findDeals(
     `Find current Black Friday ${new Date().getFullYear()} deals for: "${q}".
-If this is a specific product (like "AirPods Pro 2" or "Dyson Airwrap"), compare its current sale price at major retailers (Amazon, Best Buy, Target, Walmart, the brand's own store and others you find), one deal per store (retailer = the store name, like "Walmart", via = null), with sale_price and original_price in USD, cheapest first.
+If this is a specific product (like "AirPods Pro 2" or "Dyson Airwrap"), compare its current sale price at major retailers (Amazon, Best Buy, Target, Walmart, the brand's own store and others you find), up to 8 stores, one deal per store (retailer = the store name, like "Walmart", via = null), with sale_price and original_price in USD, cheapest first.
 Always run a web search first, even for broad terms like "espresso maker" or "winter coats", and never answer [] without searching.
-Otherwise, list the best deals for it, biggest real savings first. Up to 6 deals. Be quick: use at most 2 searches and keep titles short.${exclude.length ? `\nSkip these brands, we already have them: ${exclude.join(", ")}.` : ""}`,
-    { maxSearches: 2, maxTokens: 4000, strict: false, fast: true }
+Otherwise, list the best deals for it, biggest real savings first. Up to 8 deals. Be quick: use at most 3 searches and keep titles short.${exclude.length ? `\nSkip these brands, we already have them: ${exclude.join(", ")}.` : ""}`,
+    { maxSearches: 3, maxTokens: 5000, strict: false, fast: true }
 );
 const cache = new Map();
 const TTL = 3 * 60 * 60 * 1000;
 async function search(q, exclude) {
-  const hit = cache.get(q);
+  const k = `${q}|${exclude.join(",").toLowerCase()}`;
+  const hit = cache.get(k);
   if (hit && Date.now() - hit.at < TTL) return hit.deals;
   const deals = await runSearch(q, exclude);
-  if (deals.length) cache.set(q, { at: Date.now(), deals }); // never keep an empty answer
+  if (deals.length) cache.set(k, { at: Date.now(), deals }); // never keep an empty answer
   return deals;
 }
 
@@ -56,7 +57,7 @@ export async function POST(req) {
     return NextResponse.json({ deals: [], error: "Live search isn't switched on yet." }, { status: 503 });
   }
   const key = q.toLowerCase();
-  const hit = cache.get(key);
+  const hit = cache.get(`${key}|${exclude.join(",").toLowerCase()}`);
   if (!(hit && Date.now() - hit.at < TTL)) {
     const blocked = allowed(req);
     if (blocked) return NextResponse.json({ deals: [], error: blocked }, { status: 429 });

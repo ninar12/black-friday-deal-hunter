@@ -1,0 +1,26 @@
+# Nina's picks: brands she personally approves. One brand per line, spelled as in brands.csv.
+# Their deals get a "Nina's pick" tag and show first.
+437
+Geel
+Tank Air
+Revolve
+Skims
+Reformation
+Adanola
+Gymshark
+Quince
+Los Angeles Apparel
+Klassy Network
+Daily Drills
+Honeydew
+Peppermayo
+I.AM.GIA
+Madhappy
+I Am Delilah
+UNIF
+Ecko Unltd
+Giant Vintage
+PrettyLittleThing
+Hello Molly
+Miaou
+Guess

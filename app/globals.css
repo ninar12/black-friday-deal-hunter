@@ -211,3 +211,11 @@ a { color: inherit; text-decoration: none; }
 .heart.on { color: var(--red); }
 .heart.on svg { fill: currentColor; }
 .chip-mine.on { color: var(--red); border-bottom-color: var(--red); }
+
+/* Nina's picks */
+.pick { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--red); font-weight: 600; }
+.chip-pick.on { color: var(--red); border-bottom-color: var(--red); }
+.chip-new { color: var(--paper, #fff); background: var(--red); border-radius: 999px; padding: 4px 10px; }
+.subscribe { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.subscribe p { flex: 1 1 100%; }
+.subscribe .btn { background: var(--ink); color: var(--bg); padding: 10px 16px; text-decoration: none; font-size: 14px; }

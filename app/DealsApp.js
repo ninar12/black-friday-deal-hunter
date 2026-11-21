@@ -5,7 +5,7 @@ import Link from "next/link";
 import { shopUrl } from "@/lib/shop";
 import { CATEGORIES, PRICE_RANGES, POPULAR, FASHION_FIRST, dealScore } from "@/lib/deals";
 
-const EMPTY = { q: "", mine: false, category: null, minPct: 0, price: null, maxPrice: null, endsToday: false, endsOn: null, hasCode: false, sort: "featured" };
+const EMPTY = { q: "", mine: false, picks: false, category: null, minPct: 0, price: null, maxPrice: null, endsToday: false, endsOn: null, hasCode: false, sort: "featured" };
 
 const localDay = (d = new Date()) => {
   const z = new Date(d.getTime() - d.getTimezoneOffset() * 60000);
@@ -98,16 +98,26 @@ function matches(hay, w) {
 }
 const norm = (q) => q.trim().toLowerCase();
 
-export default function DealsApp({ initialDeals, sites = {} }) {
+export default function DealsApp({ initialDeals, sites = {}, picks = [] }) {
   const [f, setF] = useState(EMPTY);
   const [now, setNow] = useState(() => new Date());
   const [live, setLive] = useState({ status: "idle", deals: [], msg: "" });
   const [reported, setReported] = useState([]);
   const hunted = useRef(new Set());
   const moreRound = useRef(0);
+  const isPick = (d) => picks.includes(String(d.retailer).toLowerCase());
+  const pickRank = (d) => (isPick(d) ? (d.via ? 1 : 2) : 0); // a pick's own-site sale beats a single item at Amazon
   // Brands this visitor follows, kept in their browser (no sign-up).
   const [following, setFollowing] = useState([]);
   useEffect(() => { try { setFollowing(JSON.parse(localStorage.getItem("bfh-follow") || "[]")); } catch {} }, []);
+  // Last visit: deals from followed brands first seen after it count as new for you.
+  const [lastVisit, setLastVisit] = useState(null);
+  useEffect(() => {
+    try {
+      setLastVisit(localStorage.getItem("bfh-visit") || "");
+      localStorage.setItem("bfh-visit", new Date().toISOString().slice(0, 10));
+    } catch {}
+  }, []);
   const toggleFollow = (brand) => setFollowing((list) => {
     const k = brand.toLowerCase();
     const next = list.includes(k) ? list.filter((x) => x !== k) : [...list, k];
@@ -159,6 +169,7 @@ export default function DealsApp({ initialDeals, sites = {} }) {
       const fromThisSearch = d.forQ && d.forQ === norm(f.q);
       if (words.length && !fromThisSearch && !words.every((w) => matches(hay, w))) return false;
       if (f.mine && !following.includes(d.retailer.toLowerCase())) return false;
+      if (f.picks && !isPick(d)) return false;
       if (f.category && d.category !== f.category) return false;
       if (f.minPct && (d.discount_pct ?? 0) < f.minPct) return false;
       if (f.hasCode && !d.code) return false;
@@ -170,7 +181,7 @@ export default function DealsApp({ initialDeals, sites = {} }) {
       return true;
     });
     const by = {
-      featured: (a, b) => (FASHION_FIRST.includes(b.category) - FASHION_FIRST.includes(a.category)) || b.score - a.score,
+      featured: (a, b) => (pickRank(b) - pickRank(a)) || (FASHION_FIRST.includes(b.category) - FASHION_FIRST.includes(a.category)) || b.score - a.score,
       score: (a, b) => b.score - a.score,
       pct: (a, b) => (b.discount_pct ?? 0) - (a.discount_pct ?? 0),
       price: (a, b) => (priceOf(a) ?? 1e9) - (priceOf(b) ?? 1e9),
@@ -178,6 +189,10 @@ export default function DealsApp({ initialDeals, sites = {} }) {
     }[f.sort];
     return [...list].sort(by);
   }, [all, f, today, following]);
+
+  const newForYou = lastVisit ? all.filter((d) => following.includes(String(d.retailer).toLowerCase()) && (d.first_seen || d.last_checked || "") > lastVisit) : [];
+  const feedUrl = following.length ? `/api/calendar?brands=${encodeURIComponent(following.join(","))}` : "";
+  const webcal = () => `webcal://${location.host}${feedUrl}`;
 
   // When a search turns up fewer than 3 saved deals, search the web on its own
   // once typing pauses, so nobody has to press a button.
@@ -266,12 +281,15 @@ export default function DealsApp({ initialDeals, sites = {} }) {
           ))}
           <button className="pill pill-shuffle" onClick={shufflePills} aria-label="Show other popular searches">↻</button>
         </div>
-        {f.q.trim() && (results.length < 3 || live.status === "loading") && (
+        {f.q.trim() && (results.length < 6 || live.status === "loading") && (
           <div className="inline-hunt" aria-live="polite">
             {live.status === "loading" ? (
               <p>Hunting the web for “{f.q.trim()}”<span className="dots" /></p>
             ) : hunted.current.has(norm(f.q)) ? (
-              <p>{live.err && !results.length ? live.err : results.length ? <a href="#deals">{results.length} deal{results.length === 1 ? "" : "s"} for “{f.q.trim()}” below ↓</a> : `Nothing turned up for “${f.q.trim()}” yet. Try a brand or a simpler word.`}</p>
+              <>
+                <p>{live.err && !results.length ? live.err : results.length ? <a href="#deals">{results.length} deal{results.length === 1 ? "" : "s"} for “{f.q.trim()}” below ↓</a> : `Nothing turned up for “${f.q.trim()}” yet. Try a brand or a simpler word.`}</p>
+                {results.length > 0 && <button onClick={() => { hunted.current.delete(norm(f.q)); huntWeb(f.q, false, { exclude: [...new Set(results.map((d) => d.retailer))] }); }}>Check more stores</button>}
+              </>
             ) : (
               <>
                 <p>{results.length ? `Only ${results.length} saved deal${results.length === 1 ? "" : "s"} for “${f.q.trim()}”.` : `No saved deals for “${f.q.trim()}” yet.`}</p>
@@ -312,8 +330,10 @@ export default function DealsApp({ initialDeals, sites = {} }) {
 
       <section className="filters" aria-label="Filters">
         <div className="chips">
-          <button className={`chip ${!f.category && !f.mine ? "on" : ""}`} onClick={() => set({ category: null, mine: false })}>All</button>
-          <button className={`chip chip-mine ${f.mine ? "on" : ""}`} onClick={() => set({ mine: !f.mine, category: null })}>♥ My brands{following.length ? ` (${following.length})` : ""}</button>
+          <button className={`chip ${!f.category && !f.mine ? "on" : ""}`} onClick={() => set({ category: null, mine: false, picks: false })}>All</button>
+          {newForYou.length > 0 && !f.mine && <button className="chip chip-new" onClick={() => set({ mine: true, picks: false, category: null })}>{newForYou.length} new from your brands</button>}
+          <button className={`chip chip-pick ${f.picks ? "on" : ""}`} onClick={() => set({ picks: !f.picks, mine: false, category: null })}>★ Nina’s picks</button>
+          <button className={`chip chip-mine ${f.mine ? "on" : ""}`} onClick={() => set({ mine: !f.mine, picks: false, category: null })}>♥ My brands{following.length ? ` (${following.length})` : ""}</button>
           {CATEGORIES.map((c) => (
             <button key={c} className={`chip ${f.category === c ? "on" : ""}`} onClick={() => set({ category: f.category === c ? null : c })}><CatIcon cat={c} />{c}</button>
           ))}
@@ -347,7 +367,7 @@ export default function DealsApp({ initialDeals, sites = {} }) {
           <article key={d.id} className={`card ${d.ends === today ? "urgent" : ""}`}>
             <div className="card-hero">
               <div className="hero-top">
-                <span className="cat"><CatIcon cat={d.category} />{d.category}</span>
+                <span className="cat">{isPick(d) ? <span className="pick">★ Nina’s pick</span> : <><CatIcon cat={d.category} />{d.category}</>}</span>
                 <span className="hero-right">
                   {d.ends === today ? <span className="flag">Ends tonight</span> : d.fresh ? <em className="new">New</em> : null}
                   <button className={`heart ${following.includes(d.retailer.toLowerCase()) ? "on" : ""}`} onClick={() => toggleFollow(d.retailer)} aria-pressed={following.includes(d.retailer.toLowerCase())} title={following.includes(d.retailer.toLowerCase()) ? `Unfollow ${d.retailer}` : `Follow ${d.retailer}`}>
@@ -370,11 +390,19 @@ export default function DealsApp({ initialDeals, sites = {} }) {
               <span className="go">Shop <span aria-hidden="true">→</span></span>
               {d.ends && <button className="mini" onClick={() => icsFor(d)} title="Add the last day to your calendar">+ Calendar</button>}
               <a className="mini" href={d.source} target="_blank" rel="noopener noreferrer" title="Where this deal was found">Source</a>
-              <button className="mini" onClick={() => report(d)} title="Hide this deal and flag it as wrong">Wrong?</button>
+              <button className="mini" onClick={() => report(d)} title="Hide this deal: it's sold out, over, or wrong">Sold out?</button>
             </div>
           </article>
         ))}
       </section>
+
+      {f.mine && following.length > 0 && (
+        <section className="hunt subscribe">
+          <p>Get a heads-up without email: add your brands to your calendar. It updates on its own as new sales turn up, with a reminder the day before each one ends.</p>
+          <a className="btn" href={feedUrl ? webcal() : "#"} onClick={(e) => { e.currentTarget.href = webcal(); }}>Subscribe in my calendar</a>
+          <a className="mini" href={feedUrl} download="my-brands.ics">or download it once</a>
+        </section>
+      )}
 
       {f.mine && !results.length && (
         <section className="hunt"><p>{following.length ? "None of your brands have a sale saved yet. We check twice a day." : "Tap the ♥ on any deal to follow that brand. Its sales will show up here."}</p></section>

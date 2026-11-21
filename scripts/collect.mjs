@@ -66,14 +66,14 @@ const isHidden = (d) => hidden.some((h) => d.retailer.toLowerCase() === h.retail
 for (let i = found.length - 1; i >= 0; i--) if (isHidden(found[i])) found.splice(i, 1);
 const normalize = makeNormalizer(brands);
 for (let i = 0; i < found.length; i++) found[i] = normalize(found[i]);
-const existing = JSON.parse(fs.readFileSync(DEALS, "utf8")).map(normalize);
+const existing = JSON.parse(fs.readFileSync(DEALS, "utf8")).map(normalize).map((d) => ({ ...d, first_seen: d.first_seen || d.last_checked }));
 const key = (d) => `${d.retailer}|${d.title}`.toLowerCase();
 const byKey = new Map(existing.map((d) => [key(d), d]));
 let added = 0, updated = 0;
 for (const d of found) {
   const k = key(d);
   if (byKey.has(k)) { byKey.set(k, { ...byKey.get(k), ...Object.fromEntries(Object.entries(d).filter(([, v]) => v != null)) }); updated++; }
-  else { byKey.set(k, d); added++; }
+  else { byKey.set(k, { ...d, first_seen: today }); added++; }
 }
 // Drop deals that ended more than 2 days ago.
 const cutoff = new Date(Date.now() - 2 * 864e5).toISOString().slice(0, 10);

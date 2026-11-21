@@ -17,7 +17,12 @@ function brandSites() {
   return out;
 }
 
+function picks() {
+  if (!fs.existsSync("data/picks.txt")) return [];
+  return fs.readFileSync("data/picks.txt", "utf8").split(/\r?\n/).map((l) => l.trim()).filter((l) => l && !l.startsWith("#")).map((l) => l.toLowerCase());
+}
+
 export default function Home() {
   const withIds = deals.map((d, i) => ({ ...d, id: `${d.retailer}-${i}` }));
-  return <DealsApp initialDeals={withIds} sites={brandSites()} />;
+  return <DealsApp initialDeals={withIds} sites={brandSites()} picks={picks()} />;
 }
