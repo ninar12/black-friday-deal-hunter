@@ -19,7 +19,11 @@ async function probe(url) {
     const r = await fetch(url, { redirect: "follow", signal: AbortSignal.timeout(15000), headers: { "user-agent": UA, accept: "text/html" } });
     const html = r.ok ? (await r.text()).slice(0, 20000) : "";
     return { status: r.status, final: r.url, title: (html.match(/<title[^>]*>([^<]*)/i)?.[1] || "").trim() };
-  } catch (e) { return { status: 0, err: e.cause?.code || e.name }; }
+  } catch (e) {
+    // Only "no such site" counts as dead; TLS quirks, timeouts and huge headers are real sites blocking bots.
+    const code = e.cause?.code || e.name;
+    return { status: /ENOTFOUND/.test(code) ? 0 : 999, err: code };
+  }
 }
 async function pool(items, n, fn) {
   const out = []; let i = 0;
