@@ -52,6 +52,8 @@ async function pool(items, n, fn) {
 // Pictures are only shown on single items (deals with a sale price).
 const { shopUrl } = await import("../lib/shop.js");
 const items = deals.filter((d) => d.sale_price != null);
+// Drop pictures that came from pages Shop doesn't go to (news articles), unless Google Shopping found them.
+for (const d of items) if (d.image && !d.image_tried && shopUrl(d, sites) !== d.link) d.image = null;
 
 // 1. Free: when Shop goes to the product's own page, read that page once for
 //    its preview picture and to check the sale price is really on it.
