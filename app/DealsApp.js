@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
+import { shopUrl } from "@/lib/shop";
 import { CATEGORIES, PRICE_RANGES, PILLS, FASHION_FIRST, dealScore } from "@/lib/deals";
 
 const EMPTY = { q: "", category: null, minPct: 0, price: null, maxPrice: null, endsToday: false, endsOn: null, hasCode: false, sort: "featured" };
@@ -97,7 +98,7 @@ function matches(hay, w) {
 }
 const norm = (q) => q.trim().toLowerCase();
 
-export default function DealsApp({ initialDeals }) {
+export default function DealsApp({ initialDeals, sites = {} }) {
   const [f, setF] = useState(EMPTY);
   const [now, setNow] = useState(() => new Date());
   const [live, setLive] = useState({ status: "idle", deals: [], msg: "" });
@@ -199,10 +200,10 @@ export default function DealsApp({ initialDeals }) {
       const priced = fresh.filter((d) => d.sale_price != null).length;
       // Product searches come back with prices: show the cheapest first.
       if (fresh.length && priced >= fresh.length / 2) set({ sort: "price" });
-      setLive((l) => ({ status: "done", deals: [...l.deals, ...fresh], msg: j.error || (fresh.length ? (priced >= fresh.length / 2 ? `Found ${fresh.length} prices on the web, cheapest first.` : `Found ${fresh.length} more on the web.`) : "Nothing new turned up on the web.") }));
+      setLive((l) => ({ status: "done", deals: [...l.deals, ...fresh], err: j.error || "", msg: j.error || (fresh.length ? (priced >= fresh.length / 2 ? `Found ${fresh.length} prices on the web, cheapest first.` : `Found ${fresh.length} more on the web.`) : "Nothing new turned up on the web.") }));
     } catch {
       hunted.current.delete(norm(q));
-      setLive((l) => ({ ...l, status: "done", msg: "The hunt hit a snag. Try again in a minute." }));
+      setLive((l) => ({ ...l, status: "done", err: "The hunt hit a snag. Try again in a minute.", msg: "" }));
     }
   }
 
@@ -253,7 +254,7 @@ export default function DealsApp({ initialDeals }) {
             {live.status === "loading" ? (
               <p>Hunting the web for “{f.q.trim()}”<span className="dots" /></p>
             ) : hunted.current.has(norm(f.q)) ? (
-              <p>{results.length ? <a href="#deals">{results.length} deal{results.length === 1 ? "" : "s"} for “{f.q.trim()}” below ↓</a> : `Nothing turned up for “${f.q.trim()}” yet. Try a brand or a simpler word.`}</p>
+              <p>{live.err && !results.length ? live.err : results.length ? <a href="#deals">{results.length} deal{results.length === 1 ? "" : "s"} for “{f.q.trim()}” below ↓</a> : `Nothing turned up for “${f.q.trim()}” yet. Try a brand or a simpler word.`}</p>
             ) : (
               <>
                 <p>{results.length ? `Only ${results.length} saved deal${results.length === 1 ? "" : "s"} for “${f.q.trim()}”.` : `No saved deals for “${f.q.trim()}” yet.`}</p>
@@ -325,7 +326,7 @@ export default function DealsApp({ initialDeals }) {
               {d.via && <p className="via">at {d.via}</p>}
               <p className="offer">{d.discount_pct ? <>{/up to/i.test(d.title) && "Up to "}{d.discount_pct}% off</> : "On sale"}</p>
             </div>
-            <h3><a className="stretch" href={d.link} target="_blank" rel="noopener noreferrer sponsored"><DealTitle d={d} /></a></h3>
+            <h3><a className="stretch" href={shopUrl(d, sites)} target="_blank" rel="noopener noreferrer sponsored"><DealTitle d={d} /></a></h3>
             {(d.sale_price || d.original_price) && (
               <p className="price">{d.sale_price && <b>${d.sale_price}</b>} {d.original_price && <s>${d.original_price}</s>}</p>
             )}
@@ -333,7 +334,7 @@ export default function DealsApp({ initialDeals }) {
             {d.notes && <p className="note">{d.notes}</p>}
             <p className={`ends ${d.ends ? "" : "unknown"}`}>{timeLeft(d.ends, now)}{d.ends && <span> · {fmtDay(d.ends)}</span>}</p>
             <div className="actions">
-              <a className="go" href={d.link} target="_blank" rel="noopener noreferrer sponsored">Shop <span aria-hidden="true">→</span></a>
+              <a className="go" href={shopUrl(d, sites)} target="_blank" rel="noopener noreferrer sponsored">Shop <span aria-hidden="true">→</span></a>
               {d.ends && <button className="cal" onClick={() => icsFor(d)}>Add to calendar</button>}
             </div>
             <p className="meta">
