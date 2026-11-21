@@ -9460,5 +9460,23 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21"
+  },
+  {
+    "retailer": "Elwood",
+    "via": null,
+    "category": "Athleisure",
+    "title": "Sitewide 30% off Black Friday sale",
+    "discount_pct": 30,
+    "original_price": null,
+    "sale_price": null,
+    "code": null,
+    "starts": "2026-11-21",
+    "ends": "2026-11-30",
+    "link": "https://www.elwoodclothing.com",
+    "source": "https://www.vonbk.com/post/black-friday-cyber-monday-deals-2026",
+    "last_checked": "2026-11-21",
+    "notes": null,
+    "found_by": "ai",
+    "first_seen": "2026-11-21"
   }
 ]
