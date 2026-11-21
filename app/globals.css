@@ -219,3 +219,16 @@ a { color: inherit; text-decoration: none; }
 .subscribe { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
 .subscribe p { flex: 1 1 100%; }
 .subscribe .btn { background: var(--ink); color: var(--bg); padding: 10px 16px; text-decoration: none; font-size: 14px; }
+
+/* Search band: deep forest teal so the search reads apart from the deals */
+header.hero { background: var(--teal); box-shadow: 0 0 0 100vmax var(--teal); clip-path: inset(0 -100vmax); padding-bottom: 36px; color: #eef2f2; }
+header.hero .eyebrow { color: #a9bcbc; }
+header.hero .search input { color: #f4f6f6; border-bottom-color: #cfdcdc; caret-color: #f4f6f6; }
+header.hero .search input::placeholder { color: #8ea6a6; }
+header.hero .search button, header.hero .search svg { color: #eef2f2; }
+header.hero .pill { background: transparent; border-color: rgba(238,242,242,.35); color: #eef2f2; }
+header.hero .pill:hover { border-color: #eef2f2; background: rgba(255,255,255,.08); }
+header.hero .pill-shuffle { color: #a9bcbc; }
+header.hero .inline-hunt p, header.hero .inline-hunt a, header.hero .pill-search { color: #eef2f2; }
+header.hero .inline-hunt button { background: #f4f6f6; color: var(--ink); }
+.calendar { border-top: 0; }
