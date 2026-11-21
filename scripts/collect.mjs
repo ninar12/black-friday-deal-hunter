@@ -49,9 +49,13 @@ for (let i = 0; i < active.length; i += BATCH) {
   const list = group.map((b) => (b.website ? `${b.brand} (${b.website})` : b.brand)).join("; ");
   tasks.push(() => findDeals(`Find each of these brands' current Black Friday ${year} sale, if announced: ${list}. One deal per brand at most, skip brands with no ${year} sale found.`));
 }
-for (const c of CATEGORIES) {
-  tasks.push(() => findDeals(`Find the best Black Friday ${year} deals in the ${c} category from any brand or store. Up to 8 deals, biggest real savings first.`));
-}
+// Three discovery angles per category, so each category keeps filling up.
+const ANGLES = [
+  (c) => `Find the best Black Friday ${year} deals in the ${c} category from any brand or store. Up to 10 deals, biggest real savings first.`,
+  (c) => `Find Black Friday ${year} sitewide sales from smaller, indie or trending ${c} brands (not the biggest names). Up to 10 deals.`,
+  (c) => `Find specific ${c} products with big Black Friday ${year} price drops right now, with sale and original prices. Up to 10 deals.`,
+];
+for (const c of CATEGORIES) for (const angle of ANGLES) tasks.push(() => findDeals(angle(c)));
 
 console.log(`Running ${tasks.length} searches for ${active.length} brands + ${CATEGORIES.length} categories...`);
 const found = await pool(tasks, PARALLEL);

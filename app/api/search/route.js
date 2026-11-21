@@ -3,19 +3,19 @@ import { findDeals, lastRun } from "@/lib/claude.mjs";
 
 // Live web search for things the saved deals don't cover.
 // Good results are cached for 3 hours, so a repeat search is instant.
-const runSearch = (q) => findDeals(
+const runSearch = (q, exclude = []) => findDeals(
     `Find current Black Friday ${new Date().getFullYear()} deals for: "${q}".
 If this is a specific product (like "AirPods Pro 2" or "Dyson Airwrap"), compare its current sale price at major retailers (Amazon, Best Buy, Target, Walmart, the brand's own store and others you find), one deal per store (retailer = the store name, like "Walmart", via = null), with sale_price and original_price in USD, cheapest first.
 Always run a web search first, even for broad terms like "espresso maker" or "winter coats", and never answer [] without searching.
-Otherwise, list the best deals for it, biggest real savings first. Up to 6 deals. Be quick: use at most 2 searches and keep titles short.`,
+Otherwise, list the best deals for it, biggest real savings first. Up to 6 deals. Be quick: use at most 2 searches and keep titles short.${exclude.length ? `\nSkip these brands, we already have them: ${exclude.join(", ")}.` : ""}`,
     { maxSearches: 2, maxTokens: 4000, strict: false, fast: true }
 );
 const cache = new Map();
 const TTL = 3 * 60 * 60 * 1000;
-async function search(q) {
+async function search(q, exclude) {
   const hit = cache.get(q);
   if (hit && Date.now() - hit.at < TTL) return hit.deals;
-  const deals = await runSearch(q);
+  const deals = await runSearch(q, exclude);
   if (deals.length) cache.set(q, { at: Date.now(), deals }); // never keep an empty answer
   return deals;
 }
@@ -45,10 +45,11 @@ function allowed(req) {
 }
 
 export async function POST(req) {
-  let q = "";
+  let q = "", exclude = [];
   try {
-    ({ q } = await req.json());
+    ({ q, exclude = [] } = await req.json());
   } catch {}
+  exclude = (Array.isArray(exclude) ? exclude : []).map((x) => String(x).slice(0, 40)).slice(0, 40);
   q = String(q || "").trim().slice(0, 100);
   if (q.length < 2) return NextResponse.json({ deals: [] });
   if (!process.env.ANTHROPIC_API_KEY) {
@@ -61,7 +62,7 @@ export async function POST(req) {
     if (blocked) return NextResponse.json({ deals: [], error: blocked }, { status: 429 });
   }
   try {
-    const deals = await search(key);
+    const deals = await search(key, exclude);
     return NextResponse.json(deals.length ? { deals } : { deals, why: lastRun.info });
   } catch (e) {
     console.error("live search failed", e);

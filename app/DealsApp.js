@@ -104,6 +104,7 @@ export default function DealsApp({ initialDeals, sites = {} }) {
   const [live, setLive] = useState({ status: "idle", deals: [], msg: "" });
   const [reported, setReported] = useState([]);
   const hunted = useRef(new Set());
+  const moreRound = useRef(0);
   // The "When deals end" strip starts folded away; the choice is remembered.
   const [calOpen, setCalOpen] = useState(false);
   useEffect(() => { try { setCalOpen(localStorage.getItem("bfh-cal") === "open"); } catch {} }, []);
@@ -192,14 +193,14 @@ export default function DealsApp({ initialDeals, sites = {} }) {
     return out;
   }, [all, today, now]);
 
-  async function huntWeb(q = f.q, scroll = false) {
+  async function huntWeb(q = f.q, scroll = false, opts = {}) {
     if (!q.trim() || hunted.current.has(norm(q))) return;
     hunted.current.add(norm(q));
     setLive((l) => ({ ...l, status: "loading", msg: "" }));
     try {
-      const r = await fetch("/api/search", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ q }) });
+      const r = await fetch("/api/search", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ q, exclude: opts.exclude || [] }) });
       const j = await r.json();
-      const fresh = (j.deals || []).map((d, i) => ({ ...d, id: `live-${Date.now()}-${i}`, fresh: true, forQ: norm(q) }));
+      const fresh = (j.deals || []).map((d, i) => ({ ...d, ...(opts.category ? { category: opts.category } : {}), id: `live-${Date.now()}-${i}`, fresh: true, forQ: opts.category ? "" : norm(q) }));
       if (fresh.length && scroll) setTimeout(() => document.getElementById("deals")?.scrollIntoView({ behavior: "smooth", block: "start" }), 50);
       const priced = fresh.filter((d) => d.sale_price != null).length;
       // Product searches come back with prices: show the cheapest first.
@@ -358,6 +359,19 @@ export default function DealsApp({ initialDeals, sites = {} }) {
           </article>
         ))}
       </section>
+
+      {f.category && !f.q.trim() && (
+        <section className="hunt">
+          <p>Want more {f.category} deals?</p>
+          <button disabled={live.status === "loading"} onClick={() => {
+            moreRound.current++;
+            huntWeb(`best ${f.category} black friday deals`.concat(moreRound.current > 1 ? ` page ${moreRound.current}` : ""), false, { category: f.category, exclude: [...new Set(results.map((d) => d.retailer))].slice(0, 40) });
+          }}>
+            {live.status === "loading" ? <>Finding more<span className="dots" /></> : `Find more ${f.category} deals on the web`}
+          </button>
+          {live.status !== "loading" && live.msg && <p className="msg">{live.err || live.msg}</p>}
+        </section>
+      )}
 
       {results.length >= 3 && f.q.trim() && live.status !== "loading" ? (
         <section className="hunt">
