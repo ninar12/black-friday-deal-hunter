@@ -105,8 +105,9 @@ export default function DealsApp({ initialDeals, sites = {}, picks = [] }) {
   const [reported, setReported] = useState([]);
   const hunted = useRef(new Set());
   const moreRound = useRef(0);
-  const isPick = (d) => picks.includes(String(d.retailer).toLowerCase());
-  const pickRank = (d) => (isPick(d) ? (d.via ? 1 : 2) : 0); // a pick's own-site sale beats a single item at Amazon
+  // A pick is the brand's own sale. Single items from that brand at Amazon/Macy's etc. aren't tagged.
+  const isPick = (d) => !d.via && picks.includes(String(d.retailer).toLowerCase());
+  const pickRank = (d) => (isPick(d) ? 1 : 0); // a pick's own-site sale beats a single item at Amazon
   // Brands this visitor follows, kept in their browser (no sign-up).
   const [following, setFollowing] = useState([]);
   useEffect(() => { try { setFollowing(JSON.parse(localStorage.getItem("bfh-follow") || "[]")); } catch {} }, []);
@@ -367,7 +368,7 @@ export default function DealsApp({ initialDeals, sites = {}, picks = [] }) {
           <article key={d.id} className={`card ${d.ends === today ? "urgent" : ""}`}>
             <div className="card-hero" style={{ "--cat": CAT_STYLE[d.category]?.tint || "#64748b", "--cat-bar": CAT_STYLE[d.category]?.bar || "#94a3b8", "--cat-bg": CAT_STYLE[d.category]?.bg || "#f8fafc" }}>
               <div className="hero-top">
-                <span className="cat">{isPick(d) ? <><CatIcon cat={d.category} /><span className="pick">★ Nina’s pick</span></> : <><CatIcon cat={d.category} />{d.category}</>}</span>
+                <span className="cat">{isPick(d) ? <><CatIcon cat={d.category} />{d.category}<span className="pick">· ★ Nina’s pick</span></> : <><CatIcon cat={d.category} />{d.category}</>}</span>
                 <span className="hero-right">
                   {d.ends === today ? <span className="flag">Ends tonight</span> : d.fresh ? <em className="new">New</em> : null}
                   <button className={`heart ${following.includes(d.retailer.toLowerCase()) ? "on" : ""}`} onClick={() => toggleFollow(d.retailer)} aria-pressed={following.includes(d.retailer.toLowerCase())} title={following.includes(d.retailer.toLowerCase()) ? `Unfollow ${d.retailer}` : `Follow ${d.retailer}`}>
