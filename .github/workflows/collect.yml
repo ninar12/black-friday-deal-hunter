@@ -23,6 +23,11 @@ jobs:
       - run: node scripts/collect.mjs
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      - name: Check shop links and brand websites
+        run: node scripts/sites.mjs
+        continue-on-error: true
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       - name: Commit new deals
         run: |
           git config user.name "deal-hunter-bot"
