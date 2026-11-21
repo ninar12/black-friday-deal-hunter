@@ -26,16 +26,16 @@ function timeLeft(ends, now) {
 // Puts the discount front and center in the title, e.g. "Up to **60% off** sitewide".
 // Each category gets its own soft tint and a small line icon.
 const CAT_STYLE = {
-  "Fashion": { tint: "#f5e4df", icon: "M9 3l3 2 3-2 5 3-2 4-2-1v11H8V9L6 10 4 6z" },
-  "Athleisure": { tint: "#dfeaf4", icon: "M4 15c3 0 4-2 6-2s3 2 6 2h4v3H4zM10 13l2-6 4 2" },
-  "Shoes & Accessories": { tint: "#eee7d8", icon: "M3 16V11l4 1 3-3 3 4c2 1 5 1 8 2v3z" },
-  "Beauty": { tint: "#f6e1ea", icon: "M10 3h4v6h-4zM8 9h8v12H8z" },
-  "Tech": { tint: "#e1e7ef", icon: "M4 5h16v11H4zM2 19h20" },
-  "Home & Kitchen": { tint: "#e8eadc", icon: "M4 11l8-7 8 7v9H4zM10 20v-5h4v5" },
-  "Baking & Food": { tint: "#f6ebd2", icon: "M5 14a7 4 0 0014 0zM5 14V11h14v3M9 8c0-2 2-2 2-4M13 8c0-2 2-2 2-4" },
-  "Toys & Kids": { tint: "#e0efe4", icon: "M7 4h10v6H7zM5 10h14v10H5zM9 14h6" },
-  "Outdoor": { tint: "#dde8dc", icon: "M3 20l7-12 4 6 2-3 5 9z" },
-  "Horror & Pop Culture": { tint: "#e6e0f0", icon: "M12 3a7 7 0 00-7 7v11l2-2 2 2 3-2 3 2 2-2 2 2V10a7 7 0 00-7-7zM9 10h.01M15 10h.01" },
+  "Fashion": { tint: "#f1dfe8", icon: "M9 3l3 2 3-2 5 3-2 4-2-1v11H8V9L6 10 4 6z" },
+  "Athleisure": { tint: "#dde3ef", icon: "M4 15c3 0 4-2 6-2s3 2 6 2h4v3H4zM10 13l2-6 4 2" },
+  "Shoes & Accessories": { tint: "#ebe4e1", icon: "M3 16V11l4 1 3-3 3 4c2 1 5 1 8 2v3z" },
+  "Beauty": { tint: "#ece2f4", icon: "M10 3h4v6h-4zM8 9h8v12H8z" },
+  "Tech": { tint: "#e5e6eb", icon: "M4 5h16v11H4zM2 19h20" },
+  "Home & Kitchen": { tint: "#ebe8ec", icon: "M4 11l8-7 8 7v9H4zM10 20v-5h4v5" },
+  "Baking & Food": { tint: "#eedbe6", icon: "M5 14a7 4 0 0014 0zM5 14V11h14v3M9 8c0-2 2-2 2-4M13 8c0-2 2-2 2-4" },
+  "Toys & Kids": { tint: "#e0ebe4", icon: "M7 4h10v6H7zM5 10h14v10H5zM9 14h6" },
+  "Outdoor": { tint: "#dfe7dc", icon: "M3 20l7-12 4 6 2-3 5 9z" },
+  "Horror & Pop Culture": { tint: "#e4dbe9", icon: "M12 3a7 7 0 00-7 7v11l2-2 2 2 3-2 3 2 2-2 2 2V10a7 7 0 00-7-7zM9 10h.01M15 10h.01" },
 };
 function CatIcon({ cat }) {
   const c = CAT_STYLE[cat];
@@ -252,15 +252,16 @@ export default function DealsApp({ initialDeals }) {
           <div className="inline-hunt" aria-live="polite">
             {live.status === "loading" ? (
               <p>Hunting the web for “{f.q.trim()}”<span className="dots" /></p>
+            ) : hunted.current.has(norm(f.q)) ? (
+              <p>{results.length ? <a href="#deals">{results.length} deal{results.length === 1 ? "" : "s"} for “{f.q.trim()}” below ↓</a> : `Nothing turned up for “${f.q.trim()}” yet. Try a brand or a simpler word.`}</p>
             ) : (
               <>
                 <p>{results.length ? `Only ${results.length} saved deal${results.length === 1 ? "" : "s"} for “${f.q.trim()}”.` : `No saved deals for “${f.q.trim()}” yet.`}</p>
-                <button onClick={() => { hunted.current.delete(norm(f.q)); huntWeb(f.q, true); }}>Hunt the web</button>
+                <button onClick={() => { hunted.current.delete(norm(f.q)); huntWeb(f.q, true); }}>Search the web</button>
               </>
             )}
           </div>
         )}
-        {live.msg && live.status === "done" && <p className="inline-msg">{live.msg}</p>}
       </header>
 
       <section className="calendar" id="calendar" aria-label="When deals end">

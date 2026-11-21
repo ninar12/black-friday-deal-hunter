@@ -1,11 +1,13 @@
-/* Minimal grotesk: white, cool grey tiles, black type, one red accent. */
+/* Minimal grotesk in a winter palette: frost white, midnight ink,
+   plum for discounts and urgency, deep teal for Black Friday / Cyber Monday. */
 :root {
-  --bg: #ffffff;
-  --tile: #f3f4f5;
-  --line: #e3e5e8;
-  --ink: #0a0a0a;
-  --mute: #6b6f76;
-  --red: #c8102e;
+  --bg: #fbfafd;
+  --tile: #eeecf3;
+  --line: #e1dee8;
+  --ink: #2b2638;
+  --mute: #6b6f86;
+  --red: #7a2250;
+  --teal: #2f5361;
   --sans: "Inter", "Helvetica Neue", Arial, sans-serif;
   --display: "Inter Tight", "Helvetica Neue", Arial, sans-serif;
 }
@@ -17,7 +19,7 @@ button { cursor: pointer; background: none; border: 0; padding: 0; }
 a { color: inherit; text-decoration: none; }
 
 /* Top bar */
-.topbar { position: sticky; top: 0; z-index: 10; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; height: 56px; padding: 0 16px; background: rgba(255,255,255,.94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+.topbar { position: sticky; top: 0; z-index: 10; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; height: 56px; padding: 0 16px; background: rgba(251,250,253,.94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
 .tb-left, .tb-right { display: flex; gap: 28px; font-size: 13px; text-transform: uppercase; letter-spacing: .02em; }
 .tb-right { justify-content: flex-end; }
 .tb-left a:hover, .tb-right a:hover, .tb-right button:hover { text-decoration: underline; text-underline-offset: 4px; }
@@ -51,7 +53,7 @@ a { color: inherit; text-decoration: none; }
 .day.quiet .dcount { color: #c3c7cc; }
 .day.on { background: var(--ink); color: #fff; }
 .day.on .dname, .day.on .dcount { color: #fff; }
-.day.event { background: var(--ink); color: #fff; }
+.day.event { background: var(--teal); color: #fff; }
 .day.event .dname, .day.event .dcount { color: #c9ccd1; }
 .day.event.on { outline: 2px solid var(--red); outline-offset: -2px; }
 .devent { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: #fff; background: var(--red); padding: 2px 5px; margin-bottom: 4px; }
@@ -146,7 +148,7 @@ a { color: inherit; text-decoration: none; }
 
 /* Cards: brand name leads, whole card opens the deal */
 .card { position: relative; }
-.card:hover { background: #fafafa; }
+.card:hover { background: #f6f4fa; }
 .stretch::after { content: ""; position: absolute; inset: 0; z-index: 0; }
 .code button, .cal, .go, .meta a, .meta button { position: relative; z-index: 1; }
 .card-hero { aspect-ratio: auto; min-height: 168px; align-items: flex-start; justify-content: flex-end; gap: 4px; padding: 14px 16px 18px; text-align: left; }
@@ -167,3 +169,4 @@ a { color: inherit; text-decoration: none; }
 .chip { display: inline-flex; align-items: center; gap: 6px; }
 .chip .caticon { color: inherit; }
 .pill-search { display: inline-flex; align-items: center; gap: 5px; color: var(--ink); }
+.inline-hunt a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
