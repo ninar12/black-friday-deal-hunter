@@ -230,3 +230,9 @@ a { color: inherit; text-decoration: none; }
 .pill { background: #fff; border-color: #a9b4ba; }
 .day { background: #fff; }
 .calendar { border-top-color: var(--line); }
+
+/* Category color coding: a light wash of each category's color on the card top,
+   a matching stripe, and matching icon + chip underline. */
+.card-hero { background: color-mix(in srgb, var(--cat, #8a949a) 9%, #fff) !important; border-top: 3px solid var(--cat, #8a949a); }
+.card-hero .cat { color: var(--cat); }
+.chip-cat.on { color: var(--cat); border-bottom-color: var(--cat); }

@@ -27,16 +27,16 @@ function timeLeft(ends, now) {
 // Puts the discount front and center in the title, e.g. "Up to **60% off** sitewide".
 // Each category gets a small line icon in its own muted color.
 const CAT_STYLE = {
-  "Fashion": { tint: "#b5737a", icon: "M9 3l3 2 3-2 5 3-2 4-2-1v11H8V9L6 10 4 6z" },
-  "Athleisure": { tint: "#4a5d6b", icon: "M4 15c3 0 4-2 6-2s3 2 6 2h4v3H4zM10 13l2-6 4 2" },
-  "Shoes & Accessories": { tint: "#6d6a63", icon: "M3 16V11l4 1 3-3 3 4c2 1 5 1 8 2v3z" },
-  "Beauty": { tint: "#c2868c", icon: "M10 3h4v6h-4zM8 9h8v12H8z" },
-  "Tech": { tint: "#55636b", icon: "M4 5h16v11H4zM2 19h20" },
-  "Home & Kitchen": { tint: "#8a9499", icon: "M4 11l8-7 8 7v9H4zM10 20v-5h4v5" },
-  "Baking & Food": { tint: "#9a4b52", icon: "M5 14a7 4 0 0014 0zM5 14V11h14v3M9 8c0-2 2-2 2-4M13 8c0-2 2-2 2-4" },
-  "Toys & Kids": { tint: "#6d8a80", icon: "M7 4h10v6H7zM5 10h14v10H5zM9 14h6" },
-  "Outdoor": { tint: "#2e4a4c", icon: "M3 20l7-12 4 6 2-3 5 9z" },
-  "Horror & Pop Culture": { tint: "#3a3f4a", icon: "M12 3a7 7 0 00-7 7v11l2-2 2 2 3-2 3 2 2-2 2 2V10a7 7 0 00-7-7zM9 10h.01M15 10h.01" },
+  "Fashion": { tint: "#b4505d", icon: "M9 3l3 2 3-2 5 3-2 4-2-1v11H8V9L6 10 4 6z" },
+  "Athleisure": { tint: "#3c7c8e", icon: "M4 15c3 0 4-2 6-2s3 2 6 2h4v3H4zM10 13l2-6 4 2" },
+  "Shoes & Accessories": { tint: "#9c6b36", icon: "M3 16V11l4 1 3-3 3 4c2 1 5 1 8 2v3z" },
+  "Beauty": { tint: "#c25a82", icon: "M10 3h4v6h-4zM8 9h8v12H8z" },
+  "Tech": { tint: "#4862a8", icon: "M4 5h16v11H4zM2 19h20" },
+  "Home & Kitchen": { tint: "#5c8a55", icon: "M4 11l8-7 8 7v9H4zM10 20v-5h4v5" },
+  "Baking & Food": { tint: "#b77a26", icon: "M5 14a7 4 0 0014 0zM5 14V11h14v3M9 8c0-2 2-2 2-4M13 8c0-2 2-2 2-4" },
+  "Toys & Kids": { tint: "#7b5cb0", icon: "M7 4h10v6H7zM5 10h14v10H5zM9 14h6" },
+  "Outdoor": { tint: "#2f6b55", icon: "M3 20l7-12 4 6 2-3 5 9z" },
+  "Horror & Pop Culture": { tint: "#5a3f6e", icon: "M12 3a7 7 0 00-7 7v11l2-2 2 2 3-2 3 2 2-2 2 2V10a7 7 0 00-7-7zM9 10h.01M15 10h.01" },
 };
 function CatIcon({ cat }) {
   const c = CAT_STYLE[cat];
@@ -335,7 +335,7 @@ export default function DealsApp({ initialDeals, sites = {}, picks = [] }) {
           <button className={`chip chip-pick ${f.picks ? "on" : ""}`} onClick={() => set({ picks: !f.picks, mine: false, category: null })}>★ Nina’s picks</button>
           <button className={`chip chip-mine ${f.mine ? "on" : ""}`} onClick={() => set({ mine: !f.mine, picks: false, category: null })}>♥ My brands{following.length ? ` (${following.length})` : ""}</button>
           {CATEGORIES.map((c) => (
-            <button key={c} className={`chip ${f.category === c ? "on" : ""}`} onClick={() => set({ category: f.category === c ? null : c })}><CatIcon cat={c} />{c}</button>
+            <button key={c} style={{ "--cat": CAT_STYLE[c]?.tint }} className={`chip chip-cat ${f.category === c ? "on" : ""}`} onClick={() => set({ category: f.category === c ? null : c })}><CatIcon cat={c} />{c}</button>
           ))}
         </div>
         <div className="row">
@@ -365,9 +365,9 @@ export default function DealsApp({ initialDeals, sites = {}, picks = [] }) {
       <section className="grid" id="deals">
         {results.map((d) => (
           <article key={d.id} className={`card ${d.ends === today ? "urgent" : ""}`}>
-            <div className="card-hero">
+            <div className="card-hero" style={{ "--cat": CAT_STYLE[d.category]?.tint || "#8a949a" }}>
               <div className="hero-top">
-                <span className="cat">{isPick(d) ? <span className="pick">★ Nina’s pick</span> : <><CatIcon cat={d.category} />{d.category}</>}</span>
+                <span className="cat">{isPick(d) ? <><CatIcon cat={d.category} /><span className="pick">★ Nina’s pick</span></> : <><CatIcon cat={d.category} />{d.category}</>}</span>
                 <span className="hero-right">
                   {d.ends === today ? <span className="flag">Ends tonight</span> : d.fresh ? <em className="new">New</em> : null}
                   <button className={`heart ${following.includes(d.retailer.toLowerCase()) ? "on" : ""}`} onClick={() => toggleFollow(d.retailer)} aria-pressed={following.includes(d.retailer.toLowerCase())} title={following.includes(d.retailer.toLowerCase()) ? `Unfollow ${d.retailer}` : `Follow ${d.retailer}`}>
