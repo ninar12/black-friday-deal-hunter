@@ -166,3 +166,4 @@ a { color: inherit; text-decoration: none; }
 .caticon { fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; color: var(--ink); }
 .chip { display: inline-flex; align-items: center; gap: 6px; }
 .chip .caticon { color: inherit; }
+.pill-search { display: inline-flex; align-items: center; gap: 5px; color: var(--ink); }

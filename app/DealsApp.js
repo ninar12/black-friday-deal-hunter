@@ -242,7 +242,10 @@ export default function DealsApp({ initialDeals }) {
         </form>
         <div className="pills" role="list">
           {PILLS.map((p) => (
-            <button key={p.label} className="pill" onClick={() => setF({ ...EMPTY, q: f.q, ...p.f })}>{p.label}</button>
+            <button key={p.label} className={`pill ${p.q ? "pill-search" : ""}`} onClick={() => {
+              if (p.q) { setF({ ...EMPTY, q: p.q }); hunted.current.delete(norm(p.q)); huntWeb(p.q, true); }
+              else setF({ ...EMPTY, q: f.q, ...p.f });
+            }}>{p.q && <svg className="caticon" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M10.5 17a6.5 6.5 0 110-13 6.5 6.5 0 010 13zM15.5 15.5L20 20" /></svg>}{p.label}</button>
           ))}
         </div>
         {f.q.trim() && (results.length < 3 || live.status === "loading") && (
