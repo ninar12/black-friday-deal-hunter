@@ -7,14 +7,16 @@ import { findDeals, CATEGORIES } from "../lib/claude.mjs";
 import { makeNormalizer, isJunk, dedupe } from "../lib/normalize.mjs";
 
 const DEALS = "data/deals.json";
-const BRANDS = "data/brands.csv";
+const BRANDS = "data/brands.csv";          // edited by people
+const DISCOVERED = "data/discovered.csv";  // written only by the hunt, so the two never clash
 const BATCH = 8;          // brands per search request
 const PARALLEL = 4;       // requests at once
 const year = new Date().getFullYear();
 const today = new Date().toISOString().slice(0, 10);
 
-function readBrands() {
-  const [header, ...lines] = fs.readFileSync(BRANDS, "utf8").trim().split(/\r?\n/);
+function readBrands(file = BRANDS) {
+  if (!fs.existsSync(file)) return [];
+  const [header, ...lines] = fs.readFileSync(file, "utf8").trim().split(/\r?\n/);
   return lines.map((l) => {
     const cells = l.match(/("([^"]|"")*"|[^,]*)(,|$)/g).map((c) => c.replace(/,$/, "").replace(/^"|"$/g, "").replace(/""/g, '"'));
     return { brand: cells[0], category: cells[1], active: cells[2], website: cells[3] || "" };
@@ -24,7 +26,7 @@ function readBrands() {
 function writeBrands(brands) {
   const q = (s) => (/[",]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s);
   const body = brands.map((b) => [b.brand, b.category, b.active, b.website].map((s) => q(s || "")).join(",")).join("\n");
-  fs.writeFileSync(BRANDS, `brand,category,active,website\n${body}\n`);
+  fs.writeFileSync(DISCOVERED, `brand,category,active,website\n${body}\n`);
 }
 
 async function pool(tasks, n) {
@@ -39,7 +41,7 @@ async function pool(tasks, n) {
   return out;
 }
 
-const brands = readBrands();
+const brands = [...readBrands(), ...readBrands(DISCOVERED)];
 const active = brands.filter((b) => b.active !== "no");
 const tasks = [];
 for (let i = 0; i < active.length; i += BATCH) {
@@ -80,6 +82,6 @@ for (const d of found.filter((d) => !isJunk(d))) {
   const name = d.retailer;
   if (!known.has(name.toLowerCase())) { known.add(name.toLowerCase()); discovered.push({ brand: name, category: d.category, active: "discovered", website: "" }); }
 }
-if (discovered.length) writeBrands([...brands, ...discovered]);
+if (discovered.length) writeBrands([...readBrands(DISCOVERED), ...discovered]);
 
 console.log(`${today}: ${found.length} deals found, ${added} new, ${updated} refreshed, ${merged.length} total. ${discovered.length} new brands discovered.`);
