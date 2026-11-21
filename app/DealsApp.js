@@ -5,7 +5,7 @@ import Link from "next/link";
 import { shopUrl } from "@/lib/shop";
 import { CATEGORIES, PRICE_RANGES, POPULAR, FASHION_FIRST, dealScore } from "@/lib/deals";
 
-const EMPTY = { q: "", category: null, minPct: 0, price: null, maxPrice: null, endsToday: false, endsOn: null, hasCode: false, sort: "featured" };
+const EMPTY = { q: "", mine: false, category: null, minPct: 0, price: null, maxPrice: null, endsToday: false, endsOn: null, hasCode: false, sort: "featured" };
 
 const localDay = (d = new Date()) => {
   const z = new Date(d.getTime() - d.getTimezoneOffset() * 60000);
@@ -105,6 +105,15 @@ export default function DealsApp({ initialDeals, sites = {} }) {
   const [reported, setReported] = useState([]);
   const hunted = useRef(new Set());
   const moreRound = useRef(0);
+  // Brands this visitor follows, kept in their browser (no sign-up).
+  const [following, setFollowing] = useState([]);
+  useEffect(() => { try { setFollowing(JSON.parse(localStorage.getItem("bfh-follow") || "[]")); } catch {} }, []);
+  const toggleFollow = (brand) => setFollowing((list) => {
+    const k = brand.toLowerCase();
+    const next = list.includes(k) ? list.filter((x) => x !== k) : [...list, k];
+    try { localStorage.setItem("bfh-follow", JSON.stringify(next)); } catch {}
+    return next;
+  });
   // A random mix of popular searches, picked after load so every visit differs.
   const [pills, setPills] = useState(() => POPULAR.slice(0, 8));
   const shufflePills = () => setPills([...POPULAR].sort(() => Math.random() - 0.5).slice(0, 8));
@@ -149,6 +158,7 @@ export default function DealsApp({ initialDeals, sites = {} }) {
       // Web results were already found for this exact search, so they always show.
       const fromThisSearch = d.forQ && d.forQ === norm(f.q);
       if (words.length && !fromThisSearch && !words.every((w) => matches(hay, w))) return false;
+      if (f.mine && !following.includes(d.retailer.toLowerCase())) return false;
       if (f.category && d.category !== f.category) return false;
       if (f.minPct && (d.discount_pct ?? 0) < f.minPct) return false;
       if (f.hasCode && !d.code) return false;
@@ -167,7 +177,7 @@ export default function DealsApp({ initialDeals, sites = {} }) {
       ending: (a, b) => (a.ends ?? "9999") .localeCompare(b.ends ?? "9999"),
     }[f.sort];
     return [...list].sort(by);
-  }, [all, f, today]);
+  }, [all, f, today, following]);
 
   // When a search turns up fewer than 3 saved deals, search the web on its own
   // once typing pauses, so nobody has to press a button.
@@ -302,7 +312,8 @@ export default function DealsApp({ initialDeals, sites = {} }) {
 
       <section className="filters" aria-label="Filters">
         <div className="chips">
-          <button className={`chip ${!f.category ? "on" : ""}`} onClick={() => set({ category: null })}>All</button>
+          <button className={`chip ${!f.category && !f.mine ? "on" : ""}`} onClick={() => set({ category: null, mine: false })}>All</button>
+          <button className={`chip chip-mine ${f.mine ? "on" : ""}`} onClick={() => set({ mine: !f.mine, category: null })}>♥ My brands{following.length ? ` (${following.length})` : ""}</button>
           {CATEGORIES.map((c) => (
             <button key={c} className={`chip ${f.category === c ? "on" : ""}`} onClick={() => set({ category: f.category === c ? null : c })}><CatIcon cat={c} />{c}</button>
           ))}
@@ -337,7 +348,12 @@ export default function DealsApp({ initialDeals, sites = {} }) {
             <div className="card-hero">
               <div className="hero-top">
                 <span className="cat"><CatIcon cat={d.category} />{d.category}</span>
-                {d.ends === today ? <span className="flag">Ends tonight</span> : d.fresh ? <em className="new">New</em> : null}
+                <span className="hero-right">
+                  {d.ends === today ? <span className="flag">Ends tonight</span> : d.fresh ? <em className="new">New</em> : null}
+                  <button className={`heart ${following.includes(d.retailer.toLowerCase()) ? "on" : ""}`} onClick={() => toggleFollow(d.retailer)} aria-pressed={following.includes(d.retailer.toLowerCase())} title={following.includes(d.retailer.toLowerCase()) ? `Unfollow ${d.retailer}` : `Follow ${d.retailer}`}>
+                    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z" /></svg>
+                  </button>
+                </span>
               </div>
               <p className="brand">{d.retailer}</p>
               {d.via && <p className="via">at {d.via}</p>}
@@ -359,6 +375,10 @@ export default function DealsApp({ initialDeals, sites = {} }) {
           </article>
         ))}
       </section>
+
+      {f.mine && !results.length && (
+        <section className="hunt"><p>{following.length ? "None of your brands have a sale saved yet. We check twice a day." : "Tap the ♥ on any deal to follow that brand. Its sales will show up here."}</p></section>
+      )}
 
       {f.category && !f.q.trim() && (
         <section className="hunt">
