@@ -1823,7 +1823,7 @@
     "first_seen": "2026-11-20"
   },
   {
-    "retailer": "Amazon",
+    "retailer": "Vitamix",
     "category": "Home & Kitchen",
     "title": "Vitamix 5200 blender, $200 off",
     "discount_pct": 40,
@@ -1837,7 +1837,7 @@
     "last_checked": "2026-11-20",
     "notes": null,
     "found_by": "ai",
-    "via": null,
+    "via": "Amazon",
     "first_seen": "2026-11-20"
   },
   {
@@ -2849,8 +2849,8 @@
     "first_seen": "2026-11-21"
   },
   {
-    "retailer": "Macy's",
-    "via": null,
+    "retailer": "Michael Kors",
+    "via": "Macy's",
     "category": "Shoes & Accessories",
     "title": "Designer boots and styles on sale, including $50 Michael Kors booties",
     "discount_pct": 75,
@@ -8963,6 +8963,24 @@
     "ends": null,
     "link": "https://srscinemastore.com/collections/black-friday-2026",
     "source": "https://srscinemastore.com/collections/black-friday-2026/may",
+    "last_checked": "2026-11-21",
+    "notes": null,
+    "found_by": "ai",
+    "first_seen": "2026-11-21"
+  },
+  {
+    "retailer": "Dolce Vita",
+    "via": null,
+    "category": "Shoes & Accessories",
+    "title": "Black Friday & Cyber Monday: 30% off almost everything",
+    "discount_pct": 30,
+    "original_price": null,
+    "sale_price": null,
+    "code": null,
+    "starts": null,
+    "ends": null,
+    "link": "https://www.dolcevita.com/collections/cyber-week-sale",
+    "source": "https://www.dolcevita.com/collections/cyber-week-sale",
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
