@@ -15,8 +15,8 @@ Otherwise, find Black Friday sales for it from smaller, indie and trending brand
 const runOne = (q, exclude, angle) => findDeals(
     `Find current Black Friday ${new Date().getFullYear()} deals for: "${q}".
 ${angle}
-Always run a web search first, and never answer [] without searching. Return at least 8 deals if you can find them (up to 12), biggest real savings first. Be quick: use at most 3 searches and keep titles short.${exclude.length ? `\nSkip these brands and stores, we already have them: ${exclude.join(", ")}.` : ""}`,
-    { maxSearches: 3, maxTokens: 6000, strict: false, fast: true }
+Always run a web search first, and never answer [] without searching. Return at least 8 deals if you can find them (up to 12), biggest real savings first. Be quick: use at most 2 searches and keep titles short.${exclude.length ? `\nSkip these brands and stores, we already have them: ${exclude.join(", ")}.` : ""}`,
+    { maxSearches: 2, maxTokens: 5000, strict: false, fast: true }
 );
 async function runSearch(q, exclude = []) {
   const runs = await Promise.allSettled(ANGLES.map((a) => runOne(q, exclude, a)));
@@ -29,7 +29,7 @@ async function runSearch(q, exclude = []) {
   return out;
 }
 const cache = new Map();
-const TTL = 3 * 60 * 60 * 1000;
+const TTL = 12 * 60 * 60 * 1000;
 async function search(q, exclude) {
   const k = `${q}|${exclude.join(",").toLowerCase()}`;
   const hit = cache.get(k);
@@ -43,7 +43,7 @@ export const maxDuration = 60;
 
 // Bot protection: only our own pages may call this, each visitor gets a
 // handful of web searches per 10 minutes, and there's a daily ceiling.
-const PER_IP = 8, WINDOW = 10 * 60 * 1000, DAILY_CAP = 600;
+const PER_IP = 6, WINDOW = 10 * 60 * 1000, DAILY_CAP = 60;
 const hits = new Map();
 let day = "", dayCount = 0;
 function allowed(req) {

@@ -1,8 +1,7 @@
 name: Daily deal hunt
 on:
   schedule:
-    - cron: "0 13 * * *"   # 5 AM Pacific
-    - cron: "0 1 * * *"    # 5 PM Pacific
+    - cron: "0 13 * * *"   # once a day, 5 AM Pacific
   workflow_dispatch: {}
 permissions:
   contents: write

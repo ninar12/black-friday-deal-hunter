@@ -3,13 +3,13 @@
 // New brands found by discovery are added to data/brands.csv as "discovered".
 // Run: ANTHROPIC_API_KEY=... node scripts/collect.mjs
 import fs from "node:fs";
-import { findDeals, CATEGORIES } from "../lib/claude.mjs";
+import { findDeals, CATEGORIES, usage } from "../lib/claude.mjs";
 import { makeNormalizer, isJunk, dedupe } from "../lib/normalize.mjs";
 
 const DEALS = "data/deals.json";
 const BRANDS = "data/brands.csv";          // edited by people
 const DISCOVERED = "data/discovered.csv";  // written only by the hunt, so the two never clash
-const BATCH = 8;          // brands per search request
+const BATCH = 12;         // brands per search request
 const PARALLEL = 4;       // requests at once
 const year = new Date().getFullYear();
 const today = new Date().toISOString().slice(0, 10);
@@ -42,22 +42,30 @@ async function pool(tasks, n) {
 }
 
 const brands = [...readBrands(), ...readBrands(DISCOVERED)];
-const active = brands.filter((b) => b.active !== "no");
+// To keep API costs down, only brands on Nina's list get their own check, and only
+// when they have no current deal saved (checked in the last 3 days and not ended).
+// Discovered brands are kept fresh by the category searches.
+const saved = fs.existsSync(DEALS) ? JSON.parse(fs.readFileSync(DEALS, "utf8")) : [];
+const recent = new Date(Date.now() - 3 * 864e5).toISOString().slice(0, 10);
+const covered = new Set(saved.filter((d) => (d.last_checked || "") >= recent && (!d.ends || d.ends >= today)).map((d) => String(d.retailer).toLowerCase()));
+const active = readBrands().filter((b) => b.active !== "no" && !covered.has(b.brand.toLowerCase()));
+const opts = { maxSearches: 3, maxTokens: 8000, fast: true };
 const tasks = [];
 for (let i = 0; i < active.length; i += BATCH) {
   const group = active.slice(i, i + BATCH);
   const list = group.map((b) => (b.website ? `${b.brand} (${b.website})` : b.brand)).join("; ");
-  tasks.push(() => findDeals(`Find each of these brands' current Black Friday ${year} sale, if announced: ${list}. One deal per brand at most, skip brands with no ${year} sale found.`));
+  tasks.push(() => findDeals(`Find each of these brands' current Black Friday ${year} sale, if announced: ${list}. One deal per brand at most, skip brands with no ${year} sale found.`, opts));
 }
-// Three discovery angles per category, so each category keeps filling up.
+// One discovery search per category per day, rotating through three angles.
 const ANGLES = [
   (c) => `Find the best Black Friday ${year} deals in the ${c} category from any brand or store. Up to 10 deals, biggest real savings first.`,
   (c) => `Find Black Friday ${year} sitewide sales from smaller, indie or trending ${c} brands (not the biggest names). Up to 10 deals.`,
   (c) => `Find specific ${c} products with big Black Friday ${year} price drops right now, with sale and original prices. Up to 10 deals.`,
 ];
-for (const c of CATEGORIES) for (const angle of ANGLES) tasks.push(() => findDeals(angle(c)));
+const dayNo = Math.floor(Date.now() / 864e5);
+CATEGORIES.forEach((c, i) => tasks.push(() => findDeals(ANGLES[(dayNo + i) % ANGLES.length](c), opts)));
 
-console.log(`Running ${tasks.length} searches for ${active.length} brands + ${CATEGORIES.length} categories...`);
+console.log(`Running ${tasks.length} searches for ${active.length} brands without a current deal + ${CATEGORIES.length} categories...`);
 const found = await pool(tasks, PARALLEL);
 
 // Deals Nina has marked wrong are never re-added.
@@ -89,3 +97,5 @@ for (const d of found.filter((d) => !isJunk(d))) {
 if (discovered.length) writeBrands([...readBrands(DISCOVERED), ...discovered]);
 
 console.log(`${today}: ${found.length} deals found, ${added} new, ${updated} refreshed, ${merged.length} total. ${discovered.length} new brands discovered.`);
+// Rough cost: Haiku tokens plus $10 per 1,000 web searches.
+console.log(`API use: ${usage.calls} calls, ${usage.searches} web searches, ${Math.round(usage.input / 1000)}k input + ${Math.round(usage.output / 1000)}k output tokens.`);
