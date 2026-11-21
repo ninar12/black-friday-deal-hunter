@@ -5,7 +5,7 @@ import { findDeals, lastRun } from "@/lib/claude.mjs";
 // Good results are cached for 3 hours, so a repeat search is instant.
 const runSearch = (q) => findDeals(
     `Find current Black Friday ${new Date().getFullYear()} deals for: "${q}".
-If this is a specific product (like "AirPods Pro 2" or "Dyson Airwrap"), compare its current sale price at major retailers (Amazon, Best Buy, Target, Walmart, the brand's own store and others you find), one deal per retailer, with sale_price and original_price in USD, cheapest first.
+If this is a specific product (like "AirPods Pro 2" or "Dyson Airwrap"), compare its current sale price at major retailers (Amazon, Best Buy, Target, Walmart, the brand's own store and others you find), one deal per store (retailer = the store name, like "Walmart", via = null), with sale_price and original_price in USD, cheapest first.
 Always run a web search first, even for broad terms like "espresso maker" or "winter coats", and never answer [] without searching.
 Otherwise, list the best deals for it, biggest real savings first. Up to 6 deals. Be quick: use at most 2 searches and keep titles short.`,
     { maxSearches: 2, maxTokens: 4000, strict: false, fast: true }
