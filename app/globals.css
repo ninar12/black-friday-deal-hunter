@@ -258,3 +258,4 @@ a { color: inherit; text-decoration: none; }
 .photo-item { aspect-ratio: 4 / 3; background: #fff; }
 .photo-item img { object-fit: contain; padding: 12px; }
 .photo + .card-hero { border-top: 0; }
+.price-note { display: block; margin-top: 4px; font-size: 11px; font-weight: 500; letter-spacing: .02em; color: var(--mute); }

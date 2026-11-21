@@ -109,8 +109,8 @@ export default function DealsApp({ initialDeals, sites = {}, picks = [], images 
   const isPick = (d) => !d.via && picks.includes(String(d.retailer).toLowerCase());
   // A single product with a price, versus a store- or brand-wide sale.
   const isItem = (d) => d.sale_price != null;
-  // A deal's own page picture (only when Shop goes to that page), else the brand's homepage picture.
-  const photoOf = (d) => (d.image && shopUrl(d, sites) === d.link ? d.image : null) || images[String(d.retailer).toLowerCase()] || null;
+  // Product photo, on single items only (found by scripts/images.mjs).
+  const photoOf = (d) => (isItem(d) && d.image) || null;
   const money = (n) => "$" + (Number.isInteger(+n) ? +n : (+n).toFixed(2));
   const pickRank = (d) => (isPick(d) ? 1 : 0); // a pick's own-site sale beats a single item at Amazon
   // Brands this visitor follows, kept in their browser (no sign-up).
@@ -381,7 +381,7 @@ export default function DealsApp({ initialDeals, sites = {}, picks = [], images 
         {results.map((d) => (
           <article key={d.id} className={`card ${d.ends === today ? "urgent" : ""}`}>
             {photoOf(d) && (
-              <div className={`photo ${isItem(d) && d.image ? "photo-item" : ""}`}>
+              <div className="photo photo-item">
                 <img src={photoOf(d)} alt="" loading="lazy" referrerPolicy="no-referrer" onError={(e) => { e.currentTarget.parentElement.style.display = "none"; }} />
               </div>
             )}
@@ -399,7 +399,11 @@ export default function DealsApp({ initialDeals, sites = {}, picks = [], images 
               <p className="brand">{d.retailer}</p>
               {d.via && <p className="via">at {d.via}</p>}
               {isItem(d)
-                ? <p className="offer">{money(d.sale_price)}{d.original_price && <s>{money(d.original_price)}</s>}{d.discount_pct ? <span className="pct">−{d.discount_pct}%</span> : null}</p>
+                ? (d.price_ok === false
+                  // The store's page doesn't show this price any more: don't print a wrong number.
+                  ? <p className="offer">{d.discount_pct ? `${d.discount_pct}% off` : "On sale"}<span className="price-note">See today’s price at the store</span></p>
+                  : <p className="offer">{money(d.sale_price)}{d.original_price && <s>{money(d.original_price)}</s>}{d.discount_pct ? <span className="pct">−{d.discount_pct}%</span> : null}
+                      <span className="price-note">{d.price_ok ? "Price checked on the store’s page" : `Price as of ${fmtDay(d.last_checked || today)}`}</span></p>)
                 : <p className="offer">{d.discount_pct ? <>{/up to/i.test(d.title) && "Up to "}{d.discount_pct}% off</> : "On sale"}</p>}
             </div>
             <h3><a className="stretch" href={shopUrl(d, sites)} target="_blank" rel="noopener noreferrer sponsored"><DealTitle d={d} /></a></h3>

@@ -16,6 +16,8 @@ jobs:
         with:
           node-version: 22
       - run: node scripts/images.mjs
+        env:
+          SERPER_API_KEY: ${{ secrets.SERPER_API_KEY }}
       - name: Commit pictures
         run: |
           git config user.name "deal-hunter-bot"

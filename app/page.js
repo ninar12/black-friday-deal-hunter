@@ -26,5 +26,5 @@ function picks() {
 
 export default function Home() {
   const withIds = deals.map((d, i) => ({ ...d, id: `${d.retailer}-${i}` }));
-  return <DealsApp initialDeals={withIds} sites={brandSites()} picks={picks()} images={fs.existsSync("data/images.json") ? JSON.parse(fs.readFileSync("data/images.json", "utf8")) : {}} />;
+  return <DealsApp initialDeals={withIds} sites={brandSites()} picks={picks()} />;
 }

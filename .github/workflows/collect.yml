@@ -36,6 +36,8 @@ jobs:
       - name: Find deal pictures
         run: node scripts/images.mjs
         continue-on-error: true
+        env:
+          SERPER_API_KEY: ${{ secrets.SERPER_API_KEY }}
       - name: Commit new deals
         run: |
           git config user.name "deal-hunter-bot"

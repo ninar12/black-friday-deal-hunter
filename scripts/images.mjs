@@ -1,14 +1,12 @@
-// Finds a picture for each deal, with no AI cost:
-// - a deal's own page preview image (og:image), e.g. the product photo for a single item
-// - otherwise the brand's homepage preview image
-// Saves deal images on the deal (d.image) and brand images in data/images.json.
+// Single items only: finds a product photo (d.image) and checks the price (d.price_ok).
+// - free: the product page's own preview image, and whether the sale price appears on it
+// - optional: Google Shopping photos via Serper.dev when SERPER_API_KEY is set (~$0.001 each)
 // Runs in GitHub Actions, where the network is open.
 import fs from "fs";
 
-const DEALS = "data/deals.json", IMAGES = "data/images.json", SITES = "data/sites.json";
+const DEALS = "data/deals.json", SITES = "data/sites.json";
 const UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15";
 const deals = JSON.parse(fs.readFileSync(DEALS, "utf8"));
-const brandImg = fs.existsSync(IMAGES) ? JSON.parse(fs.readFileSync(IMAGES, "utf8")) : {};
 
 // Brand websites: sites.json, then the CSVs (hand-entered wins).
 const sites = fs.existsSync(SITES) ? JSON.parse(fs.readFileSync(SITES, "utf8")) : {};
@@ -33,27 +31,61 @@ function pick(html, base) {
     return u.href;
   } catch { return null; }
 }
-async function ogImage(url) {
+async function getPage(url) {
   try {
     const r = await fetch(url, { redirect: "follow", signal: AbortSignal.timeout(12000), headers: { "user-agent": UA, accept: "text/html" } });
     if (!r.ok) return null;
-    return pick((await r.text()).slice(0, 200000), r.url);
+    return { html: (await r.text()).slice(0, 600000), url: r.url };
   } catch { return null; }
+}
+// Does the product page show this sale price anywhere? ("$59", "59.00", "59,00" in JSON...)
+function showsPrice(html, price) {
+  const n = Number(price);
+  const forms = [n.toFixed(2), Number.isInteger(n) ? String(n) : null].filter(Boolean);
+  return forms.some((f) => new RegExp(`(\\$\\s?|"price"\\s*:\\s*"?|amount"?\\s*:\\s*"?)${f.replace(".", "\\.")}(?!\\d)`).test(html));
 }
 async function pool(items, n, fn) {
   let i = 0;
   await Promise.all(Array.from({ length: n }, async () => { while (i < items.length) await fn(items[i++]); }));
 }
 
-// 1. Deal pages (only ones we haven't tried yet).
-const todo = deals.filter((d) => d.link && d.image === undefined);
-await pool(todo, 16, async (d) => { d.image = (await ogImage(d.link)) || null; });
-console.log(`deal pages: ${todo.filter((d) => d.image).length} of ${todo.length} had a picture`);
+// Pictures are only shown on single items (deals with a sale price).
+const { shopUrl } = await import("../lib/shop.js");
+const items = deals.filter((d) => d.sale_price != null);
 
-// 2. Brand homepages, for deals without their own picture.
-const brands = [...new Set(deals.filter((d) => !d.image).map((d) => d.retailer.toLowerCase()))].filter((b) => sites[b] && brandImg[b] === undefined);
-await pool(brands, 16, async (b) => { brandImg[b] = (await ogImage(sites[b])) || null; });
-console.log(`brand homepages: ${brands.filter((b) => brandImg[b]).length} of ${brands.length} had a picture`);
+// 1. Free: when Shop goes to the product's own page, read that page once for
+//    its preview picture and to check the sale price is really on it.
+//    (Other pages, like news articles, are never used for pictures.)
+const own = items.filter((d) => d.link && shopUrl(d, sites) === d.link && (d.image === undefined || d.price_ok === undefined));
+await pool(own, 16, async (d) => {
+  const p = await getPage(d.link);
+  if (!p) { if (d.image === undefined) d.image = null; return; } // blocked: can't tell either way
+  if (d.image === undefined) d.image = pick(p.html, p.url);
+  d.price_ok = showsPrice(p.html, d.sale_price);
+});
+for (const d of items) if (d.image === undefined) d.image = null;
+console.log(`product pages: ${own.filter((d) => d.image).length} of ${own.length} had a picture; ${own.filter((d) => d.price_ok === false).length} prices not found on the page`);
+
+// 2. Optional, about $0.001 each: Google Shopping via Serper.dev, if SERPER_API_KEY is set.
+if (process.env.SERPER_API_KEY) {
+  const need = items.filter((d) => !d.image && !d.image_tried);
+  await pool(need, 8, async (d) => {
+    d.image_tried = true;
+    const q = `${d.retailer} ${String(d.title).replace(/\$[\d,.]+|\d+%|black friday|cyber monday|deal|sale|off/gi, " ")}`.replace(/\s+/g, " ").trim().slice(0, 100);
+    try {
+      const r = await fetch("https://google.serper.dev/shopping", {
+        method: "POST", signal: AbortSignal.timeout(15000),
+        headers: { "X-API-KEY": process.env.SERPER_API_KEY, "content-type": "application/json" },
+        body: JSON.stringify({ q, gl: "us", num: 5 }),
+      });
+      const j = await r.json();
+      const hit = (j.shopping || []).find((s) => /^https:/.test(s.imageUrl || ""));
+      if (hit) d.image = hit.imageUrl;
+    } catch (e) { console.log("serper failed", d.retailer, e.message); }
+  });
+  console.log(`Google Shopping: ${need.filter((d) => d.image).length} of ${need.length} found a picture`);
+}
+// Sale cards don't show pictures any more.
+for (const d of deals) if (d.sale_price == null) delete d.image;
 
 fs.writeFileSync(DEALS, JSON.stringify(deals, null, 2) + "\n");
-fs.writeFileSync(IMAGES, JSON.stringify(Object.fromEntries(Object.entries(brandImg).sort()), null, 2) + "\n");
