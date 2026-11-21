@@ -5,7 +5,7 @@ import Link from "next/link";
 import { shopUrl } from "@/lib/shop";
 import { CATEGORIES, PRICE_RANGES, POPULAR, FASHION_FIRST, dealScore } from "@/lib/deals";
 
-const EMPTY = { q: "", mine: false, picks: false, category: null, minPct: 0, price: null, maxPrice: null, endsToday: false, endsOn: null, hasCode: false, sort: "featured" };
+const EMPTY = { q: "", mine: false, picks: false, kind: "", category: null, minPct: 0, price: null, maxPrice: null, endsToday: false, endsOn: null, hasCode: false, sort: "featured" };
 
 const localDay = (d = new Date()) => {
   const z = new Date(d.getTime() - d.getTimezoneOffset() * 60000);
@@ -107,6 +107,9 @@ export default function DealsApp({ initialDeals, sites = {}, picks = [] }) {
   const moreRound = useRef(0);
   // A pick is the brand's own sale. Single items from that brand at Amazon/Macy's etc. aren't tagged.
   const isPick = (d) => !d.via && picks.includes(String(d.retailer).toLowerCase());
+  // A single product with a price, versus a store- or brand-wide sale.
+  const isItem = (d) => d.sale_price != null;
+  const money = (n) => "$" + (Number.isInteger(+n) ? +n : (+n).toFixed(2));
   const pickRank = (d) => (isPick(d) ? 1 : 0); // a pick's own-site sale beats a single item at Amazon
   // Brands this visitor follows, kept in their browser (no sign-up).
   const [following, setFollowing] = useState([]);
@@ -171,6 +174,8 @@ export default function DealsApp({ initialDeals, sites = {}, picks = [] }) {
       if (words.length && !fromThisSearch && !words.every((w) => matches(hay, w))) return false;
       if (f.mine && !following.includes(d.retailer.toLowerCase())) return false;
       if (f.picks && !isPick(d)) return false;
+      if (f.kind === "sale" && isItem(d)) return false;
+      if (f.kind === "item" && !isItem(d)) return false;
       if (f.category && d.category !== f.category) return false;
       if (f.minPct && (d.discount_pct ?? 0) < f.minPct) return false;
       if (f.hasCode && !d.code) return false;
@@ -351,6 +356,13 @@ export default function DealsApp({ initialDeals, sites = {}, picks = [] }) {
               {PRICE_RANGES.map((r) => <option key={r.id} value={r.id}>{r.label}</option>)}
             </select>
           </label>
+          <label>Type
+            <select value={f.kind} onChange={(e) => set({ kind: e.target.value })}>
+              <option value="">Everything</option>
+              <option value="sale">Sales</option>
+              <option value="item">Single items</option>
+            </select>
+          </label>
           <label>Sort
             <select value={f.sort} onChange={(e) => set({ sort: e.target.value })}>
               <option value="featured">Featured</option><option value="score">Best deal</option><option value="pct">Biggest discount</option>
@@ -366,7 +378,7 @@ export default function DealsApp({ initialDeals, sites = {}, picks = [] }) {
       <section className="grid" id="deals">
         {results.map((d) => (
           <article key={d.id} className={`card ${d.ends === today ? "urgent" : ""}`}>
-            <div className="card-hero" style={{ "--cat": CAT_STYLE[d.category]?.tint || "#64748b", "--cat-bar": CAT_STYLE[d.category]?.bar || "#94a3b8", "--cat-bg": CAT_STYLE[d.category]?.bg || "#f8fafc" }}>
+            <div className={`card-hero ${isItem(d) ? "is-item" : "is-sale"}`} style={{ "--cat": CAT_STYLE[d.category]?.tint || "#64748b", "--cat-bar": CAT_STYLE[d.category]?.bar || "#94a3b8", "--cat-bg": CAT_STYLE[d.category]?.bg || "#f8fafc" }}>
               <div className="hero-top">
                 <span className="cat">{isPick(d) ? <><CatIcon cat={d.category} />{d.category}<span className="pick">· ★ Nina’s pick</span></> : <><CatIcon cat={d.category} />{d.category}</>}</span>
                 <span className="hero-right">
@@ -376,12 +388,15 @@ export default function DealsApp({ initialDeals, sites = {}, picks = [] }) {
                   </button>
                 </span>
               </div>
+              <p className="kind">{isItem(d) ? "Single item" : d.via ? "Brand sale" : "Sitewide sale"}</p>
               <p className="brand">{d.retailer}</p>
               {d.via && <p className="via">at {d.via}</p>}
-              <p className="offer">{d.discount_pct ? <>{/up to/i.test(d.title) && "Up to "}{d.discount_pct}% off</> : "On sale"}</p>
+              {isItem(d)
+                ? <p className="offer">{money(d.sale_price)}{d.original_price && <s>{money(d.original_price)}</s>}{d.discount_pct ? <span className="pct">−{d.discount_pct}%</span> : null}</p>
+                : <p className="offer">{d.discount_pct ? <>{/up to/i.test(d.title) && "Up to "}{d.discount_pct}% off</> : "On sale"}</p>}
             </div>
             <h3><a className="stretch" href={shopUrl(d, sites)} target="_blank" rel="noopener noreferrer sponsored"><DealTitle d={d} /></a></h3>
-            {(d.sale_price || d.original_price) && (
+            {!isItem(d) && d.original_price && (
               <p className="price">{d.sale_price && <b>${d.sale_price}</b>} {d.original_price && <s>${d.original_price}</s>}</p>
             )}
             {d.code && <p className="code">Code <button onClick={() => navigator.clipboard?.writeText(d.code)} title="Copy code">{d.code}</button></p>}

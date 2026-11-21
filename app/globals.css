@@ -242,3 +242,11 @@ a { color: inherit; text-decoration: none; }
 .wordmark:hover .logo { transform: rotate(-10deg) scale(1.08); }
 @media (max-width: 640px) { .wordmark .logo { width: 26px; height: 26px; } .wordmark { gap: 6px; justify-content: center; } }
 .wm-text { font-weight: inherit; }
+
+/* Sale vs single item */
+.kind { margin: 6px 0 2px; font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--cat); }
+.is-item .kind::before { content: ""; display: inline-block; width: 7px; height: 7px; border: 1.5px solid currentColor; border-radius: 50%; margin-right: 6px; vertical-align: 1px; }
+.is-sale .kind::before { content: ""; display: inline-block; width: 7px; height: 7px; background: currentColor; border-radius: 50%; margin-right: 6px; vertical-align: 1px; }
+.card-hero.is-item { background: #fff !important; }
+.offer s { margin-left: 8px; font-size: .6em; color: var(--mute); font-weight: 500; }
+.offer .pct { margin-left: 8px; font-size: .6em; padding: 2px 6px; border-radius: 4px; background: var(--red); color: #fff; vertical-align: 3px; }
