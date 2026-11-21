@@ -98,7 +98,7 @@ function matches(hay, w) {
 }
 const norm = (q) => q.trim().toLowerCase();
 
-export default function DealsApp({ initialDeals, sites = {}, picks = [] }) {
+export default function DealsApp({ initialDeals, sites = {}, picks = [], images = {} }) {
   const [f, setF] = useState(EMPTY);
   const [now, setNow] = useState(() => new Date());
   const [live, setLive] = useState({ status: "idle", deals: [], msg: "" });
@@ -109,6 +109,8 @@ export default function DealsApp({ initialDeals, sites = {}, picks = [] }) {
   const isPick = (d) => !d.via && picks.includes(String(d.retailer).toLowerCase());
   // A single product with a price, versus a store- or brand-wide sale.
   const isItem = (d) => d.sale_price != null;
+  // A deal's own page picture (only when Shop goes to that page), else the brand's homepage picture.
+  const photoOf = (d) => (d.image && shopUrl(d, sites) === d.link ? d.image : null) || images[String(d.retailer).toLowerCase()] || null;
   const money = (n) => "$" + (Number.isInteger(+n) ? +n : (+n).toFixed(2));
   const pickRank = (d) => (isPick(d) ? 1 : 0); // a pick's own-site sale beats a single item at Amazon
   // Brands this visitor follows, kept in their browser (no sign-up).
@@ -378,6 +380,11 @@ export default function DealsApp({ initialDeals, sites = {}, picks = [] }) {
       <section className="grid" id="deals">
         {results.map((d) => (
           <article key={d.id} className={`card ${d.ends === today ? "urgent" : ""}`}>
+            {photoOf(d) && (
+              <div className={`photo ${isItem(d) && d.image ? "photo-item" : ""}`}>
+                <img src={photoOf(d)} alt="" loading="lazy" referrerPolicy="no-referrer" onError={(e) => { e.currentTarget.parentElement.style.display = "none"; }} />
+              </div>
+            )}
             <div className={`card-hero ${isItem(d) ? "is-item" : "is-sale"}`} style={{ "--cat": CAT_STYLE[d.category]?.tint || "#64748b", "--cat-bar": CAT_STYLE[d.category]?.bar || "#94a3b8", "--cat-bg": CAT_STYLE[d.category]?.bg || "#f8fafc" }}>
               <div className="hero-top">
                 <span className="cat">{isPick(d) ? <><CatIcon cat={d.category} />{d.category}<span className="pick">· ★ Nina’s pick</span></> : <><CatIcon cat={d.category} />{d.category}</>}</span>
