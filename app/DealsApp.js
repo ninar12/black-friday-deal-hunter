@@ -24,23 +24,23 @@ function timeLeft(ends, now) {
 }
 
 // Puts the discount front and center in the title, e.g. "Up to **60% off** sitewide".
-// Each category gets its own soft tint and a small line icon.
+// Each category gets a small line icon in its own muted color.
 const CAT_STYLE = {
-  "Fashion": { tint: "#f1dfe8", icon: "M9 3l3 2 3-2 5 3-2 4-2-1v11H8V9L6 10 4 6z" },
-  "Athleisure": { tint: "#dde3ef", icon: "M4 15c3 0 4-2 6-2s3 2 6 2h4v3H4zM10 13l2-6 4 2" },
-  "Shoes & Accessories": { tint: "#ebe4e1", icon: "M3 16V11l4 1 3-3 3 4c2 1 5 1 8 2v3z" },
-  "Beauty": { tint: "#ece2f4", icon: "M10 3h4v6h-4zM8 9h8v12H8z" },
-  "Tech": { tint: "#e5e6eb", icon: "M4 5h16v11H4zM2 19h20" },
-  "Home & Kitchen": { tint: "#ebe8ec", icon: "M4 11l8-7 8 7v9H4zM10 20v-5h4v5" },
-  "Baking & Food": { tint: "#eedbe6", icon: "M5 14a7 4 0 0014 0zM5 14V11h14v3M9 8c0-2 2-2 2-4M13 8c0-2 2-2 2-4" },
-  "Toys & Kids": { tint: "#e0ebe4", icon: "M7 4h10v6H7zM5 10h14v10H5zM9 14h6" },
-  "Outdoor": { tint: "#dfe7dc", icon: "M3 20l7-12 4 6 2-3 5 9z" },
-  "Horror & Pop Culture": { tint: "#e4dbe9", icon: "M12 3a7 7 0 00-7 7v11l2-2 2 2 3-2 3 2 2-2 2 2V10a7 7 0 00-7-7zM9 10h.01M15 10h.01" },
+  "Fashion": { tint: "#a8768f", icon: "M9 3l3 2 3-2 5 3-2 4-2-1v11H8V9L6 10 4 6z" },
+  "Athleisure": { tint: "#4b5a78", icon: "M4 15c3 0 4-2 6-2s3 2 6 2h4v3H4zM10 13l2-6 4 2" },
+  "Shoes & Accessories": { tint: "#6e5f5c", icon: "M3 16V11l4 1 3-3 3 4c2 1 5 1 8 2v3z" },
+  "Beauty": { tint: "#a079b0", icon: "M10 3h4v6h-4zM8 9h8v12H8z" },
+  "Tech": { tint: "#5b5e66", icon: "M4 5h16v11H4zM2 19h20" },
+  "Home & Kitchen": { tint: "#8f8792", icon: "M4 11l8-7 8 7v9H4zM10 20v-5h4v5" },
+  "Baking & Food": { tint: "#8c4a6e", icon: "M5 14a7 4 0 0014 0zM5 14V11h14v3M9 8c0-2 2-2 2-4M13 8c0-2 2-2 2-4" },
+  "Toys & Kids": { tint: "#6f8c79", icon: "M7 4h10v6H7zM5 10h14v10H5zM9 14h6" },
+  "Outdoor": { tint: "#4f6250", icon: "M3 20l7-12 4 6 2-3 5 9z" },
+  "Horror & Pop Culture": { tint: "#3e2540", icon: "M12 3a7 7 0 00-7 7v11l2-2 2 2 3-2 3 2 2-2 2 2V10a7 7 0 00-7-7zM9 10h.01M15 10h.01" },
 };
 function CatIcon({ cat }) {
   const c = CAT_STYLE[cat];
   if (!c) return null;
-  return (<svg className="caticon" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d={c.icon} /></svg>);
+  return (<svg className="caticon" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" style={{ color: c.tint }}><path d={c.icon} /></svg>);
 }
 
 function DealTitle({ d }) {
@@ -316,7 +316,7 @@ export default function DealsApp({ initialDeals }) {
       <section className="grid" id="deals">
         {results.map((d) => (
           <article key={d.id} className={`card ${d.ends === today ? "urgent" : ""}`}>
-            <div className="card-hero" style={{ background: CAT_STYLE[d.category]?.tint }}>
+            <div className="card-hero">
               <div className="hero-top">
                 <span className="cat"><CatIcon cat={d.category} />{d.category}</span>
                 {d.ends === today ? <span className="flag">Ends tonight</span> : d.fresh ? <em className="new">New</em> : null}
