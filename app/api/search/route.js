@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { findDeals } from "@/lib/claude.mjs";
+import { findDeals, lastRun } from "@/lib/claude.mjs";
 
 // Live web search for things the saved deals don't cover.
 // Good results are cached for 3 hours, so a repeat search is instant.
@@ -34,7 +34,7 @@ export async function POST(req) {
   }
   try {
     const deals = await search(q.toLowerCase());
-    return NextResponse.json({ deals });
+    return NextResponse.json(deals.length ? { deals } : { deals, why: lastRun.info });
   } catch (e) {
     console.error("live search failed", e);
     return NextResponse.json({ deals: [], error: "The hunt hit a snag. Try again in a minute." }, { status: 502 });
