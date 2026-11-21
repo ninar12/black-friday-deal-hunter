@@ -5,7 +5,7 @@ import Link from "next/link";
 import { shopUrl } from "@/lib/shop";
 import { CATEGORIES, PRICE_RANGES, POPULAR, FASHION_FIRST, dealScore } from "@/lib/deals";
 
-const EMPTY = { q: "", mine: false, picks: false, kind: "", category: null, minPct: 0, price: null, maxPrice: null, endsToday: false, endsOn: null, hasCode: false, sort: "featured" };
+const EMPTY = { q: "", mine: false, picks: false, kind: "", brand: "", group: "", category: null, minPct: 0, price: null, maxPrice: null, endsToday: false, endsOn: null, hasCode: false, sort: "featured" };
 
 const localDay = (d = new Date()) => {
   const z = new Date(d.getTime() - d.getTimezoneOffset() * 60000);
@@ -176,6 +176,7 @@ export default function DealsApp({ initialDeals, sites = {}, picks = [], images 
       if (words.length && !fromThisSearch && !words.every((w) => matches(hay, w))) return false;
       if (f.mine && !following.includes(d.retailer.toLowerCase())) return false;
       if (f.picks && !isPick(d)) return false;
+      if (f.brand && d.retailer !== f.brand) return false;
       if (f.kind === "sale" && isItem(d)) return false;
       if (f.kind === "item" && !isItem(d)) return false;
       if (f.category && d.category !== f.category) return false;
@@ -255,6 +256,22 @@ export default function DealsApp({ initialDeals, sites = {}, picks = [], images 
     try { localStorage.setItem("bfh-reported", JSON.stringify(next)); } catch {}
   }
 
+  // Brands that have deals, for the Brand filter.
+  const brandList = useMemo(() => [...new Set(all.map((d) => d.retailer))].sort((a, b) => a.localeCompare(b)), [all]);
+  // Optional grouping of the results into labeled sections.
+  const groups = useMemo(() => {
+    if (!f.group) return [{ key: "all", label: null, items: results }];
+    const tier = (d) => { const p = d.discount_pct ?? 0; return p >= 70 ? "70% off or more" : p >= 50 ? "50–69% off" : p >= 30 ? "30–49% off" : p > 0 ? "Under 30% off" : "Discount not listed"; };
+    const TIERS = ["70% off or more", "50–69% off", "30–49% off", "Under 30% off", "Discount not listed"];
+    const price = (d) => { const p = d.sale_price; if (p == null) return "Store-wide sales"; return (PRICE_RANGES.find((r) => p >= r.min && p < r.max) || PRICE_RANGES[PRICE_RANGES.length - 1]).label; };
+    const PRICES = [...PRICE_RANGES.map((r) => r.label), "Store-wide sales"];
+    const keyOf = { brand: (d) => d.retailer, category: (d) => d.category, discount: tier, price }[f.group];
+    const map = new Map();
+    for (const d of results) { const k = keyOf(d); if (!map.has(k)) map.set(k, []); map.get(k).push(d); }
+    const order = f.group === "discount" ? TIERS : f.group === "price" ? PRICES : f.group === "category" ? CATEGORIES : null;
+    const keys = [...map.keys()].sort(order ? (a, b) => order.indexOf(a) - order.indexOf(b) : (a, b) => a.localeCompare(b));
+    return keys.map((k) => ({ key: k, label: k, items: map.get(k) }));
+  }, [results, f.group]);
   const active = JSON.stringify({ ...f, q: "", sort: "featured" }) !== JSON.stringify({ ...EMPTY });
 
   return (
@@ -349,7 +366,7 @@ export default function DealsApp({ initialDeals, sites = {}, picks = [], images 
         <div className="row">
           <label>Discount
             <select value={f.minPct} onChange={(e) => set({ minPct: +e.target.value })}>
-              <option value={0}>Any</option><option value={30}>30%+</option><option value={50}>50%+</option><option value={70}>70%+</option>
+              <option value={0}>Any</option><option value={20}>20%+</option><option value={30}>30%+</option><option value={40}>40%+</option><option value={50}>50%+</option><option value={70}>70%+</option>
             </select>
           </label>
           <label>Price
@@ -365,6 +382,18 @@ export default function DealsApp({ initialDeals, sites = {}, picks = [], images 
               <option value="item">Single items</option>
             </select>
           </label>
+          <label>Brand
+            <select value={f.brand} onChange={(e) => set({ brand: e.target.value })}>
+              <option value="">Any</option>
+              {brandList.map((b) => <option key={b} value={b}>{b}</option>)}
+            </select>
+          </label>
+          <label>Group by
+            <select value={f.group} onChange={(e) => set({ group: e.target.value })}>
+              <option value="">Nothing</option><option value="brand">Brand</option><option value="category">Product type</option>
+              <option value="discount">% off</option><option value="price">Price range</option>
+            </select>
+          </label>
           <label>Sort
             <select value={f.sort} onChange={(e) => set({ sort: e.target.value })}>
               <option value="featured">Featured</option><option value="score">Best deal</option><option value="pct">Biggest discount</option>
@@ -377,8 +406,12 @@ export default function DealsApp({ initialDeals, sites = {}, picks = [], images 
 
       <p className="count">{results.length} deal{results.length === 1 ? "" : "s"}{f.category ? ` in ${f.category}` : ""}{f.endsOn ? ` ending ${fmtDay(f.endsOn)}` : ""}</p>
 
-      <section className="grid" id="deals">
-        {results.map((d) => (
+      <div id="deals">
+      {groups.map((g) => (
+      <div key={g.key} className="group">
+      {g.label && <h2 className="group-h">{g.label}<span>{g.items.length}</span></h2>}
+      <section className="grid">
+        {g.items.map((d) => (
           <article key={d.id} className={`card ${d.ends === today ? "urgent" : ""}`}>
             {photoOf(d) && (
               <div className="photo photo-item">
@@ -421,6 +454,9 @@ export default function DealsApp({ initialDeals, sites = {}, picks = [], images 
           </article>
         ))}
       </section>
+      </div>
+      ))}
+      </div>
 
       {f.mine && following.length > 0 && (
         <section className="hunt subscribe">

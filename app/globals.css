@@ -259,3 +259,9 @@ a { color: inherit; text-decoration: none; }
 .photo-item img { object-fit: contain; padding: 12px; }
 .photo + .card-hero { border-top: 0; }
 .price-note { display: block; margin-top: 4px; font-size: 11px; font-weight: 500; letter-spacing: .02em; color: var(--mute); }
+
+/* Group by */
+.group-h { display: flex; align-items: baseline; gap: 10px; margin: 36px 16px 12px; font-family: var(--display); font-size: 22px; font-weight: 800; letter-spacing: -.02em; }
+.group-h span { font-family: var(--sans); font-size: 12px; font-weight: 500; color: var(--mute); }
+.group:first-child .group-h { margin-top: 8px; }
+.row select { max-width: 180px; }
