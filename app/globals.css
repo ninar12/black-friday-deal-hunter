@@ -267,4 +267,5 @@ a { color: inherit; text-decoration: none; }
 .row select { max-width: 180px; }
 
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
-h3.sr-only .stretch::after { position: fixed; }
+/* Title that only repeats the headline: hidden, but the whole card stays a link. */
+h3.quiet { height: 0; margin: 0; padding: 0; overflow: visible; font-size: 0; line-height: 0; }

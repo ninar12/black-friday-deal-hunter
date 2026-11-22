@@ -466,7 +466,7 @@ export default function DealsApp({ initialDeals, sites = {}, picks = [], images 
                       <span className="price-note">{d.price_ok ? "Price checked on the store’s page" : `Price as of ${fmtDay(d.last_checked || today)}`}</span></p>)
                 : <p className="offer">{headline(d)}</p>}
             </div>
-            <h3 className={isItem(d) || addsInfo(d) ? "" : "sr-only"}><a className="stretch" href={shopUrl(d, sites)} target="_blank" rel="noopener noreferrer sponsored"><DealTitle d={d} /></a></h3>
+            <h3 className={isItem(d) || addsInfo(d) ? "" : "quiet"}><a className="stretch" href={shopUrl(d, sites)} target="_blank" rel="noopener noreferrer sponsored"><DealTitle d={d} /></a></h3>
             {!isItem(d) && d.original_price && (
               <p className="price">{d.sale_price && <b>${d.sale_price}</b>} {d.original_price && <s>${d.original_price}</s>}</p>
             )}
@@ -474,7 +474,7 @@ export default function DealsApp({ initialDeals, sites = {}, picks = [], images 
             {d.notes && <p className="note">{d.notes}</p>}
             {d.ends ? <p className="ends">{timeLeft(d.ends, now)}<span> · {fmtDay(d.ends)}</span></p> : null}
             <div className="card-foot">
-              <span className="go">Shop <span aria-hidden="true">→</span></span>
+              <a className="go" href={shopUrl(d, sites)} target="_blank" rel="noopener noreferrer sponsored" tabIndex={-1}>Shop <span aria-hidden="true">→</span></a>
               {d.ends && <button className="mini" onClick={() => icsFor(d)} title="Add the last day to your calendar">+ Calendar</button>}
             </div>
           </article>
