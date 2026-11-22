@@ -4,7 +4,7 @@
 // Run: ANTHROPIC_API_KEY=... node scripts/collect.mjs
 import fs from "node:fs";
 import { findDeals, CATEGORIES, usage } from "../lib/claude.mjs";
-import { makeNormalizer, isJunk, dedupe, onePerBrand } from "../lib/normalize.mjs";
+import { makeNormalizer, isJunk, dedupe, dedupeItems, onePerBrand } from "../lib/normalize.mjs";
 
 const DEALS = "data/deals.json";
 const BRANDS = "data/brands.csv";          // edited by people
@@ -74,6 +74,7 @@ const found = await pool(tasks, PARALLEL);
 const hidden = fs.existsSync("data/hidden.json") ? JSON.parse(fs.readFileSync("data/hidden.json", "utf8")) : [];
 const isHidden = (d) => hidden.some((h) => d.retailer.toLowerCase() === h.retailer.toLowerCase() && (!h.title_contains || d.title.toLowerCase().includes(h.title_contains.toLowerCase())));
 for (let i = found.length - 1; i >= 0; i--) if (isHidden(found[i])) found.splice(i, 1);
+for (const r of new Set(JSON.parse(fs.readFileSync(DEALS, "utf8")).map((d) => d.retailer))) if (!brands.some((b) => b.brand.toLowerCase() === String(r).toLowerCase())) brands.push({ brand: r });
 const normalize = makeNormalizer(brands);
 for (let i = 0; i < found.length; i++) found[i] = normalize(found[i]);
 const existing = JSON.parse(fs.readFileSync(DEALS, "utf8")).map(normalize).map((d) => ({ ...d, first_seen: d.first_seen || d.last_checked }));
@@ -87,7 +88,7 @@ for (const d of found) {
 }
 // Drop deals that ended more than 2 days ago.
 const cutoff = new Date(Date.now() - 2 * 864e5).toISOString().slice(0, 10);
-const merged = onePerBrand(dedupe([...byKey.values()].filter((d) => (!d.ends || d.ends >= cutoff) && !isHidden(d) && !isJunk(d))));
+const merged = dedupeItems(onePerBrand(dedupe([...byKey.values()].filter((d) => (!d.ends || d.ends >= cutoff) && !isHidden(d) && !isJunk(d)))));
 fs.writeFileSync(DEALS, JSON.stringify(merged, null, 2) + "\n");
 
 const known = new Set(brands.map((b) => b.brand.toLowerCase()));

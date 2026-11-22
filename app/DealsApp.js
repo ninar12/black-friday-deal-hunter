@@ -63,6 +63,13 @@ function headline(d) {
   if (/up to/i.test(d.title)) return `Up to ${pct}% off`;
   return `${pct}% off`;
 }
+// Product name only: the price talk is already in the price line.
+function itemName(d) {
+  let t = String(d.title);
+  const tail = /(?:^|[\s,(])\s*(\$[\d,.]+ off|\d+% off|save \$[\d,.]+|(cut|down|marked) to \$[\d,.]+|cut in half|half off|half price|(now|for) \$[\d,.]+|(its )?lowest price|reduced price|on sale|price cut|discount(ed)?\b.*|early black friday.*|black friday (price|pricing)|sale price|in [\w'.]+ (black friday )?sale|[\w'.]+ holiday sale|during .*|at (amazon|walmart|target|best buy|macy's|rei)\b.*|at|in|for|on|roughly|about)\)?\s*$/i;
+  for (let i = 0; i < 4; i++) t = t.replace(tail, "").replace(/[,\s]+$/, "");
+  return t || d.title;
+}
 // What kind of deal this is.
 function kindOf(d) {
   if (d.sale_price != null) return "Single item";
@@ -460,6 +467,7 @@ export default function DealsApp({ initialDeals, sites = {}, picks = [], images 
               <p className="kind">{kindOf(d)}</p>
               <p className="brand">{d.retailer}</p>
               {d.via && <p className="via">at {d.via}</p>}
+              {isItem(d) && <p className="item-name">{itemName(d)}</p>}
               {isItem(d)
                 ? (d.price_ok === false
                   // The store's page doesn't show this price any more: don't print a wrong number.
@@ -468,7 +476,7 @@ export default function DealsApp({ initialDeals, sites = {}, picks = [], images 
                       <span className="price-note">{d.price_ok ? "Price checked on the store’s page" : `Price as of ${fmtDay(d.last_checked || today)}`}</span></p>)
                 : <p className="offer">{headline(d)}</p>}
             </div>
-            <h3 className={isItem(d) || addsInfo(d) ? "" : "quiet"}><a className="stretch" href={shopUrl(d, sites)} target="_blank" rel="noopener noreferrer sponsored"><DealTitle d={d} /></a></h3>
+            <h3 className={!isItem(d) && addsInfo(d) ? "" : "quiet"}><a className="stretch" href={shopUrl(d, sites)} target="_blank" rel="noopener noreferrer sponsored"><DealTitle d={d} /></a></h3>
             {!isItem(d) && d.original_price && (
               <p className="price">{d.sale_price && <b>${d.sale_price}</b>} {d.original_price && <s>${d.original_price}</s>}</p>
             )}

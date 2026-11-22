@@ -1,14 +1,29 @@
 import { NextResponse } from "next/server";
 import { findDeals, lastRun } from "@/lib/claude.mjs";
+import { makeNormalizer, dedupeItems } from "@/lib/normalize.mjs";
+import fs from "node:fs";
+import path from "node:path";
+
+// Same brand/category clean-up as the daily hunt, so search cards read the same way.
+let normalize;
+function getNormalizer() {
+  if (normalize) return normalize;
+  let brands = [];
+  try {
+    brands = fs.readFileSync(path.join(process.cwd(), "data/brands.csv"), "utf8").trim().split(/\r?\n/).slice(1)
+      .map((l) => ({ brand: l.split(",")[0].trim() })).filter((b) => b.brand);
+  } catch {}
+  return (normalize = makeNormalizer(brands));
+}
 
 // Live web search for things the saved deals don't cover.
 // Good results are cached for 3 hours, so a repeat search is instant.
 // Two hunts run side by side with different angles, then get merged, so a
 // search returns 2-3x more deals in about the same time.
 const ANGLES = [
-  `If this is a specific product (like "AirPods Pro 2" or "Owala bottle"), compare its sale price at the brand's own store and the big retailers (Amazon, Walmart, Target, Best Buy, Costco), one deal per store (retailer = the store name, via = null), with sale_price and original_price in USD.
+  `If this is a specific product (like "AirPods Pro 2" or "Owala bottle"), compare its sale price at the brand's own store and the big retailers (Amazon, Walmart, Target, Best Buy, Costco), one deal per store (retailer = the brand that makes it, via = the store selling it, or null on the brand's own site), with sale_price and original_price in USD.
 Otherwise, list the biggest real Black Friday sales for it from well-known brands and stores.`,
-  `If this is a specific product, find its sale price at OTHER stores than Amazon, Walmart, Target, Best Buy and Costco (e.g. Kohl's, Macy's, Nordstrom, Dick's, REI, Ulta, Sephora, Zappos, Urban Outfitters, specialty shops), one deal per store (retailer = the store name, via = null), with sale_price and original_price in USD. Also include close variants or bundles of it on sale.
+  `If this is a specific product, find its sale price at OTHER stores than Amazon, Walmart, Target, Best Buy and Costco (e.g. Kohl's, Macy's, Nordstrom, Dick's, REI, Ulta, Sephora, Zappos, Urban Outfitters, specialty shops), one deal per store (retailer = the brand that makes it, via = the store selling it, or null on the brand's own site), with sale_price and original_price in USD. Also include close variants or bundles of it on sale.
 Otherwise, find Black Friday sales for it from smaller, indie and trending brands and shops that big lists miss.`,
   `Search Black Friday deal roundups and deal sites (e.g. Slickdeals, Good Housekeeping, People, Today, The Strategist, Buzzfeed, Reddit) for it and pull every specific US deal they list, one row per store or brand.`,
 ];
@@ -26,7 +41,8 @@ async function runSearch(q, exclude = []) {
     if (seen.has(k)) continue;
     seen.add(k); out.push(d);
   }
-  return out;
+  const norm = getNormalizer();
+  return dedupeItems(out.map(norm));
 }
 const cache = new Map();
 const TTL = 12 * 60 * 60 * 1000;
