@@ -28,7 +28,7 @@ function timeLeft(ends, now) {
 // Each category gets a small line icon in its own muted color.
 const CAT_STYLE = {
   "Fashion": { tint: "#0d9488", bar: "#2dd4bf", bg: "#f0fdfa", icon: "M9 3l3 2 3-2 5 3-2 4-2-1v11H8V9L6 10 4 6z" },
-  "Athleisure": { tint: "#0891b2", bar: "#22d3ee", bg: "#ecfeff", icon: "M4 15c3 0 4-2 6-2s3 2 6 2h4v3H4zM10 13l2-6 4 2" },
+  "Athleisure": { tint: "#0891b2", bar: "#22d3ee", bg: "#ecfeff", icon: "M3 10v4M6 7v10M18 7v10M21 10v4M6 12h12" },
   "Shoes & Accessories": { tint: "#0284c7", bar: "#38bdf8", bg: "#f0f9ff", icon: "M3 16V11l4 1 3-3 3 4c2 1 5 1 8 2v3z" },
   "Beauty": { tint: "#059669", bar: "#34d399", bg: "#ecfdf5", icon: "M10 3h4v6h-4zM8 9h8v12H8z" },
   "Tech": { tint: "#2563eb", bar: "#60a5fa", bg: "#eff6ff", icon: "M4 5h16v11H4zM2 19h20" },
@@ -51,6 +51,33 @@ function DealTitle({ d }) {
     return (<>{d.title.slice(0, i)}<span className="pct">{m[0]}</span>{d.title.slice(i + m[0].length)}</>);
   }
   return d.title; // the % is already shown above the title
+}
+
+// One clear headline per card, worded the way the deal really is.
+function headline(d) {
+  const pct = d.discount_pct;
+  if (!pct) return "On sale";
+  if (new RegExp(`extra\\s+${pct}\\s*%`, "i").test(d.title)) return `Extra ${pct}% off`;
+  const extra = String(d.title).match(/extra\s+(\d{1,2})\s*%/i);
+  if (extra) return `${/up to/i.test(d.title) ? "Up to " : ""}${pct}% off + extra ${extra[1]}%`;
+  if (/up to/i.test(d.title)) return `Up to ${pct}% off`;
+  return `${pct}% off`;
+}
+// What kind of deal this is.
+function kindOf(d) {
+  if (d.sale_price != null) return "Single item";
+  if (d.via) return "Brand sale";
+  const t = `${d.title} ${d.notes || ""}`;
+  if (/select|last[- ]chance|styles only|clearance|outlet|markdowns?/i.test(t)) return "Select styles";
+  if (/site-?wide|store-?wide|entire (site|store)|everything|all orders|all products/i.test(t)) return "Sitewide sale";
+  return "Sale";
+}
+// Hide the card's line of text when it only repeats the headline.
+function addsInfo(d) {
+  const left = d.title.toLowerCase()
+    .replace(/\b(up to|\d+\s*%|percent|off|site-?wide|store-?wide|entire|site|store|black friday|cyber monday|sale|across|the|all|everything|early|deals?|on|of|and|with|for|savings|its|our|event|now)\b/g, " ")
+    .replace(/[^a-z ]/g, " ").split(/\s+/).filter((w) => w.length > 2);
+  return left.length >= 2;
 }
 
 function priceOf(d) {
@@ -428,28 +455,27 @@ export default function DealsApp({ initialDeals, sites = {}, picks = [], images 
                   </button>
                 </span>
               </div>
-              <p className="kind">{isItem(d) ? "Single item" : d.via ? "Brand sale" : "Sitewide sale"}</p>
+              <p className="kind">{kindOf(d)}</p>
               <p className="brand">{d.retailer}</p>
               {d.via && <p className="via">at {d.via}</p>}
               {isItem(d)
                 ? (d.price_ok === false
                   // The store's page doesn't show this price any more: don't print a wrong number.
-                  ? <p className="offer">{d.discount_pct ? `${d.discount_pct}% off` : "On sale"}<span className="price-note">See today’s price at the store</span></p>
+                  ? <p className="offer">{headline(d)}<span className="price-note">See today’s price at the store</span></p>
                   : <p className="offer">{money(d.sale_price)}{d.original_price && <s>{money(d.original_price)}</s>}{d.discount_pct ? <span className="pct">−{d.discount_pct}%</span> : null}
                       <span className="price-note">{d.price_ok ? "Price checked on the store’s page" : `Price as of ${fmtDay(d.last_checked || today)}`}</span></p>)
-                : <p className="offer">{d.discount_pct ? <>{/up to/i.test(d.title) && "Up to "}{d.discount_pct}% off</> : "On sale"}</p>}
+                : <p className="offer">{headline(d)}</p>}
             </div>
-            <h3><a className="stretch" href={shopUrl(d, sites)} target="_blank" rel="noopener noreferrer sponsored"><DealTitle d={d} /></a></h3>
+            <h3 className={isItem(d) || addsInfo(d) ? "" : "sr-only"}><a className="stretch" href={shopUrl(d, sites)} target="_blank" rel="noopener noreferrer sponsored"><DealTitle d={d} /></a></h3>
             {!isItem(d) && d.original_price && (
               <p className="price">{d.sale_price && <b>${d.sale_price}</b>} {d.original_price && <s>${d.original_price}</s>}</p>
             )}
             {d.code && <p className="code">Code <button onClick={() => navigator.clipboard?.writeText(d.code)} title="Copy code">{d.code}</button></p>}
             {d.notes && <p className="note">{d.notes}</p>}
-            {d.ends ? <p className="ends">{timeLeft(d.ends, now)}<span> · {fmtDay(d.ends)}</span></p> : <p className="ends unknown">End date not announced</p>}
+            {d.ends ? <p className="ends">{timeLeft(d.ends, now)}<span> · {fmtDay(d.ends)}</span></p> : null}
             <div className="card-foot">
               <span className="go">Shop <span aria-hidden="true">→</span></span>
               {d.ends && <button className="mini" onClick={() => icsFor(d)} title="Add the last day to your calendar">+ Calendar</button>}
-              <a className="mini" href={d.source} target="_blank" rel="noopener noreferrer" title="Where this deal was found">Source</a>
             </div>
           </article>
         ))}
