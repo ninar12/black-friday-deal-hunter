@@ -1,5 +1,22 @@
 [
   {
+    "retailer": "DÔEN",
+    "via": "Nordstrom",
+    "category": "Fashion",
+    "title": "DÔEN at Nordstrom Black Friday sale, up to 60% off",
+    "discount_pct": 60,
+    "original_price": null,
+    "sale_price": null,
+    "code": null,
+    "starts": null,
+    "ends": null,
+    "link": "https://www.nordstrom.com/sr?keyword=DOEN",
+    "source": "https://www.nordstrom.com/sr?keyword=DOEN",
+    "last_checked": "2026-11-22",
+    "notes": "DÔEN’s own site hasn’t posted a Black Friday sale yet.",
+    "found_by": "ai"
+  },
+  {
     "retailer": "Quince",
     "category": "Fashion",
     "title": "Early access sale, up to 30% off (in-app only, 24 hours)",
