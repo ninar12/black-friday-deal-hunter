@@ -1604,7 +1604,7 @@
     "image": null
   },
   {
-    "retailer": "Best Buy",
+    "retailer": "TCL",
     "category": "Tech",
     "title": "TCL 65-inch 4K TV",
     "discount_pct": null,
@@ -1618,7 +1618,7 @@
     "last_checked": "2026-11-20",
     "notes": null,
     "found_by": "ai",
-    "via": null,
+    "via": "Best Buy",
     "first_seen": "2026-11-20",
     "image": null
   },
