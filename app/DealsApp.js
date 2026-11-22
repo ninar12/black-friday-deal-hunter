@@ -133,7 +133,9 @@ export default function DealsApp({ initialDeals, sites = {}, picks = [], images 
   const hunted = useRef(new Set());
   const moreRound = useRef(0);
   // A pick is the brand's own sale. Single items from that brand at Amazon/Macy's etc. aren't tagged.
-  const isPick = (d) => !d.via && picks.includes(String(d.retailer).toLowerCase());
+  // A pick's own-site sale; or, when the brand has none yet, its sale at a store.
+  const ownSale = useMemo(() => new Set(initialDeals.filter((d) => !d.via).map((d) => String(d.retailer).toLowerCase())), [initialDeals]);
+  const isPick = (d) => { const r = String(d.retailer).toLowerCase(); return picks.includes(r) && (!d.via || !ownSale.has(r)); };
   // A single product with a price, versus a store- or brand-wide sale.
   const isItem = (d) => d.sale_price != null;
   // Product photo, on single items only (found by scripts/images.mjs).
