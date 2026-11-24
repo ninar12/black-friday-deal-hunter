@@ -66,13 +66,13 @@ function headline(d) {
 // Product name only: the price talk is already in the price line.
 function itemName(d) {
   let t = String(d.title);
-  const tail = /(?:^|[\s,(])\s*(\$[\d,.]+ off|\d+% off|save \$[\d,.]+|(cut|down|marked) to \$[\d,.]+|cut in half|half off|half price|(now|for) \$[\d,.]+|(its )?lowest price|reduced price|on sale|price cut|discount(ed)?\b.*|early black friday.*|black friday (price|pricing)|sale price|in [\w'.]+ (black friday )?sale|[\w'.]+ holiday sale|during .*|at (amazon|walmart|target|best buy|macy's|rei)\b.*|at|in|for|on|roughly|about)\)?\s*$/i;
+  const tail = /(?:^|[\s,(])\s*(\$[\d,.]+ off|\d+% off|save \$[\d,.]+|(cut|down|marked) to \$[\d,.]+|cut in half|half off|half price|(now|for) \$[\d,.]+|(its )?lowest price|reduced price|on sale|price cut|discount(ed)?\b.*|product (page|listing) sale|product page|early black friday.*|black friday (price|pricing)|sale price|in [\w'.]+ (black friday )?sale|[\w'.]+ holiday sale|during .*|at (amazon|walmart|target|best buy|macy's|rei)\b.*|at|in|for|on|roughly|about)\)?\s*$/i;
   for (let i = 0; i < 4; i++) t = t.replace(tail, "").replace(/[,\s]+$/, "");
   return t || d.title;
 }
 // What kind of deal this is.
 function kindOf(d) {
-  if (d.sale_price != null) return "Single item";
+  if (d.item ?? d.sale_price != null) return "Single item";
   if (d.via) return "Brand sale";
   const t = `${d.title} ${d.notes || ""}`;
   if (/select|last[- ]chance|styles only|clearance|outlet|markdowns?/i.test(t)) return "Select styles";
@@ -144,7 +144,7 @@ export default function DealsApp({ initialDeals, sites = {}, picks = [], images 
   const ownSale = useMemo(() => new Set(initialDeals.filter((d) => !d.via).map((d) => String(d.retailer).toLowerCase())), [initialDeals]);
   const isPick = (d) => { const r = String(d.retailer).toLowerCase(); return picks.includes(r) && (!d.via || !ownSale.has(r)); };
   // A single product with a price, versus a store- or brand-wide sale.
-  const isItem = (d) => d.sale_price != null;
+  const isItem = (d) => d.item ?? d.sale_price != null;
   // Product photo, on single items only (found by scripts/images.mjs).
   const photoOf = (d) => (isItem(d) && d.image) || null;
   const money = (n) => "$" + (Number.isInteger(+n) ? +n : (+n).toFixed(2));
@@ -299,8 +299,8 @@ export default function DealsApp({ initialDeals, sites = {}, picks = [], images 
     if (!f.group) return [{ key: "all", label: null, items: results }];
     const tier = (d) => { const p = d.discount_pct ?? 0; return p >= 70 ? "70% off or more" : p >= 50 ? "50–69% off" : p >= 30 ? "30–49% off" : p > 0 ? "Under 30% off" : "Discount not listed"; };
     const TIERS = ["70% off or more", "50–69% off", "30–49% off", "Under 30% off", "Discount not listed"];
-    const price = (d) => { const p = d.sale_price; if (p == null) return "Store-wide sales"; return (PRICE_RANGES.find((r) => p >= r.min && p < r.max) || PRICE_RANGES[PRICE_RANGES.length - 1]).label; };
-    const PRICES = [...PRICE_RANGES.map((r) => r.label), "Store-wide sales"];
+    const price = (d) => { const p = d.sale_price; if (p == null) return isItem(d) ? "Price not listed" : "Store-wide sales"; return (PRICE_RANGES.find((r) => p >= r.min && p < r.max) || PRICE_RANGES[PRICE_RANGES.length - 1]).label; };
+    const PRICES = [...PRICE_RANGES.map((r) => r.label), "Price not listed", "Store-wide sales"];
     const keyOf = { brand: (d) => d.retailer, category: (d) => d.category, discount: tier, price }[f.group];
     const map = new Map();
     for (const d of results) { const k = keyOf(d); if (!map.has(k)) map.set(k, []); map.get(k).push(d); }
@@ -469,9 +469,9 @@ export default function DealsApp({ initialDeals, sites = {}, picks = [], images 
               {d.via && <p className="via">at {d.via}</p>}
               {isItem(d) && <p className="item-name">{itemName(d)}</p>}
               {isItem(d)
-                ? (d.price_ok === false
+                ? (d.sale_price == null || d.price_ok === false
                   // The store's page doesn't show this price any more: don't print a wrong number.
-                  ? <p className="offer">{headline(d)}<span className="price-note">See today’s price at the store</span></p>
+                  ? <p className="offer">{headline(d)}<span className="price-note">{d.sale_price == null ? "Check the price at the store" : "See today’s price at the store"}</span></p>
                   : <p className="offer">{money(d.sale_price)}{d.original_price && <s>{money(d.original_price)}</s>}{d.discount_pct ? <span className="pct">−{d.discount_pct}%</span> : null}
                       <span className="price-note">{d.price_ok ? "Price checked on the store’s page" : `Price as of ${fmtDay(d.last_checked || today)}`}</span></p>)
                 : <p className="offer">{headline(d)}</p>}
