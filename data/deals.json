@@ -823,7 +823,10 @@
     "via": "Walmart",
     "first_seen": "2026-11-20",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 169,
+    "price_note": null
   },
   {
     "retailer": "Amazon",
@@ -900,27 +903,10 @@
     "via": "Amazon",
     "first_seen": "2026-11-20",
     "image": null,
-    "item": true
-  },
-  {
-    "retailer": "Meta",
-    "via": null,
-    "category": "Tech",
-    "title": "Quest 3S headset discount in Meta's Black Friday sale",
-    "discount_pct": 15,
-    "original_price": 349.99,
-    "sale_price": 296.99,
-    "code": null,
-    "starts": "2026-11-20",
-    "ends": "2026-11-30",
-    "link": "https://roadtovr.com/meta-quest-3s-black-friday-2026-sale/",
-    "source": "https://roadtovr.com/meta-quest-3s-black-friday-2026-sale/",
-    "last_checked": "2026-11-21",
-    "notes": null,
-    "found_by": "ai",
-    "first_seen": "2026-11-21",
-    "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 249.95,
+    "price_note": null
   },
   {
     "retailer": "Our Place",
@@ -1420,9 +1406,9 @@
     "retailer": "Adidas",
     "category": "Athleisure",
     "title": "adi365 Iconic running shorts tight, down to $30",
-    "discount_pct": 40,
-    "original_price": 50,
-    "sale_price": 30,
+    "discount_pct": null,
+    "original_price": null,
+    "sale_price": null,
     "code": null,
     "starts": null,
     "ends": null,
@@ -1434,7 +1420,9 @@
     "via": null,
     "first_seen": "2026-11-20",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": null,
+    "price_note": "See price at store"
   },
   {
     "retailer": "Care to Beauty",
@@ -1512,7 +1500,9 @@
     "first_seen": "2026-11-20",
     "image": null,
     "price_ok": true,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 17
   },
   {
     "retailer": "Amazon",
@@ -1532,13 +1522,16 @@
     "via": null,
     "first_seen": "2026-11-20",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 18,
+    "price_note": null
   },
   {
     "retailer": "Medicube",
     "category": "Beauty",
     "title": "Medicube collagen jelly cream, 35% off",
-    "discount_pct": 35,
+    "discount_pct": 36,
     "original_price": 14.9,
     "sale_price": 9.6,
     "code": null,
@@ -1552,7 +1545,10 @@
     "via": "Amazon",
     "first_seen": "2026-11-20",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 9.6,
+    "price_note": null
   },
   {
     "retailer": "Medik8",
@@ -1573,7 +1569,9 @@
     "first_seen": "2026-11-20",
     "image": null,
     "price_ok": true,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 46
   },
   {
     "retailer": "True Botanicals",
@@ -1612,7 +1610,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 800,
+    "price_note": null
   },
   {
     "retailer": "LG",
@@ -1633,7 +1634,10 @@
     "first_seen": "2026-11-21",
     "image": null,
     "price_ok": false,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 599,
+    "price_note": null
   },
   {
     "retailer": "HP",
@@ -1654,7 +1658,9 @@
     "first_seen": "2026-11-21",
     "image": null,
     "price_ok": true,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 449.99
   },
   {
     "retailer": "Apple",
@@ -1674,7 +1680,10 @@
     "via": "Best Buy",
     "first_seen": "2026-11-20",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 1049,
+    "price_note": null
   },
   {
     "retailer": "TCL",
@@ -1694,7 +1703,10 @@
     "via": "Best Buy",
     "first_seen": "2026-11-20",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 229.99,
+    "price_note": null
   },
   {
     "retailer": "Sony",
@@ -1714,7 +1726,10 @@
     "via": "Best Buy",
     "first_seen": "2026-11-20",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 169,
+    "price_note": null
   },
   {
     "retailer": "Vitamix",
@@ -1734,7 +1749,10 @@
     "via": "Amazon",
     "first_seen": "2026-11-20",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 299.95,
+    "price_note": null
   },
   {
     "retailer": "Technivorm Moccamaster",
@@ -1754,7 +1772,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 240.95,
+    "price_note": null
   },
   {
     "retailer": "Cuisinart",
@@ -1774,7 +1795,10 @@
     "via": "Sur La Table",
     "first_seen": "2026-11-20",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 219.96,
+    "price_note": null
   },
   {
     "retailer": "Macy's",
@@ -1813,15 +1837,18 @@
     "via": "Amazon",
     "first_seen": "2026-11-20",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 83.99,
+    "price_note": null
   },
   {
     "retailer": "LEGO",
     "category": "Toys & Kids",
     "title": "LEGO Up-Scaled Darth Vader minifigure at 40% off",
-    "discount_pct": 40,
-    "original_price": 99.99,
-    "sale_price": 59.99,
+    "discount_pct": null,
+    "original_price": null,
+    "sale_price": null,
     "code": null,
     "starts": null,
     "ends": null,
@@ -1833,7 +1860,9 @@
     "via": "Target",
     "first_seen": "2026-11-20",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": null,
+    "price_note": "See price at store"
   },
   {
     "retailer": "LEGO",
@@ -1853,7 +1882,10 @@
     "via": "Amazon",
     "first_seen": "2026-11-20",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 103.95,
+    "price_note": null
   },
   {
     "retailer": "LEGO",
@@ -2027,7 +2059,10 @@
     "via": "Backcountry",
     "first_seen": "2026-11-20",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 299,
+    "price_note": null
   },
   {
     "retailer": "Gossamer Gear",
@@ -2066,7 +2101,10 @@
     "via": null,
     "first_seen": "2026-11-20",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 6.99,
+    "price_note": null
   },
   {
     "retailer": "Epic Games Store",
@@ -2086,7 +2124,10 @@
     "via": null,
     "first_seen": "2026-11-20",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 13.99,
+    "price_note": null
   },
   {
     "retailer": "Epic Games Store",
@@ -2106,15 +2147,18 @@
     "via": null,
     "first_seen": "2026-11-20",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 17.49,
+    "price_note": null
   },
   {
     "retailer": "Fanatical",
     "category": "Horror & Pop Culture",
     "title": "Resident Evil 4 PC at 70% off",
-    "discount_pct": 70,
-    "original_price": 69.99,
-    "sale_price": 20.99,
+    "discount_pct": null,
+    "original_price": null,
+    "sale_price": null,
     "code": null,
     "starts": null,
     "ends": null,
@@ -2126,7 +2170,9 @@
     "via": null,
     "first_seen": "2026-11-20",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": null,
+    "price_note": "See price at store"
   },
   {
     "retailer": "Funko",
@@ -2165,7 +2211,10 @@
     "via": null,
     "first_seen": "2026-11-20",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 20,
+    "price_note": null
   },
   {
     "retailer": "HOKA",
@@ -2224,7 +2273,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 199,
+    "price_note": null
   },
   {
     "retailer": "Beats",
@@ -2244,7 +2296,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 249,
+    "price_note": null
   },
   {
     "retailer": "Google",
@@ -2550,7 +2605,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 29,
+    "price_note": null
   },
   {
     "retailer": "Ellis Brooklyn",
@@ -3198,7 +3256,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 51,
+    "price_note": null
   },
   {
     "retailer": "EADEM",
@@ -3636,7 +3697,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 59,
+    "price_note": null
   },
   {
     "retailer": "TEVEO",
@@ -3814,9 +3878,9 @@
     "via": "Macy's",
     "category": "Shoes & Accessories",
     "title": "Ray-Ban RB4184 unisex sunglasses half off",
-    "discount_pct": 50,
-    "original_price": 183,
-    "sale_price": 92,
+    "discount_pct": null,
+    "original_price": null,
+    "sale_price": null,
     "code": null,
     "starts": null,
     "ends": null,
@@ -3827,7 +3891,9 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": null,
+    "price_note": "See price at store"
   },
   {
     "retailer": "Oakley",
@@ -3853,9 +3919,9 @@
     "via": "Macy's",
     "category": "Shoes & Accessories",
     "title": "Coach Bella medium leather shoulder bag",
-    "discount_pct": 40,
-    "original_price": 450,
-    "sale_price": 270,
+    "discount_pct": null,
+    "original_price": null,
+    "sale_price": null,
     "code": null,
     "starts": null,
     "ends": null,
@@ -3866,7 +3932,9 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": null,
+    "price_note": "See price at store"
   },
   {
     "retailer": "Steve Madden",
@@ -3886,26 +3954,6 @@
     "found_by": "ai",
     "first_seen": "2026-11-22",
     "item": false
-  },
-  {
-    "retailer": "UGG",
-    "via": "Amazon",
-    "category": "Shoes & Accessories",
-    "title": "UGG Classic Slipper discounted on Amazon",
-    "discount_pct": 33,
-    "original_price": 130,
-    "sale_price": 89.9,
-    "code": null,
-    "starts": null,
-    "ends": null,
-    "link": "https://abcnews.com/GMA/Shop/black-friday-fashion-deals-2026/story?id=138116529",
-    "source": "https://www.goodmorningamerica.com/shop/story/black-friday-fashion-deals-2026-138116529",
-    "last_checked": "2026-11-21",
-    "notes": null,
-    "found_by": "ai",
-    "first_seen": "2026-11-21",
-    "image": null,
-    "item": true
   },
   {
     "retailer": "Antler",
@@ -3944,7 +3992,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 46,
+    "price_note": null
   },
   {
     "retailer": "Nutrafol",
@@ -3964,7 +4015,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 66,
+    "price_note": null
   },
   {
     "retailer": "Lancôme",
@@ -3984,7 +4038,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 15,
+    "price_note": null
   },
   {
     "retailer": "Best Buy",
@@ -4023,7 +4080,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 1549.99,
+    "price_note": null
   },
   {
     "retailer": "Google",
@@ -4043,7 +4103,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 749,
+    "price_note": null
   },
   {
     "retailer": "Samsung",
@@ -4063,7 +4126,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 1049.99,
+    "price_note": null
   },
   {
     "retailer": "Sony",
@@ -4084,7 +4150,9 @@
     "first_seen": "2026-11-21",
     "image": null,
     "price_ok": true,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 169.99
   },
   {
     "retailer": "Sony",
@@ -4104,7 +4172,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 398,
+    "price_note": null
   },
   {
     "retailer": "Ninja",
@@ -4124,7 +4195,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 229.99,
+    "price_note": null
   },
   {
     "retailer": "KitchenAid",
@@ -4144,7 +4218,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 349,
+    "price_note": null
   },
   {
     "retailer": "KitchenAid",
@@ -4164,7 +4241,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 279.99,
+    "price_note": null
   },
   {
     "retailer": "Ninja",
@@ -4184,7 +4264,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 199.95,
+    "price_note": null
   },
   {
     "retailer": "Emeril Lagasse",
@@ -4204,7 +4287,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 149.99,
+    "price_note": null
   },
   {
     "retailer": "Bella",
@@ -4224,16 +4310,19 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 53.99,
+    "price_note": null
   },
   {
     "retailer": "UNREAL",
     "via": null,
     "category": "Baking & Food",
     "title": "Dark chocolate peanut butter cups",
-    "discount_pct": 21,
-    "original_price": 38,
-    "sale_price": 30,
+    "discount_pct": null,
+    "original_price": null,
+    "sale_price": null,
     "code": null,
     "starts": null,
     "ends": null,
@@ -4244,16 +4333,18 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": null,
+    "price_note": "See price at store"
   },
   {
     "retailer": "Spring & Mulberry",
     "via": null,
     "category": "Baking & Food",
     "title": "Dark chocolate bars",
-    "discount_pct": 16,
-    "original_price": 43,
-    "sale_price": 36,
+    "discount_pct": null,
+    "original_price": null,
+    "sale_price": null,
     "code": null,
     "starts": null,
     "ends": null,
@@ -4264,7 +4355,9 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": null,
+    "price_note": "See price at store"
   },
   {
     "retailer": "Criterion",
@@ -4284,16 +4377,19 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 24.98,
+    "price_note": null
   },
   {
     "retailer": "Funko",
     "via": "Loungefly",
     "category": "Horror & Pop Culture",
     "title": "Jumbo Derpy Tiger plush",
-    "discount_pct": 50,
-    "original_price": 39.99,
-    "sale_price": 19.99,
+    "discount_pct": null,
+    "original_price": null,
+    "sale_price": null,
     "code": null,
     "starts": null,
     "ends": null,
@@ -4304,16 +4400,18 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": null,
+    "price_note": "See price at store"
   },
   {
     "retailer": "Universal",
     "via": "Walmart",
     "category": "Horror & Pop Culture",
     "title": "Obsession 4K Ultra HD and Blu-ray horror film",
-    "discount_pct": 54,
-    "original_price": 27.96,
-    "sale_price": 12.99,
+    "discount_pct": null,
+    "original_price": null,
+    "sale_price": null,
     "code": null,
     "starts": null,
     "ends": null,
@@ -4325,16 +4423,18 @@
     "first_seen": "2026-11-21",
     "image": null,
     "price_ok": false,
-    "item": true
+    "item": true,
+    "price_checked": null,
+    "price_note": "See price at store"
   },
   {
     "retailer": "Funko",
     "via": "Loungefly",
     "category": "Horror & Pop Culture",
     "title": "Abby (Soda Pop) KPop Demon Hunters Pop",
-    "discount_pct": 70,
-    "original_price": 14.99,
-    "sale_price": 4.5,
+    "discount_pct": null,
+    "original_price": null,
+    "sale_price": null,
     "code": null,
     "starts": null,
     "ends": null,
@@ -4345,16 +4445,18 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": null,
+    "price_note": "See price at store"
   },
   {
     "retailer": "Funko",
     "via": "Loungefly",
     "category": "Horror & Pop Culture",
     "title": "KPop Demon Hunters mystery box pin",
-    "discount_pct": 70,
-    "original_price": 12,
-    "sale_price": 3.6,
+    "discount_pct": null,
+    "original_price": null,
+    "sale_price": null,
     "code": null,
     "starts": null,
     "ends": null,
@@ -4365,7 +4467,9 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": null,
+    "price_note": "See price at store"
   },
   {
     "retailer": "Travoca",
@@ -4385,7 +4489,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 743.99,
+    "price_note": null
   },
   {
     "retailer": "YETI",
@@ -4405,7 +4512,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-24",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 298,
+    "price_note": null
   },
   {
     "retailer": "Black Diamond",
@@ -4444,14 +4554,17 @@
     "found_by": "ai",
     "first_seen": "2026-11-24",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 112,
+    "price_note": null
   },
   {
     "retailer": "Walmart",
     "via": null,
     "category": "Toys & Kids",
     "title": "Star Wars Buddy Grogu animatronic toy",
-    "discount_pct": 72,
+    "discount_pct": 73,
     "original_price": 54.99,
     "sale_price": 15,
     "code": null,
@@ -4464,7 +4577,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 15,
+    "price_note": null
   },
   {
     "retailer": "Little Tikes",
@@ -4484,7 +4600,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 24.99,
+    "price_note": null
   },
   {
     "retailer": "Kiehl's",
@@ -4562,7 +4681,9 @@
     "first_seen": "2026-11-21",
     "image": "https://9to5google.com/wp-content/uploads/sites/4/2026/11/Google-Store-Black-Friday-2026.jpg?quality=82&strip=all&resize=1200,628",
     "price_ok": true,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 899
   },
   {
     "retailer": "Purple",
@@ -4965,7 +5086,9 @@
     "first_seen": "2026-11-21",
     "image": null,
     "price_ok": true,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 519.99
   },
   {
     "retailer": "P'tula",
@@ -5086,9 +5209,9 @@
     "via": null,
     "category": "Athleisure",
     "title": "Black Friday sale on best-selling activewear, Align leggings $59",
-    "discount_pct": 40,
-    "original_price": 98,
-    "sale_price": 59,
+    "discount_pct": null,
+    "original_price": null,
+    "sale_price": null,
     "code": null,
     "starts": null,
     "ends": null,
@@ -5099,16 +5222,18 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": null,
+    "price_note": "See price at store"
   },
   {
     "retailer": "Adidas",
     "via": null,
     "category": "Athleisure",
     "title": "Optime Essentials 3-Stripes 7/8 Leggings",
-    "discount_pct": 30,
-    "original_price": 50,
-    "sale_price": 35,
+    "discount_pct": null,
+    "original_price": null,
+    "sale_price": null,
     "code": null,
     "starts": null,
     "ends": null,
@@ -5119,14 +5244,16 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": null,
+    "price_note": "See price at store"
   },
   {
     "retailer": "Lululemon",
     "via": null,
     "category": "Athleisure",
     "title": "Sojourn Joggers at reduced price",
-    "discount_pct": 49,
+    "discount_pct": 47,
     "original_price": 148,
     "sale_price": 79,
     "code": null,
@@ -5139,15 +5266,18 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 79,
+    "price_note": null
   },
   {
     "retailer": "Lululemon",
     "via": null,
     "category": "Athleisure",
     "title": "Men's Zeroed In Classic-Fit Cargo Joggers",
-    "discount_pct": 24,
-    "original_price": 78,
+    "discount_pct": null,
+    "original_price": null,
     "sale_price": 59,
     "code": null,
     "starts": null,
@@ -5159,15 +5289,18 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 59,
+    "price_note": null
   },
   {
     "retailer": "Lululemon",
     "via": null,
     "category": "Athleisure",
     "title": "Unrestricted Power Cropped Long-Sleeve Shirt",
-    "discount_pct": 28,
-    "original_price": 68,
+    "discount_pct": null,
+    "original_price": null,
     "sale_price": 49,
     "code": null,
     "starts": null,
@@ -5179,15 +5312,18 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 49,
+    "price_note": null
   },
   {
     "retailer": "Lululemon",
     "via": null,
     "category": "Athleisure",
     "title": "EasySet Training Short-Sleeve Shirt",
-    "discount_pct": 24,
-    "original_price": 78,
+    "discount_pct": null,
+    "original_price": null,
     "sale_price": 59,
     "code": null,
     "starts": null,
@@ -5199,28 +5335,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
-  },
-  {
-    "retailer": "ONER",
-    "via": null,
-    "category": "Athleisure",
-    "title": "SoftMotion Strappy Halter Mid Tank with Bra Shelf",
-    "discount_pct": 10,
-    "original_price": 52,
-    "sale_price": 46.8,
-    "code": null,
-    "starts": null,
-    "ends": null,
-    "link": "https://us.oneractive.com/collections/shop/black-friday",
-    "source": "https://us.oneractive.com/collections/shop/black-friday",
-    "last_checked": "2026-11-21",
-    "notes": null,
-    "found_by": "ai",
-    "first_seen": "2026-11-21",
-    "image": null,
-    "price_ok": false,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 59,
+    "price_note": null
   },
   {
     "retailer": "Levi's",
@@ -5506,7 +5624,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 26,
+    "price_note": null
   },
   {
     "retailer": "Patagonia",
@@ -5533,9 +5654,9 @@
     "via": "Amazon",
     "category": "Fashion",
     "title": "Baggy jeans, early Black Friday price",
-    "discount_pct": 44,
-    "original_price": 85,
-    "sale_price": 48,
+    "discount_pct": null,
+    "original_price": null,
+    "sale_price": null,
     "code": null,
     "starts": null,
     "ends": null,
@@ -5546,16 +5667,18 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": null,
+    "price_note": "See price at store"
   },
   {
     "retailer": "The North Face",
     "via": null,
     "category": "Athleisure",
     "title": "Women's Cragmont Fleece Jacket, 30% off",
-    "discount_pct": 30,
-    "original_price": 180,
-    "sale_price": 126,
+    "discount_pct": null,
+    "original_price": null,
+    "sale_price": null,
     "code": null,
     "starts": null,
     "ends": null,
@@ -5566,7 +5689,9 @@
     "found_by": "ai",
     "first_seen": "2026-11-22",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": null,
+    "price_note": "See price at store"
   },
   {
     "retailer": "Peluva",
@@ -5763,9 +5888,9 @@
     "via": null,
     "category": "Shoes & Accessories",
     "title": "Ultraboost 5X running shoes",
-    "discount_pct": 30,
-    "original_price": 180,
-    "sale_price": 126,
+    "discount_pct": null,
+    "original_price": null,
+    "sale_price": null,
     "code": null,
     "starts": null,
     "ends": null,
@@ -5776,16 +5901,18 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": null,
+    "price_note": "See price at store"
   },
   {
     "retailer": "Adidas",
     "via": null,
     "category": "Shoes & Accessories",
     "title": "Swift Run 1.0 shoes",
-    "discount_pct": 35,
-    "original_price": 80,
-    "sale_price": 52,
+    "discount_pct": null,
+    "original_price": null,
+    "sale_price": null,
     "code": null,
     "starts": null,
     "ends": null,
@@ -5796,7 +5923,9 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": null,
+    "price_note": "See price at store"
   },
   {
     "retailer": "Merrell",
@@ -5817,7 +5946,9 @@
     "first_seen": "2026-11-21",
     "image": "https://thekit.wolverineworldwide.com/match/media_lookup/MRLM-J00005387-091225-F26-000/?preset=dw-large",
     "price_ok": true,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 107.99
   },
   {
     "retailer": "Merrell",
@@ -5838,7 +5969,9 @@
     "first_seen": "2026-11-21",
     "image": "https://thekit.wolverineworldwide.com/match/media_lookup/MRLM-J00005387-091225-F26-000/?preset=dw-large",
     "price_ok": true,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 124.99
   },
   {
     "retailer": "Merrell",
@@ -5859,16 +5992,18 @@
     "first_seen": "2026-11-21",
     "image": "https://thekit.wolverineworldwide.com/match/media_lookup/MRLM-J00005387-091225-F26-000/?preset=dw-large",
     "price_ok": true,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 145.99
   },
   {
     "retailer": "Michael Kors",
     "via": "Macy's",
     "category": "Shoes & Accessories",
     "title": "Maeve large east-west pocket crossbody bag",
-    "discount_pct": 63,
-    "original_price": 229.5,
-    "sale_price": 86.06,
+    "discount_pct": null,
+    "original_price": null,
+    "sale_price": null,
     "code": null,
     "starts": null,
     "ends": null,
@@ -5879,7 +6014,9 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": null,
+    "price_note": "See price at store"
   },
   {
     "retailer": "Randolph",
@@ -6299,7 +6436,10 @@
     "first_seen": "2026-11-21",
     "image": null,
     "price_ok": false,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 299,
+    "price_note": null
   },
   {
     "retailer": "Armani Beauty",
@@ -6458,7 +6598,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 249.99,
+    "price_note": null
   },
   {
     "retailer": "Acer",
@@ -6478,7 +6621,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 299,
+    "price_note": null
   },
   {
     "retailer": "Amazon",
@@ -6500,26 +6646,6 @@
     "item": false
   },
   {
-    "retailer": "Dell",
-    "via": "Amazon",
-    "category": "Tech",
-    "title": "Dell 15 laptop",
-    "discount_pct": 18,
-    "original_price": 484.98,
-    "sale_price": 399.99,
-    "code": null,
-    "starts": "2026-11-19",
-    "ends": "2026-11-30",
-    "link": "https://www.aboutamazon.com/news/retail/amazon-black-friday-cyber-monday-deals-2026",
-    "source": "https://www.techradar.com/live/news/early-black-friday-sales-us-20-november",
-    "last_checked": "2026-11-21",
-    "notes": null,
-    "found_by": "ai",
-    "first_seen": "2026-11-21",
-    "image": null,
-    "item": true
-  },
-  {
     "retailer": "Beats",
     "via": "Amazon",
     "category": "Tech",
@@ -6537,7 +6663,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 149.95,
+    "price_note": null
   },
   {
     "retailer": "Amazon",
@@ -6557,7 +6686,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 349.99,
+    "price_note": null
   },
   {
     "retailer": "Apple",
@@ -6577,7 +6709,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 179,
+    "price_note": null
   },
   {
     "retailer": "Material",
@@ -6825,7 +6960,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 220.98,
+    "price_note": null
   },
   {
     "retailer": "T-fal",
@@ -6845,7 +6983,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 104.44,
+    "price_note": null
   },
   {
     "retailer": "BLACK+DECKER",
@@ -6865,7 +7006,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 89.99,
+    "price_note": null
   },
   {
     "retailer": "Ninja",
@@ -6885,7 +7029,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 179.95,
+    "price_note": null
   },
   {
     "retailer": "Nuwave",
@@ -6905,7 +7052,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 142.19,
+    "price_note": null
   },
   {
     "retailer": "Sugarfina",
@@ -6963,16 +7113,19 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 161.99,
+    "price_note": null
   },
   {
     "retailer": "LEGO",
     "via": "Target",
     "category": "Toys & Kids",
     "title": "SMART Play Mos Eisley Cantina 75425",
-    "discount_pct": 43,
-    "original_price": 79.99,
-    "sale_price": 45.49,
+    "discount_pct": null,
+    "original_price": null,
+    "sale_price": null,
     "code": null,
     "starts": null,
     "ends": null,
@@ -6983,7 +7136,9 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": null,
+    "price_note": "See price at store"
   },
   {
     "retailer": "LEGO",
@@ -7003,7 +7158,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 26.99,
+    "price_note": null
   },
   {
     "retailer": "Reima",
@@ -7314,9 +7472,9 @@
     "via": "Target",
     "category": "Toys & Kids",
     "title": "Pokémon Munchlax adult building set (72150)",
-    "discount_pct": 40,
-    "original_price": 69.99,
-    "sale_price": 41.99,
+    "discount_pct": null,
+    "original_price": null,
+    "sale_price": null,
     "code": null,
     "starts": null,
     "ends": null,
@@ -7327,7 +7485,9 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": null,
+    "price_note": "See price at store"
   },
   {
     "retailer": "LEGO",
@@ -7347,7 +7507,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 29.99,
+    "price_note": null
   },
   {
     "retailer": "LEGO",
@@ -7367,16 +7530,19 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 34.99,
+    "price_note": null
   },
   {
     "retailer": "LEGO",
     "via": null,
     "category": "Toys & Kids",
     "title": "Star Wars Chopper (C1-10P) set (75416)",
-    "discount_pct": 35,
-    "original_price": 99.99,
-    "sale_price": 64.99,
+    "discount_pct": null,
+    "original_price": null,
+    "sale_price": null,
     "code": null,
     "starts": null,
     "ends": null,
@@ -7387,7 +7553,9 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": null,
+    "price_note": "See price at store"
   },
   {
     "retailer": "LEGO",
@@ -7407,16 +7575,19 @@
     "found_by": "ai",
     "first_seen": "2026-11-22",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 41.99,
+    "price_note": null
   },
   {
     "retailer": "LEGO",
     "via": null,
     "category": "Toys & Kids",
     "title": "Williams Racing FW14B & Nigel Mansell (10353)",
-    "discount_pct": 50,
-    "original_price": 79.99,
-    "sale_price": 40,
+    "discount_pct": null,
+    "original_price": null,
+    "sale_price": null,
     "code": null,
     "starts": null,
     "ends": null,
@@ -7427,7 +7598,9 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": null,
+    "price_note": "See price at store"
   },
   {
     "retailer": "Six Moon Designs",
@@ -7620,26 +7793,6 @@
     "item": false
   },
   {
-    "retailer": "YETI",
-    "via": "Field & Stream",
-    "category": "Outdoor",
-    "title": "Hopper M20 backpack cooler, $65 off",
-    "discount_pct": 20,
-    "original_price": 325,
-    "sale_price": 260,
-    "code": null,
-    "starts": null,
-    "ends": null,
-    "link": "https://fieldandstream.com/outdoor-gear/camping-and-outdoor-rec/yeti-black-friday-sale",
-    "source": "https://fieldandstream.com/outdoor-gear/camping-and-outdoor-rec/yeti-black-friday-sale",
-    "last_checked": "2026-11-21",
-    "notes": null,
-    "found_by": "ai",
-    "first_seen": "2026-11-21",
-    "image": null,
-    "item": true
-  },
-  {
     "retailer": "Igloo",
     "via": null,
     "category": "Outdoor",
@@ -7701,9 +7854,9 @@
     "via": "Walmart",
     "category": "Horror & Pop Culture",
     "title": "Obsession 4K UHD, Blu-ray and digital combo",
-    "discount_pct": 54,
-    "original_price": 27.96,
-    "sale_price": 12.99,
+    "discount_pct": null,
+    "original_price": null,
+    "sale_price": null,
     "code": null,
     "starts": null,
     "ends": null,
@@ -7715,7 +7868,9 @@
     "first_seen": "2026-11-21",
     "image": null,
     "price_ok": false,
-    "item": true
+    "item": true,
+    "price_checked": null,
+    "price_note": "See price at store"
   },
   {
     "retailer": "SRS Cinema Store",
@@ -7736,7 +7891,10 @@
     "first_seen": "2026-11-21",
     "image": null,
     "price_ok": false,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 4.95,
+    "price_note": null
   },
   {
     "retailer": "SRS Cinema Store",
@@ -7757,7 +7915,10 @@
     "first_seen": "2026-11-21",
     "image": null,
     "price_ok": false,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 9.95,
+    "price_note": null
   },
   {
     "retailer": "SRS Cinema Store",
@@ -7778,7 +7939,10 @@
     "first_seen": "2026-11-21",
     "image": null,
     "price_ok": false,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 9.95,
+    "price_note": null
   },
   {
     "retailer": "Dolce Vita",
@@ -8236,7 +8400,9 @@
     "first_seen": "2026-11-21",
     "image": "https://thekit.wolverineworldwide.com/match/media_lookup/MRLM-J00005387-091225-F26-000/?preset=dw-large",
     "price_ok": true,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 107.99
   },
   {
     "retailer": "Merrell",
@@ -8257,7 +8423,9 @@
     "first_seen": "2026-11-21",
     "image": "https://thekit.wolverineworldwide.com/match/media_lookup/MRLM-J00005387-091225-F26-000/?preset=dw-large",
     "price_ok": true,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 124.99
   },
   {
     "retailer": "Merrell",
@@ -8278,16 +8446,18 @@
     "first_seen": "2026-11-21",
     "image": "https://thekit.wolverineworldwide.com/match/media_lookup/MRLM-J00005387-091225-F26-000/?preset=dw-large",
     "price_ok": true,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 130.99
   },
   {
     "retailer": "Coach",
     "via": "Macy's",
     "category": "Shoes & Accessories",
     "title": "COACH Soft Empire Small Leather Satchel Bag",
-    "discount_pct": 40,
-    "original_price": 325,
-    "sale_price": 195,
+    "discount_pct": null,
+    "original_price": null,
+    "sale_price": null,
     "code": null,
     "starts": null,
     "ends": null,
@@ -8298,16 +8468,18 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": null,
+    "price_note": "See price at store"
   },
   {
     "retailer": "Ray-Ban",
     "via": "Macy's",
     "category": "Shoes & Accessories",
     "title": "Women's Sunglasses RB4216",
-    "discount_pct": 50,
-    "original_price": 168,
-    "sale_price": 84,
+    "discount_pct": null,
+    "original_price": null,
+    "sale_price": null,
     "code": null,
     "starts": null,
     "ends": null,
@@ -8318,16 +8490,18 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": null,
+    "price_note": "See price at store"
   },
   {
     "retailer": "Coach",
     "via": "Macy's",
     "category": "Shoes & Accessories",
     "title": "Polarized Sunglasses HC8264",
-    "discount_pct": 30,
-    "original_price": 245,
-    "sale_price": 172,
+    "discount_pct": null,
+    "original_price": null,
+    "sale_price": null,
     "code": null,
     "starts": null,
     "ends": null,
@@ -8338,15 +8512,17 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": null,
+    "price_note": "See price at store"
   },
   {
     "retailer": "HOKA",
     "via": null,
     "category": "Shoes & Accessories",
     "title": "Men's Bondi 9 running shoes",
-    "discount_pct": 20,
-    "original_price": 175,
+    "discount_pct": null,
+    "original_price": null,
     "sale_price": 140,
     "code": null,
     "starts": null,
@@ -8358,7 +8534,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 140,
+    "price_note": null
   },
   {
     "retailer": "Biossance",
@@ -8568,7 +8747,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 44.99,
+    "price_note": null
   },
   {
     "retailer": "CAROTE",
@@ -8594,9 +8776,9 @@
     "via": "Amazon",
     "category": "Home & Kitchen",
     "title": "Bread maker",
-    "discount_pct": 49,
-    "original_price": 170,
-    "sale_price": 86,
+    "discount_pct": null,
+    "original_price": null,
+    "sale_price": null,
     "code": null,
     "starts": null,
     "ends": null,
@@ -8607,7 +8789,9 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": null,
+    "price_note": "See price at store"
   },
   {
     "retailer": "Costco",
@@ -8647,26 +8831,6 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "item": false
-  },
-  {
-    "retailer": "Ghirardelli",
-    "via": null,
-    "category": "Baking & Food",
-    "title": "100 squares of chocolate for $60",
-    "discount_pct": null,
-    "original_price": null,
-    "sale_price": 60,
-    "code": null,
-    "starts": null,
-    "ends": null,
-    "link": "https://sporked.com/scooped/black-friday-cyber-monday-cookware-sale-deals-2026/",
-    "source": "https://sporked.com/scooped/black-friday-cyber-monday-cookware-sale-deals-2026/",
-    "last_checked": "2026-11-21",
-    "notes": null,
-    "found_by": "ai",
-    "first_seen": "2026-11-21",
-    "image": null,
-    "item": true
   },
   {
     "retailer": "Oso & Me",
@@ -8825,9 +8989,9 @@
     "via": null,
     "category": "Horror & Pop Culture",
     "title": "Loungefly Funko KPop Demon Hunters mystery pin box",
-    "discount_pct": 70,
-    "original_price": 12,
-    "sale_price": 3.6,
+    "discount_pct": null,
+    "original_price": null,
+    "sale_price": null,
     "code": null,
     "starts": null,
     "ends": null,
@@ -8838,7 +9002,9 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": null,
+    "price_note": "See price at store"
   },
   {
     "retailer": "Sideshow",
@@ -9187,9 +9353,9 @@
     "via": "Macy's",
     "category": "Beauty",
     "title": "Shalimar Eau de Parfum 1-oz at 50% off",
-    "discount_pct": 50,
-    "original_price": 110,
-    "sale_price": 55,
+    "discount_pct": null,
+    "original_price": null,
+    "sale_price": null,
     "code": null,
     "starts": null,
     "ends": null,
@@ -9200,7 +9366,9 @@
     "found_by": "ai",
     "first_seen": "2026-11-22",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": null,
+    "price_note": "See price at store"
   },
   {
     "retailer": "Jo Malone London",
@@ -9245,9 +9413,9 @@
     "via": null,
     "category": "Athleisure",
     "title": "Women's Frost Fall Hooded Jacket, 30% off",
-    "discount_pct": 30,
-    "original_price": 280,
-    "sale_price": 196,
+    "discount_pct": null,
+    "original_price": null,
+    "sale_price": null,
     "code": null,
     "starts": null,
     "ends": null,
@@ -9258,16 +9426,18 @@
     "found_by": "ai",
     "first_seen": "2026-11-22",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": null,
+    "price_note": "See price at store"
   },
   {
     "retailer": "The North Face",
     "via": null,
     "category": "Athleisure",
     "title": "Women's Thermoball Jacket, 40% off",
-    "discount_pct": 40,
-    "original_price": 220,
-    "sale_price": 131.98,
+    "discount_pct": null,
+    "original_price": null,
+    "sale_price": null,
     "code": null,
     "starts": null,
     "ends": null,
@@ -9278,27 +9448,9 @@
     "found_by": "ai",
     "first_seen": "2026-11-22",
     "image": null,
-    "item": true
-  },
-  {
-    "retailer": "Dissh",
-    "via": null,
-    "category": "Fashion",
-    "title": "Annabel White Sleeveless V Neck Midi Dress, 20% off",
-    "discount_pct": 20,
-    "original_price": 226,
-    "sale_price": 180.8,
-    "code": null,
-    "starts": null,
-    "ends": null,
-    "link": "https://dissh.com/collections/black-friday-sale",
-    "source": "https://dissh.com/collections/black-friday-sale",
-    "last_checked": "2026-11-22",
-    "notes": null,
-    "found_by": "ai",
-    "first_seen": "2026-11-22",
-    "image": null,
-    "item": true
+    "item": true,
+    "price_checked": null,
+    "price_note": "See price at store"
   },
   {
     "retailer": "Dissh",
@@ -9318,7 +9470,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-22",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 136,
+    "price_note": null
   },
   {
     "retailer": "Forme",
@@ -9605,7 +9760,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-22",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 1399.99,
+    "price_note": null
   },
   {
     "retailer": "TCL",
@@ -9625,7 +9783,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-22",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 1397,
+    "price_note": null
   },
   {
     "retailer": "Google",
@@ -9645,15 +9806,18 @@
     "found_by": "ai",
     "first_seen": "2026-11-22",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 299.99,
+    "price_note": null
   },
   {
     "retailer": "Samsung",
     "via": null,
     "category": "Tech",
     "title": "Samsung Galaxy S26 Plus smartphone",
-    "discount_pct": 21,
-    "original_price": 1199.99,
+    "discount_pct": null,
+    "original_price": null,
     "sale_price": 949.99,
     "code": null,
     "starts": null,
@@ -9665,7 +9829,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-22",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 949.99,
+    "price_note": null
   },
   {
     "retailer": "Our Place",
@@ -9685,7 +9852,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-22",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 275,
+    "price_note": null
   },
   {
     "retailer": "Best Buy",
@@ -9730,7 +9900,7 @@
     "via": "Amazon",
     "category": "Toys & Kids",
     "title": "LEGO Animal Crossing Blathers's Museum Collection (77056)",
-    "discount_pct": 40,
+    "discount_pct": null,
     "original_price": null,
     "sale_price": 47.99,
     "code": null,
@@ -9743,14 +9913,17 @@
     "found_by": "ai",
     "first_seen": "2026-11-22",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 47.99,
+    "price_note": null
   },
   {
     "retailer": "LEGO",
     "via": "Amazon",
     "category": "Toys & Kids",
     "title": "LEGO Creator 3 in 1 Wild Animals: Majestic Rhino (31171)",
-    "discount_pct": 55,
+    "discount_pct": null,
     "original_price": null,
     "sale_price": 26.99,
     "code": null,
@@ -9763,7 +9936,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-22",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 26.99,
+    "price_note": null
   },
   {
     "retailer": "LEGO",
@@ -9783,7 +9959,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-22",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 34.99,
+    "price_note": null
   },
   {
     "retailer": "LEGO",
@@ -9803,7 +9982,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-22",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 44.99,
+    "price_note": null
   },
   {
     "retailer": "LEGO",
@@ -9823,7 +10005,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-22",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 27.99,
+    "price_note": null
   },
   {
     "retailer": "Goldbelly",
@@ -9862,27 +10047,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-22",
     "image": null,
-    "item": true
-  },
-  {
-    "retailer": "Patagonia",
-    "via": "REI",
-    "category": "Athleisure",
-    "title": "Patagonia Houdini Stash pullover, REI Holiday Sale",
-    "discount_pct": 30,
-    "original_price": 139,
-    "sale_price": 96.73,
-    "code": "HOLIDAY2026",
-    "starts": "2026-11-13",
-    "ends": "2026-11-23",
-    "link": "https://shopping.yahoo.com/deals/articles/no-rei-doesn-t-black-110000016.html",
-    "source": "https://shopping.yahoo.com/deals/articles/no-rei-doesn-t-black-110000016.html",
-    "last_checked": "2026-11-22",
-    "notes": null,
-    "found_by": "ai",
-    "first_seen": "2026-11-22",
-    "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 127.93,
+    "price_note": null
   },
   {
     "retailer": "REI",
@@ -10111,7 +10279,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-24",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 31.5,
+    "price_note": null
   },
   {
     "retailer": "Lululemon",
@@ -10321,7 +10492,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-24",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 134.99,
+    "price_note": null
   },
   {
     "retailer": "Allbirds",
@@ -10341,7 +10515,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-24",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 70,
+    "price_note": null
   },
   {
     "retailer": "Timberland PRO",
@@ -10361,7 +10538,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-24",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 99.99,
+    "price_note": null
   },
   {
     "retailer": "Salomon",
@@ -10381,7 +10561,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-24",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 127.5,
+    "price_note": null
   },
   {
     "retailer": "Coach",
@@ -10401,7 +10584,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-24",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 146.25,
+    "price_note": null
   },
   {
     "retailer": "Coach",
@@ -10421,7 +10607,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-24",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 171.75,
+    "price_note": null
   },
   {
     "retailer": "Coach",
@@ -10441,7 +10630,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-24",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 221.25,
+    "price_note": null
   },
   {
     "retailer": "Nike",
@@ -10461,7 +10653,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-24",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 111,
+    "price_note": null
   },
   {
     "retailer": "Murad",
@@ -10595,7 +10790,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-24",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 299.5,
+    "price_note": null
   },
   {
     "retailer": "Sea to Summit",
@@ -10615,7 +10813,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-24",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 274.5,
+    "price_note": null
   },
   {
     "retailer": "Sea to Summit",
@@ -10635,14 +10836,17 @@
     "found_by": "ai",
     "first_seen": "2026-11-24",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 153.3,
+    "price_note": null
   },
   {
     "retailer": "YETI",
     "via": "Amazon",
     "category": "Outdoor",
     "title": "Tundra 45 hard cooler",
-    "discount_pct": 27,
+    "discount_pct": 30,
     "original_price": 325,
     "sale_price": 228,
     "code": null,
@@ -10655,7 +10859,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-24",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 228,
+    "price_note": null
   },
   {
     "retailer": "YETI",
@@ -10675,7 +10882,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-24",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 116,
+    "price_note": null
   },
   {
     "retailer": "YETI",
@@ -10695,16 +10905,19 @@
     "found_by": "ai",
     "first_seen": "2026-11-24",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 163,
+    "price_note": null
   },
   {
     "retailer": "Rooftop tent maker 23Zero",
     "via": null,
     "category": "Outdoor",
     "title": "Armadillo Horizon 2 hardshell rooftop tent",
-    "discount_pct": 23,
-    "original_price": 3995,
-    "sale_price": 3076.15,
+    "discount_pct": null,
+    "original_price": null,
+    "sale_price": null,
     "code": null,
     "starts": null,
     "ends": null,
@@ -10715,16 +10928,18 @@
     "found_by": "ai",
     "first_seen": "2026-11-24",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": null,
+    "price_note": "See price at store"
   },
   {
     "retailer": "Warner Bros.",
     "via": "Walmart",
     "category": "Horror & Pop Culture",
     "title": "Resident Evil 6-movie collection Steelbook",
-    "discount_pct": 28,
-    "original_price": 155,
-    "sale_price": 111.76,
+    "discount_pct": null,
+    "original_price": null,
+    "sale_price": null,
     "code": null,
     "starts": null,
     "ends": null,
@@ -10735,16 +10950,18 @@
     "found_by": "ai",
     "first_seen": "2026-11-24",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": null,
+    "price_note": "See price at store"
   },
   {
     "retailer": "Sony Pictures",
     "via": "Walmart",
     "category": "Horror & Pop Culture",
     "title": "Venom 3-movie collection Blu-ray",
-    "discount_pct": 32,
-    "original_price": 42.99,
-    "sale_price": 29.41,
+    "discount_pct": null,
+    "original_price": null,
+    "sale_price": null,
     "code": null,
     "starts": null,
     "ends": null,
@@ -10755,7 +10972,9 @@
     "found_by": "ai",
     "first_seen": "2026-11-24",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": null,
+    "price_note": "See price at store"
   },
   {
     "retailer": "Silent Hill",
@@ -10775,7 +10994,10 @@
     "found_by": "ai",
     "first_seen": "2026-11-24",
     "image": null,
-    "item": true
+    "item": true,
+    "price_checked": "2026-11-24",
+    "price_checked_price": 29.99,
+    "price_note": null
   },
   {
     "retailer": "Funko",
