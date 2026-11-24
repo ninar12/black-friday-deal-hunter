@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
-import { shopUrl } from "@/lib/shop";
+import { shopUrl, isSearchLink, searchLabel } from "@/lib/shop";
 import { CATEGORIES, PRICE_RANGES, POPULAR, FASHION_FIRST, dealScore } from "@/lib/deals";
 
 const EMPTY = { q: "", mine: false, picks: false, kind: "", brand: "", group: "", category: null, minPct: 0, price: null, maxPrice: null, endsToday: false, endsOn: null, hasCode: false, sort: "featured" };
@@ -441,6 +441,7 @@ export default function DealsApp({ initialDeals, sites = {}, picks = [], images 
       </section>
 
       <p className="count">{results.length} deal{results.length === 1 ? "" : "s"}{f.category ? ` in ${f.category}` : ""}{f.endsOn ? ` ending ${fmtDay(f.endsOn)}` : ""}</p>
+      <p className="link-note">A note on links: Shop goes straight to the product when we can find its page. When we can’t, it opens a search for that item at the store or on Google Shopping, so the exact piece may take a scroll to find.</p>
 
       <div id="deals">
       {groups.map((g) => (
@@ -485,6 +486,7 @@ export default function DealsApp({ initialDeals, sites = {}, picks = [], images 
             {d.ends ? <p className="ends">{timeLeft(d.ends, now)}<span> · {fmtDay(d.ends)}</span></p> : null}
             <div className="card-foot">
               <a className="go" href={shopUrl(d, sites)} target="_blank" rel="noopener noreferrer sponsored" tabIndex={-1}>Shop <span aria-hidden="true">→</span></a>
+              {isSearchLink(shopUrl(d, sites)) && <span className="via-search" title="We couldn’t pin down the exact product page, so this opens a search for it.">{searchLabel(shopUrl(d, sites))}</span>}
               {d.ends && <button className="mini" onClick={() => icsFor(d)} title="Add the last day to your calendar">+ Calendar</button>}
             </div>
           </article>
@@ -530,7 +532,7 @@ export default function DealsApp({ initialDeals, sites = {}, picks = [], images 
       ) : null}
 
       <footer className="foot">
-        <p>Deals are found by AI from public pages and may change. Always check the retailer’s site. Some links may be affiliate links.</p>
+        <p>Deals are found by AI from public pages and may change. Always check the retailer’s site. Shop links often open a store search or Google Shopping rather than the exact product page. Some links may be affiliate links.</p>
         <Link href="/about">About Black Friday Hunter</Link>
       </footer>
     </main>
