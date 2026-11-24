@@ -392,6 +392,7 @@
     "via": null,
     "category": "Fashion",
     "title": "Black Friday sale: 30% off sitewide plus extra 40% off sale items",
+    "item": false,
     "discount_pct": 30,
     "original_price": null,
     "sale_price": null,
@@ -403,8 +404,7 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24",
-    "item": false
+    "first_seen": "2026-11-24"
   },
   {
     "retailer": "Alo Yoga",
