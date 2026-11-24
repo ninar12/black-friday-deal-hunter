@@ -15,7 +15,8 @@
     "last_checked": "2026-11-22",
     "notes": "DÔEN’s own site hasn’t posted a Black Friday sale yet.",
     "found_by": "ai",
-    "first_seen": "2026-11-22"
+    "first_seen": "2026-11-22",
+    "item": false
   },
   {
     "retailer": "Glossier",
@@ -32,7 +33,8 @@
     "last_checked": "2026-11-20",
     "notes": null,
     "via": null,
-    "first_seen": "2026-11-20"
+    "first_seen": "2026-11-20",
+    "item": false
   },
   {
     "retailer": "Gap",
@@ -50,7 +52,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "SURI",
@@ -67,7 +70,8 @@
     "last_checked": "2026-11-20",
     "notes": null,
     "via": null,
-    "first_seen": "2026-11-20"
+    "first_seen": "2026-11-20",
+    "item": false
   },
   {
     "retailer": "Aritzia",
@@ -84,7 +88,8 @@
     "last_checked": "2026-11-20",
     "notes": "Official sale not announced yet",
     "via": null,
-    "first_seen": "2026-11-20"
+    "first_seen": "2026-11-20",
+    "item": false
   },
   {
     "retailer": "Lola Blankets",
@@ -102,7 +107,8 @@
     "last_checked": "2026-11-21",
     "notes": "VETTED35 also works",
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Pottery Barn",
@@ -119,7 +125,8 @@
     "last_checked": "2026-11-20",
     "notes": null,
     "via": null,
-    "first_seen": "2026-11-20"
+    "first_seen": "2026-11-20",
+    "item": false
   },
   {
     "retailer": "West Elm",
@@ -136,7 +143,8 @@
     "last_checked": "2026-11-20",
     "notes": null,
     "via": null,
-    "first_seen": "2026-11-20"
+    "first_seen": "2026-11-20",
+    "item": false
   },
   {
     "retailer": "KitchenAid",
@@ -153,7 +161,8 @@
     "last_checked": "2026-11-20",
     "notes": null,
     "via": null,
-    "first_seen": "2026-11-20"
+    "first_seen": "2026-11-20",
+    "item": false
   },
   {
     "retailer": "POPFLEX",
@@ -171,7 +180,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "amika",
@@ -189,7 +199,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "amika",
@@ -206,7 +217,8 @@
     "last_checked": "2026-11-20",
     "notes": null,
     "via": "Sephora",
-    "first_seen": "2026-11-20"
+    "first_seen": "2026-11-20",
+    "item": false
   },
   {
     "retailer": "amika",
@@ -223,7 +235,8 @@
     "last_checked": "2026-11-20",
     "notes": null,
     "via": "Amazon",
-    "first_seen": "2026-11-20"
+    "first_seen": "2026-11-20",
+    "item": false
   },
   {
     "retailer": "Merit",
@@ -241,7 +254,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-20"
+    "first_seen": "2026-11-20",
+    "item": false
   },
   {
     "retailer": "Saie",
@@ -259,7 +273,8 @@
     "notes": null,
     "via": null,
     "first_seen": "2026-11-20",
-    "found_by": "ai"
+    "found_by": "ai",
+    "item": false
   },
   {
     "retailer": "IGK",
@@ -276,7 +291,8 @@
     "last_checked": "2026-11-20",
     "notes": null,
     "via": null,
-    "first_seen": "2026-11-20"
+    "first_seen": "2026-11-20",
+    "item": false
   },
   {
     "retailer": "Kérastase",
@@ -293,7 +309,8 @@
     "last_checked": "2026-11-20",
     "notes": null,
     "via": null,
-    "first_seen": "2026-11-20"
+    "first_seen": "2026-11-20",
+    "item": false
   },
   {
     "retailer": "Medicube",
@@ -310,7 +327,8 @@
     "last_checked": "2026-11-20",
     "notes": "Starts online Nov 21, 8 p.m. CT",
     "via": "Ulta Beauty",
-    "first_seen": "2026-11-20"
+    "first_seen": "2026-11-20",
+    "item": false
   },
   {
     "retailer": "Everlane",
@@ -328,7 +346,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Reformation",
@@ -346,7 +365,8 @@
     "notes": null,
     "found_by": "ai",
     "via": null,
-    "first_seen": "2026-11-20"
+    "first_seen": "2026-11-20",
+    "item": false
   },
   {
     "retailer": "Free People",
@@ -364,7 +384,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Anthropologie",
@@ -382,7 +403,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Alo Yoga",
@@ -400,7 +422,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "Gymshark",
@@ -418,7 +441,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "Under Armour",
@@ -436,7 +460,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Puma",
@@ -454,7 +479,8 @@
     "notes": null,
     "found_by": "ai",
     "via": null,
-    "first_seen": "2026-11-20"
+    "first_seen": "2026-11-20",
+    "item": false
   },
   {
     "retailer": "Rhone",
@@ -472,7 +498,8 @@
     "notes": null,
     "found_by": "ai",
     "via": null,
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Girlfriend Collective",
@@ -490,7 +517,8 @@
     "notes": null,
     "found_by": "ai",
     "via": null,
-    "first_seen": "2026-11-20"
+    "first_seen": "2026-11-20",
+    "item": false
   },
   {
     "retailer": "Set Active",
@@ -508,7 +536,8 @@
     "notes": null,
     "found_by": "ai",
     "via": null,
-    "first_seen": "2026-11-20"
+    "first_seen": "2026-11-20",
+    "item": false
   },
   {
     "retailer": "Old Navy",
@@ -526,7 +555,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Banana Republic Factory",
@@ -544,7 +574,8 @@
     "notes": null,
     "found_by": "ai",
     "via": null,
-    "first_seen": "2026-11-20"
+    "first_seen": "2026-11-20",
+    "item": false
   },
   {
     "retailer": "Dr. Martens",
@@ -562,7 +593,8 @@
     "notes": null,
     "found_by": "ai",
     "via": null,
-    "first_seen": "2026-11-20"
+    "first_seen": "2026-11-20",
+    "item": false
   },
   {
     "retailer": "Birkenstock",
@@ -580,7 +612,8 @@
     "notes": null,
     "found_by": "ai",
     "via": "Nordstrom Rack",
-    "first_seen": "2026-11-20"
+    "first_seen": "2026-11-20",
+    "item": false
   },
   {
     "retailer": "UGG",
@@ -598,7 +631,8 @@
     "notes": null,
     "found_by": "ai",
     "via": null,
-    "first_seen": "2026-11-20"
+    "first_seen": "2026-11-20",
+    "item": false
   },
   {
     "retailer": "Pandora",
@@ -616,7 +650,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Ray-Ban",
@@ -634,7 +669,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Fossil",
@@ -652,7 +688,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Away",
@@ -670,7 +707,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Rare Beauty",
@@ -688,7 +726,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Charlotte Tilbury",
@@ -706,7 +745,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Drunk Elephant",
@@ -724,7 +764,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Tatcha",
@@ -742,7 +783,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Target",
@@ -760,7 +802,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Ninja",
@@ -779,7 +822,8 @@
     "found_by": "ai",
     "via": "Walmart",
     "first_seen": "2026-11-20",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Amazon",
@@ -797,7 +841,8 @@
     "notes": null,
     "found_by": "ai",
     "via": null,
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Wayfair",
@@ -815,7 +860,8 @@
     "notes": null,
     "found_by": "ai",
     "via": null,
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Anker",
@@ -833,7 +879,8 @@
     "notes": null,
     "found_by": "ai",
     "via": null,
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "JBL",
@@ -852,7 +899,8 @@
     "found_by": "ai",
     "via": "Amazon",
     "first_seen": "2026-11-20",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Meta",
@@ -871,7 +919,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Our Place",
@@ -889,7 +938,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Le Creuset",
@@ -907,7 +957,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Breville",
@@ -925,7 +976,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Amazon",
@@ -943,7 +995,8 @@
     "notes": null,
     "found_by": "ai",
     "via": null,
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Melissa & Doug",
@@ -961,7 +1014,8 @@
     "notes": null,
     "found_by": "ai",
     "via": null,
-    "first_seen": "2026-11-20"
+    "first_seen": "2026-11-20",
+    "item": false
   },
   {
     "retailer": "Lovevery",
@@ -979,7 +1033,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Carter's",
@@ -997,7 +1052,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Arc'teryx",
@@ -1015,7 +1071,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Columbia",
@@ -1033,7 +1090,8 @@
     "notes": null,
     "found_by": "ai",
     "via": null,
-    "first_seen": "2026-11-20"
+    "first_seen": "2026-11-20",
+    "item": false
   },
   {
     "retailer": "YETI",
@@ -1051,7 +1109,8 @@
     "notes": null,
     "found_by": "ai",
     "via": null,
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Loungefly",
@@ -1069,7 +1128,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "Guess",
@@ -1087,7 +1147,8 @@
     "notes": null,
     "found_by": "ai",
     "via": null,
-    "first_seen": "2026-11-20"
+    "first_seen": "2026-11-20",
+    "item": false
   },
   {
     "retailer": "Skims",
@@ -1105,7 +1166,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "e.l.f.",
@@ -1123,7 +1185,8 @@
     "notes": null,
     "found_by": "ai",
     "via": null,
-    "first_seen": "2026-11-20"
+    "first_seen": "2026-11-20",
+    "item": false
   },
   {
     "retailer": "Moroccanoil",
@@ -1141,7 +1204,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Buck Mason",
@@ -1159,7 +1223,8 @@
     "notes": null,
     "found_by": "ai",
     "via": null,
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Lemme",
@@ -1177,7 +1242,8 @@
     "notes": null,
     "found_by": "ai",
     "via": "iHerb",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Ellis Brooklyn",
@@ -1195,7 +1261,8 @@
     "notes": null,
     "found_by": "ai",
     "via": "Nordstrom",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Snif",
@@ -1213,7 +1280,8 @@
     "notes": null,
     "found_by": "ai",
     "via": null,
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "I.AM.GIA",
@@ -1231,7 +1299,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Tank Air",
@@ -1249,7 +1318,8 @@
     "notes": null,
     "found_by": "ai",
     "via": null,
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "I Am Delilah",
@@ -1267,7 +1337,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Buffbunny",
@@ -1285,7 +1356,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "AYBL",
@@ -1303,7 +1375,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "Athleta",
@@ -1321,7 +1394,8 @@
     "notes": null,
     "found_by": "ai",
     "via": null,
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "ONER Active",
@@ -1339,7 +1413,8 @@
     "last_checked": "2026-11-22",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-22"
+    "first_seen": "2026-11-22",
+    "item": false
   },
   {
     "retailer": "Adidas",
@@ -1358,7 +1433,8 @@
     "found_by": "ai",
     "via": null,
     "first_seen": "2026-11-20",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Care to Beauty",
@@ -1376,7 +1452,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "Ulta Beauty",
@@ -1394,7 +1471,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "Lancôme",
@@ -1412,7 +1490,8 @@
     "notes": null,
     "found_by": "ai",
     "via": null,
-    "first_seen": "2026-11-20"
+    "first_seen": "2026-11-20",
+    "item": false
   },
   {
     "retailer": "Laura Geller",
@@ -1432,7 +1511,8 @@
     "via": "Yahoo Shopping",
     "first_seen": "2026-11-20",
     "image": null,
-    "price_ok": true
+    "price_ok": true,
+    "item": true
   },
   {
     "retailer": "Amazon",
@@ -1451,7 +1531,8 @@
     "found_by": "ai",
     "via": null,
     "first_seen": "2026-11-20",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Medicube",
@@ -1470,7 +1551,8 @@
     "found_by": "ai",
     "via": "Amazon",
     "first_seen": "2026-11-20",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Medik8",
@@ -1490,7 +1572,8 @@
     "via": "Yahoo Shopping",
     "first_seen": "2026-11-20",
     "image": null,
-    "price_ok": true
+    "price_ok": true,
+    "item": true
   },
   {
     "retailer": "True Botanicals",
@@ -1508,25 +1591,28 @@
     "notes": null,
     "found_by": "ai",
     "via": null,
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Hisense",
+    "via": "Best Buy",
     "category": "Tech",
-    "title": "Hisense 98-inch QD5 4K Hi-QLED TV, marked down from $2,500",
+    "title": "98-inch QD5 Hi-QLED 4K TV",
     "discount_pct": 68,
-    "original_price": null,
-    "sale_price": null,
+    "original_price": 2500,
+    "sale_price": 800,
     "code": null,
-    "starts": "2026-11-19",
-    "ends": "2026-11-28",
+    "starts": null,
+    "ends": null,
     "link": "https://www.dealnews.com/Best-Buy-Black-Friday-Sale-2026-Up-to-68-off-free-shipping/22411142.html",
     "source": "https://www.dealnews.com/Best-Buy-Black-Friday-Sale-2026-Up-to-68-off-free-shipping/22411142.html",
-    "last_checked": "2026-11-20",
+    "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "via": "Best Buy",
-    "first_seen": "2026-11-20"
+    "first_seen": "2026-11-21",
+    "image": null,
+    "item": true
   },
   {
     "retailer": "LG",
@@ -1546,7 +1632,8 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "price_ok": false
+    "price_ok": false,
+    "item": true
   },
   {
     "retailer": "HP",
@@ -1566,7 +1653,8 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "price_ok": true
+    "price_ok": true,
+    "item": true
   },
   {
     "retailer": "Apple",
@@ -1585,7 +1673,8 @@
     "found_by": "ai",
     "via": "Best Buy",
     "first_seen": "2026-11-20",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "TCL",
@@ -1604,7 +1693,8 @@
     "found_by": "ai",
     "via": "Best Buy",
     "first_seen": "2026-11-20",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Sony",
@@ -1623,7 +1713,8 @@
     "found_by": "ai",
     "via": "Best Buy",
     "first_seen": "2026-11-20",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Vitamix",
@@ -1642,7 +1733,8 @@
     "found_by": "ai",
     "via": "Amazon",
     "first_seen": "2026-11-20",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Technivorm Moccamaster",
@@ -1661,7 +1753,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Cuisinart",
@@ -1680,7 +1773,8 @@
     "found_by": "ai",
     "via": "Sur La Table",
     "first_seen": "2026-11-20",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Macy's",
@@ -1698,7 +1792,8 @@
     "last_checked": "2026-11-22",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-22"
+    "first_seen": "2026-11-22",
+    "item": false
   },
   {
     "retailer": "LEGO",
@@ -1717,7 +1812,8 @@
     "found_by": "ai",
     "via": "Amazon",
     "first_seen": "2026-11-20",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "LEGO",
@@ -1736,7 +1832,8 @@
     "found_by": "ai",
     "via": "Target",
     "first_seen": "2026-11-20",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "LEGO",
@@ -1755,7 +1852,8 @@
     "found_by": "ai",
     "via": "Amazon",
     "first_seen": "2026-11-20",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "LEGO",
@@ -1773,7 +1871,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": true
   },
   {
     "retailer": "Best Buy",
@@ -1791,7 +1890,8 @@
     "notes": null,
     "found_by": "ai",
     "via": null,
-    "first_seen": "2026-11-20"
+    "first_seen": "2026-11-20",
+    "item": true
   },
   {
     "retailer": "Campmor",
@@ -1809,7 +1909,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "Backcountry",
@@ -1827,7 +1928,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "RTIC Outdoors",
@@ -1845,7 +1947,8 @@
     "last_checked": "2026-11-22",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-22"
+    "first_seen": "2026-11-22",
+    "item": false
   },
   {
     "retailer": "Sea to Summit",
@@ -1863,7 +1966,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Macpac",
@@ -1881,7 +1985,8 @@
     "notes": null,
     "found_by": "ai",
     "via": null,
-    "first_seen": "2026-11-20"
+    "first_seen": "2026-11-20",
+    "item": false
   },
   {
     "retailer": "Osprey",
@@ -1899,7 +2004,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Black Diamond",
@@ -1918,7 +2024,8 @@
     "found_by": "ai",
     "via": "Backcountry",
     "first_seen": "2026-11-20",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Gossamer Gear",
@@ -1936,7 +2043,8 @@
     "last_checked": "2026-11-22",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-22"
+    "first_seen": "2026-11-22",
+    "item": false
   },
   {
     "retailer": "Epic Games Store",
@@ -1955,7 +2063,8 @@
     "found_by": "ai",
     "via": null,
     "first_seen": "2026-11-20",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Epic Games Store",
@@ -1974,7 +2083,8 @@
     "found_by": "ai",
     "via": null,
     "first_seen": "2026-11-20",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Epic Games Store",
@@ -1993,7 +2103,8 @@
     "found_by": "ai",
     "via": null,
     "first_seen": "2026-11-20",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Fanatical",
@@ -2012,7 +2123,8 @@
     "found_by": "ai",
     "via": null,
     "first_seen": "2026-11-20",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Funko",
@@ -2030,7 +2142,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "Sony PlayStation Store",
@@ -2049,7 +2162,8 @@
     "found_by": "ai",
     "via": null,
     "first_seen": "2026-11-20",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "HOKA",
@@ -2067,7 +2181,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": true
   },
   {
     "retailer": "Banana Republic",
@@ -2085,7 +2200,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Bose",
@@ -2104,7 +2220,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Beats",
@@ -2123,7 +2240,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Google",
@@ -2141,7 +2259,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Microsoft",
@@ -2159,7 +2278,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Parachute",
@@ -2177,7 +2297,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Casper",
@@ -2195,7 +2316,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Article",
@@ -2213,7 +2335,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Food52",
@@ -2231,7 +2354,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Hasbro",
@@ -2249,7 +2373,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Hot Topic",
@@ -2267,7 +2392,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "Columbia Sportswear",
@@ -2285,7 +2411,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "YETI",
@@ -2303,7 +2430,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Shudder",
@@ -2321,7 +2449,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Guess",
@@ -2339,7 +2468,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": true
   },
   {
     "retailer": "Stringys",
@@ -2357,7 +2487,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "MERIT Beauty",
@@ -2375,7 +2506,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Medicube",
@@ -2393,7 +2525,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "TULA",
@@ -2412,7 +2545,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Ellis Brooklyn",
@@ -2430,7 +2564,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Madhappy",
@@ -2448,7 +2583,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "P.E Nation",
@@ -2466,7 +2602,8 @@
     "last_checked": "2026-11-22",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-22"
+    "first_seen": "2026-11-22",
+    "item": false
   },
   {
     "retailer": "Michael Kors",
@@ -2484,7 +2621,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Epic Games Store",
@@ -2502,7 +2640,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Fanatical",
@@ -2520,7 +2659,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "PlayStation Store",
@@ -2538,7 +2678,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "GameStop",
@@ -2556,7 +2697,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Citizens of Humanity",
@@ -2574,7 +2716,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Edikted",
@@ -2592,7 +2735,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Aerie",
@@ -2610,7 +2754,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "BDG",
@@ -2628,7 +2773,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": true
   },
   {
     "retailer": "Brandy Melville",
@@ -2646,7 +2792,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Hollister",
@@ -2664,7 +2811,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Indigo Luna",
@@ -2682,7 +2830,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Mavi",
@@ -2700,7 +2849,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Motel Rocks",
@@ -2718,7 +2868,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Muse",
@@ -2736,7 +2887,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Pistola Denim",
@@ -2754,7 +2906,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Ruti",
@@ -2772,7 +2925,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Tiger Mist",
@@ -2790,7 +2944,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "VICI",
@@ -2808,7 +2963,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Anastasia Beverly Hills",
@@ -2826,7 +2982,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Armani Beauty",
@@ -2844,7 +3001,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Freck",
@@ -2862,7 +3020,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Haus Labs",
@@ -2880,7 +3039,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Laura Mercier",
@@ -2898,7 +3058,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Make Up For Ever",
@@ -2916,7 +3077,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "SACHEU Beauty",
@@ -2934,7 +3096,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Tarte",
@@ -2952,7 +3115,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Saltyface",
@@ -2970,7 +3134,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Urban Decay",
@@ -2988,7 +3153,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Cyklar",
@@ -3006,7 +3172,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Dr. Dennis Gross",
@@ -3025,7 +3192,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "EADEM",
@@ -3043,7 +3211,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Face Reality Skincare",
@@ -3061,7 +3230,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "iS Clinical",
@@ -3079,7 +3249,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Rael",
@@ -3097,7 +3268,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Skinny Confidential",
@@ -3115,7 +3287,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "MAKE Beauty",
@@ -3133,7 +3306,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Naturium",
@@ -3151,7 +3325,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Obagi",
@@ -3169,7 +3344,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "TOOLETRIES",
@@ -3187,7 +3363,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Youth To The People",
@@ -3205,7 +3382,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "DedCool",
@@ -3223,7 +3401,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Diptyque",
@@ -3241,7 +3420,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Kayali",
@@ -3259,7 +3439,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Bondi Boost",
@@ -3277,7 +3458,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Color Wow",
@@ -3295,7 +3477,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Living Proof",
@@ -3313,7 +3496,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Ooni",
@@ -3331,7 +3515,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Archies Footwear",
@@ -3349,7 +3534,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Ecko Unltd",
@@ -3367,7 +3553,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "SharkNinja",
@@ -3385,7 +3572,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Slip",
@@ -3403,7 +3591,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "T3",
@@ -3421,7 +3610,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Lululemon",
@@ -3440,7 +3630,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "TEVEO",
@@ -3458,7 +3649,8 @@
     "last_checked": "2026-11-22",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-22"
+    "first_seen": "2026-11-22",
+    "item": false
   },
   {
     "retailer": "ONER",
@@ -3476,7 +3668,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Nordstrom Rack",
@@ -3494,7 +3687,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Kara Yoo",
@@ -3512,7 +3706,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Nordstrom",
@@ -3530,7 +3725,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Lands' End",
@@ -3548,7 +3744,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "H&M",
@@ -3566,7 +3763,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Kuru",
@@ -3584,7 +3782,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Crocs",
@@ -3602,7 +3801,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Ray-Ban",
@@ -3621,7 +3821,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Oakley",
@@ -3639,7 +3840,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Coach",
@@ -3658,7 +3860,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Steve Madden",
@@ -3676,7 +3879,8 @@
     "last_checked": "2026-11-22",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-22"
+    "first_seen": "2026-11-22",
+    "item": false
   },
   {
     "retailer": "UGG",
@@ -3695,7 +3899,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Antler",
@@ -3713,7 +3918,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Hot Tools",
@@ -3732,7 +3938,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Nutrafol",
@@ -3751,7 +3958,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Lancôme",
@@ -3770,26 +3978,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
-  },
-  {
-    "retailer": "Hisense",
-    "via": "Best Buy",
-    "category": "Tech",
-    "title": "98-inch QD5 Hi-QLED 4K TV",
-    "discount_pct": 68,
-    "original_price": 2500,
-    "sale_price": 800,
-    "code": null,
-    "starts": null,
-    "ends": null,
-    "link": "https://www.dealnews.com/Best-Buy-Black-Friday-Sale-2026-Up-to-68-off-free-shipping/22411142.html",
-    "source": "https://www.dealnews.com/Best-Buy-Black-Friday-Sale-2026-Up-to-68-off-free-shipping/22411142.html",
-    "last_checked": "2026-11-21",
-    "notes": null,
-    "found_by": "ai",
-    "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Best Buy",
@@ -3807,7 +3997,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Samsung",
@@ -3826,7 +4017,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Google",
@@ -3845,7 +4037,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Samsung",
@@ -3864,7 +4057,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Sony",
@@ -3884,7 +4078,8 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "price_ok": true
+    "price_ok": true,
+    "item": true
   },
   {
     "retailer": "Sony",
@@ -3903,7 +4098,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Ninja",
@@ -3922,7 +4118,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "KitchenAid",
@@ -3941,7 +4138,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "KitchenAid",
@@ -3960,7 +4158,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Ninja",
@@ -3979,7 +4178,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Emeril Lagasse",
@@ -3998,7 +4198,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Bella",
@@ -4017,7 +4218,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "UNREAL",
@@ -4036,7 +4238,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Spring & Mulberry",
@@ -4055,7 +4258,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Criterion",
@@ -4074,7 +4278,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Funko",
@@ -4093,7 +4298,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Universal",
@@ -4113,7 +4319,8 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "price_ok": false
+    "price_ok": false,
+    "item": true
   },
   {
     "retailer": "Funko",
@@ -4132,7 +4339,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Funko",
@@ -4151,7 +4359,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Travoca",
@@ -4170,7 +4379,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "YETI",
@@ -4189,7 +4399,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-24",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Black Diamond",
@@ -4207,7 +4418,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Kelty",
@@ -4226,7 +4438,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-24",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Walmart",
@@ -4245,7 +4458,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Little Tikes",
@@ -4264,7 +4478,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Kiehl's",
@@ -4282,7 +4497,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "MAC Cosmetics",
@@ -4300,7 +4516,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Benefit Cosmetics",
@@ -4318,7 +4535,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Google",
@@ -4338,7 +4556,8 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": "https://9to5google.com/wp-content/uploads/sites/4/2026/11/Google-Store-Black-Friday-2026.jpg?quality=82&strip=all&resize=1200,628",
-    "price_ok": true
+    "price_ok": true,
+    "item": true
   },
   {
     "retailer": "Purple",
@@ -4356,7 +4575,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "HexClad",
@@ -4374,7 +4594,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Shudder",
@@ -4392,7 +4613,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Lemme",
@@ -4410,7 +4632,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Hawkers",
@@ -4428,7 +4651,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Eleven Eleven",
@@ -4446,7 +4670,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Kulfi",
@@ -4464,7 +4689,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Make Up For Ever",
@@ -4482,7 +4708,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Shiseido",
@@ -4500,7 +4727,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Dr. Dennis Gross",
@@ -4518,7 +4746,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Face Reality Skincare",
@@ -4536,7 +4765,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Remedy Skin",
@@ -4554,7 +4784,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Tangle Teezer",
@@ -4572,7 +4803,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": true
   },
   {
     "retailer": "Owala",
@@ -4590,7 +4822,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "PlayStation",
@@ -4608,7 +4841,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Hisense",
@@ -4626,7 +4860,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "LG",
@@ -4644,7 +4879,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Emeril Lagasse",
@@ -4662,7 +4898,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": true
   },
   {
     "retailer": "The Criterion Collection",
@@ -4680,7 +4917,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Universal Audio",
@@ -4698,7 +4936,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Travoca",
@@ -4718,7 +4957,8 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "price_ok": true
+    "price_ok": true,
+    "item": true
   },
   {
     "retailer": "P'tula",
@@ -4736,7 +4976,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Alphalete",
@@ -4754,7 +4995,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Wiskii",
@@ -4772,7 +5014,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "LSKD",
@@ -4790,7 +5033,8 @@
     "last_checked": "2026-11-22",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-22"
+    "first_seen": "2026-11-22",
+    "item": false
   },
   {
     "retailer": "SWT Active",
@@ -4808,7 +5052,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "OFFLINE by Aerie",
@@ -4826,7 +5071,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Lululemon",
@@ -4845,7 +5091,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Adidas",
@@ -4864,7 +5111,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Lululemon",
@@ -4883,7 +5131,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Lululemon",
@@ -4902,7 +5151,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Lululemon",
@@ -4921,7 +5171,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Lululemon",
@@ -4940,7 +5191,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "ONER",
@@ -4960,7 +5212,8 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "price_ok": false
+    "price_ok": false,
+    "item": true
   },
   {
     "retailer": "Levi's",
@@ -4978,7 +5231,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Organic Basics",
@@ -4996,7 +5250,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Ann Taylor",
@@ -5014,7 +5269,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "White & Warren",
@@ -5032,7 +5288,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "J.Crew",
@@ -5050,7 +5307,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Madewell",
@@ -5068,7 +5326,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Princess Polly",
@@ -5086,7 +5345,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "ASTR The Label",
@@ -5104,7 +5364,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Hutch",
@@ -5122,7 +5383,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Almina Concept",
@@ -5140,7 +5402,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Leset",
@@ -5158,7 +5421,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "Marcella",
@@ -5176,7 +5440,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "With Jéan",
@@ -5194,7 +5459,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Rowing Blazers",
@@ -5212,7 +5478,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Big Chill",
@@ -5231,7 +5498,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Patagonia",
@@ -5249,7 +5517,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": true
   },
   {
     "retailer": "Levi's",
@@ -5268,25 +5537,28 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "The North Face",
     "via": null,
-    "category": "Fashion",
-    "title": "Women's Cragmont fleece jacket, all colors",
+    "category": "Athleisure",
+    "title": "Women's Cragmont Fleece Jacket, 30% off",
     "discount_pct": 30,
-    "original_price": null,
-    "sale_price": null,
+    "original_price": 180,
+    "sale_price": 126,
     "code": null,
     "starts": null,
     "ends": null,
-    "link": "https://www.cnn.com/cnn-underscored/deals/best-black-friday-deals-2026-11-20",
-    "source": "https://www.cnn.com/cnn-underscored/deals/best-black-friday-deals-2026-11-20",
-    "last_checked": "2026-11-21",
+    "link": "https://www.thenorthface.com/en-us/black-friday",
+    "source": "https://www.thenorthface.com/en-us/black-friday",
+    "last_checked": "2026-11-22",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-22",
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Peluva",
@@ -5304,7 +5576,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Earth Runners",
@@ -5322,7 +5595,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Lems",
@@ -5340,7 +5614,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Origo",
@@ -5358,7 +5633,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Xero Shoes",
@@ -5376,7 +5652,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Rutsu Barefoot",
@@ -5394,7 +5671,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Luna Sandals",
@@ -5412,7 +5690,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Birchbury",
@@ -5430,7 +5709,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Ritani",
@@ -5448,7 +5728,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "BaubleBar",
@@ -5466,7 +5747,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Adidas",
@@ -5485,7 +5767,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Adidas",
@@ -5504,7 +5787,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Merrell",
@@ -5524,7 +5808,8 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": "https://thekit.wolverineworldwide.com/match/media_lookup/MRLM-J00005387-091225-F26-000/?preset=dw-large",
-    "price_ok": true
+    "price_ok": true,
+    "item": true
   },
   {
     "retailer": "Merrell",
@@ -5544,7 +5829,8 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": "https://thekit.wolverineworldwide.com/match/media_lookup/MRLM-J00005387-091225-F26-000/?preset=dw-large",
-    "price_ok": true
+    "price_ok": true,
+    "item": true
   },
   {
     "retailer": "Merrell",
@@ -5564,7 +5850,8 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": "https://thekit.wolverineworldwide.com/match/media_lookup/MRLM-J00005387-091225-F26-000/?preset=dw-large",
-    "price_ok": true
+    "price_ok": true,
+    "item": true
   },
   {
     "retailer": "Michael Kors",
@@ -5583,7 +5870,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Randolph",
@@ -5601,7 +5889,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Ray-Ban",
@@ -5619,7 +5908,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Jenny Bird",
@@ -5637,7 +5927,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "Samsonite",
@@ -5655,7 +5946,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Monos",
@@ -5673,7 +5965,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Anua",
@@ -5691,7 +5984,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Dr. Barbara Sturm",
@@ -5709,7 +6003,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Sephora",
@@ -5727,7 +6022,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Nordstrom",
@@ -5745,7 +6041,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Elemis",
@@ -5763,7 +6060,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "FitGlow Beauty",
@@ -5781,7 +6079,8 @@
     "last_checked": "2026-11-22",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Kosas",
@@ -5799,7 +6098,8 @@
     "last_checked": "2026-11-22",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-22"
+    "first_seen": "2026-11-22",
+    "item": false
   },
   {
     "retailer": "Cocokind",
@@ -5817,7 +6117,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "dae",
@@ -5835,7 +6136,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Danessa Myricks Beauty",
@@ -5853,7 +6155,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Mother Science",
@@ -5871,7 +6174,8 @@
     "last_checked": "2026-11-22",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-22"
+    "first_seen": "2026-11-22",
+    "item": false
   },
   {
     "retailer": "Westman Atelier",
@@ -5889,7 +6193,8 @@
     "last_checked": "2026-11-22",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-22"
+    "first_seen": "2026-11-22",
+    "item": false
   },
   {
     "retailer": "Pattern Beauty",
@@ -5907,7 +6212,8 @@
     "last_checked": "2026-11-22",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-22"
+    "first_seen": "2026-11-22",
+    "item": false
   },
   {
     "retailer": "Nakery Beauty",
@@ -5925,7 +6231,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Phlur",
@@ -5943,7 +6250,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Insta360",
@@ -5961,7 +6269,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Oura",
@@ -5981,25 +6290,8 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "price_ok": false
-  },
-  {
-    "retailer": "Lancôme",
-    "via": "Amazon",
-    "category": "Beauty",
-    "title": "Lash Idôle volumizing mascara",
-    "discount_pct": 53,
-    "original_price": null,
-    "sale_price": null,
-    "code": null,
-    "starts": null,
-    "ends": null,
-    "link": "https://www.today.com/shop/amazon-black-friday-beauty-deals-2026-rcna609986",
-    "source": "https://www.today.com/shop/amazon-black-friday-beauty-deals-2026-rcna609986",
-    "last_checked": "2026-11-21",
-    "notes": null,
-    "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "price_ok": false,
+    "item": true
   },
   {
     "retailer": "Armani Beauty",
@@ -6017,25 +6309,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
-  },
-  {
-    "retailer": "Medicube",
-    "via": "Amazon",
-    "category": "Beauty",
-    "title": "Collagen jelly cream",
-    "discount_pct": 35,
-    "original_price": null,
-    "sale_price": null,
-    "code": null,
-    "starts": null,
-    "ends": null,
-    "link": "https://abcnews.com/GMA/Shop/black-friday-beauty-deals-2026/story?id=138216373",
-    "source": "https://abcnews.com/GMA/Shop/black-friday-beauty-deals-2026/story?id=138216373",
-    "last_checked": "2026-11-21",
-    "notes": null,
-    "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": true
   },
   {
     "retailer": "Maison Margiela",
@@ -6053,7 +6328,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": true
   },
   {
     "retailer": "BIODANCE",
@@ -6071,7 +6347,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": true
   },
   {
     "retailer": "Clinique",
@@ -6089,7 +6366,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": true
   },
   {
     "retailer": "CeraVe",
@@ -6107,7 +6385,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": true
   },
   {
     "retailer": "Burt's Bees",
@@ -6125,7 +6404,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "MakeUp Eraser",
@@ -6143,7 +6423,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": true
   },
   {
     "retailer": "Amazon",
@@ -6162,7 +6443,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Acer",
@@ -6181,7 +6463,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Amazon",
@@ -6199,7 +6482,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Dell",
@@ -6218,7 +6502,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Beats",
@@ -6237,7 +6522,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Amazon",
@@ -6256,7 +6542,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Apple",
@@ -6275,7 +6562,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Material",
@@ -6293,7 +6581,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Anyday",
@@ -6311,7 +6600,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Buffy",
@@ -6329,7 +6619,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "SIJO",
@@ -6347,7 +6638,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Hollywood at Home",
@@ -6365,7 +6657,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Le Maé",
@@ -6383,7 +6676,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Hill House Home",
@@ -6401,7 +6695,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Walmart",
@@ -6419,7 +6714,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "GreenPan",
@@ -6437,7 +6733,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Gorilla Grip",
@@ -6455,7 +6752,8 @@
     "last_checked": "2026-11-22",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-22"
+    "first_seen": "2026-11-22",
+    "item": false
   },
   {
     "retailer": "Caraway",
@@ -6473,7 +6771,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Made In",
@@ -6491,7 +6790,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Whynter",
@@ -6510,7 +6810,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "T-fal",
@@ -6529,7 +6830,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "BLACK+DECKER",
@@ -6548,7 +6850,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Ninja",
@@ -6567,7 +6870,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Nuwave",
@@ -6586,7 +6890,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Sugarfina",
@@ -6604,7 +6909,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Wolferman's Bakery",
@@ -6622,7 +6928,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "LEGO",
@@ -6641,7 +6948,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "LEGO",
@@ -6660,7 +6968,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "LEGO",
@@ -6679,7 +6988,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Reima",
@@ -6697,7 +7007,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Jacadi",
@@ -6715,7 +7026,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "LEGO",
@@ -6733,7 +7045,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Lalo",
@@ -6751,7 +7064,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "Avenlur",
@@ -6769,7 +7083,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "Mockingbird",
@@ -6787,7 +7102,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Tubby Todd",
@@ -6805,7 +7121,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "Mud Pie",
@@ -6823,7 +7140,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "Butterblu",
@@ -6841,7 +7159,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "Primary",
@@ -6859,7 +7178,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Monica + Andy",
@@ -6877,7 +7197,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Tushbaby",
@@ -6895,7 +7216,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "ergoPouch",
@@ -6913,7 +7235,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "NEMO",
@@ -6931,7 +7254,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Big Agnes",
@@ -6949,7 +7273,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Naturehike",
@@ -6967,7 +7292,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "LEGO",
@@ -6986,7 +7312,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "LEGO",
@@ -7005,7 +7332,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "LEGO",
@@ -7024,7 +7352,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "LEGO",
@@ -7043,7 +7372,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "LEGO",
@@ -7062,7 +7392,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-22",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "LEGO",
@@ -7081,7 +7412,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Six Moon Designs",
@@ -7099,7 +7431,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Enlightened Equipment",
@@ -7117,7 +7450,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Branwyn",
@@ -7135,7 +7469,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Sunski",
@@ -7153,7 +7488,8 @@
     "last_checked": "2026-11-22",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-22"
+    "first_seen": "2026-11-22",
+    "item": false
   },
   {
     "retailer": "Outdoor Vitals",
@@ -7171,7 +7507,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "RTIC",
@@ -7189,7 +7526,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Luno",
@@ -7207,7 +7545,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Boutique Camping",
@@ -7225,7 +7564,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Criterion",
@@ -7243,7 +7583,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Nin-Nin-Game",
@@ -7261,7 +7602,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "YETI",
@@ -7280,7 +7622,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Igloo",
@@ -7298,7 +7641,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "IndieMerchstore",
@@ -7316,7 +7660,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "CavityColors",
@@ -7334,7 +7679,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Universal",
@@ -7354,7 +7700,8 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "price_ok": false
+    "price_ok": false,
+    "item": true
   },
   {
     "retailer": "SRS Cinema Store",
@@ -7374,7 +7721,8 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "price_ok": false
+    "price_ok": false,
+    "item": true
   },
   {
     "retailer": "SRS Cinema Store",
@@ -7394,7 +7742,8 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "price_ok": false
+    "price_ok": false,
+    "item": true
   },
   {
     "retailer": "SRS Cinema Store",
@@ -7414,7 +7763,8 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": null,
-    "price_ok": false
+    "price_ok": false,
+    "item": true
   },
   {
     "retailer": "Dolce Vita",
@@ -7432,7 +7782,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Beyond Yoga",
@@ -7450,7 +7801,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "Outdoor Voices",
@@ -7468,7 +7820,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Frankies Bikinis",
@@ -7486,7 +7839,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Peppermayo",
@@ -7504,7 +7858,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "iHerb",
@@ -7522,7 +7877,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Hourglass",
@@ -7540,7 +7896,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Onepiece",
@@ -7558,7 +7915,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "VERSED",
@@ -7576,7 +7934,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "YSL Beauty",
@@ -7594,7 +7953,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Huda Beauty",
@@ -7612,7 +7972,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Iconic London",
@@ -7630,7 +7991,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "ILIA",
@@ -7648,7 +8010,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Ouai",
@@ -7666,7 +8029,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "PrettyLittleThing",
@@ -7684,7 +8048,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Paragon Fitwear",
@@ -7702,7 +8067,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Bombshell Sportswear",
@@ -7720,7 +8086,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Mejuri",
@@ -7738,7 +8105,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Kat The Label",
@@ -7756,7 +8124,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "Simkhai",
@@ -7774,7 +8143,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "Gemi",
@@ -7792,7 +8162,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Strathberry",
@@ -7810,7 +8181,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Margaux",
@@ -7828,7 +8200,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Merrell",
@@ -7848,7 +8221,8 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": "https://thekit.wolverineworldwide.com/match/media_lookup/MRLM-J00005387-091225-F26-000/?preset=dw-large",
-    "price_ok": true
+    "price_ok": true,
+    "item": true
   },
   {
     "retailer": "Merrell",
@@ -7868,7 +8242,8 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": "https://thekit.wolverineworldwide.com/match/media_lookup/MRLM-J00005387-091225-F26-000/?preset=dw-large",
-    "price_ok": true
+    "price_ok": true,
+    "item": true
   },
   {
     "retailer": "Merrell",
@@ -7888,7 +8263,8 @@
     "found_by": "ai",
     "first_seen": "2026-11-21",
     "image": "https://thekit.wolverineworldwide.com/match/media_lookup/MRLM-J00005387-091225-F26-000/?preset=dw-large",
-    "price_ok": true
+    "price_ok": true,
+    "item": true
   },
   {
     "retailer": "Coach",
@@ -7907,7 +8283,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Ray-Ban",
@@ -7926,7 +8303,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Coach",
@@ -7945,7 +8323,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "HOKA",
@@ -7964,7 +8343,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Biossance",
@@ -7982,7 +8362,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Parëva Beauty",
@@ -8000,7 +8381,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Exuviance",
@@ -8018,7 +8400,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Tower28",
@@ -8036,7 +8419,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Sephora",
@@ -8054,7 +8438,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Estée Lauder",
@@ -8072,7 +8457,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Koala",
@@ -8090,7 +8476,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "JBL",
@@ -8108,7 +8495,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "Garmin",
@@ -8126,7 +8514,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "Sonos",
@@ -8144,7 +8533,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "Crock-Pot",
@@ -8163,7 +8553,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "CAROTE",
@@ -8181,7 +8572,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Cuisinart",
@@ -8200,7 +8592,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Costco",
@@ -8218,7 +8611,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": true
   },
   {
     "retailer": "Harry & David",
@@ -8236,7 +8630,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Ghirardelli",
@@ -8255,7 +8650,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Oso & Me",
@@ -8273,7 +8669,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Gooselings",
@@ -8291,7 +8688,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Courtside Kids",
@@ -8309,7 +8707,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "In My Jammers",
@@ -8327,7 +8726,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Rachel Riley",
@@ -8345,7 +8745,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Hanna Andersson",
@@ -8363,7 +8764,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Tiny Land",
@@ -8381,7 +8783,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "Munchkin",
@@ -8399,7 +8802,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "Loungefly",
@@ -8418,7 +8822,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Sideshow",
@@ -8436,7 +8841,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Elwood",
@@ -8454,7 +8860,8 @@
     "last_checked": "2026-11-21",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-21"
+    "first_seen": "2026-11-21",
+    "item": false
   },
   {
     "retailer": "Fabletics",
@@ -8472,7 +8879,8 @@
     "last_checked": "2026-11-22",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-22"
+    "first_seen": "2026-11-22",
+    "item": false
   },
   {
     "retailer": "Sam Edelman",
@@ -8490,7 +8898,8 @@
     "last_checked": "2026-11-22",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-22"
+    "first_seen": "2026-11-22",
+    "item": false
   },
   {
     "retailer": "Mattel",
@@ -8508,7 +8917,8 @@
     "last_checked": "2026-11-22",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-22"
+    "first_seen": "2026-11-22",
+    "item": false
   },
   {
     "retailer": "Xbox",
@@ -8526,7 +8936,8 @@
     "last_checked": "2026-11-22",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-22"
+    "first_seen": "2026-11-22",
+    "item": false
   },
   {
     "retailer": "Ring",
@@ -8544,7 +8955,8 @@
     "last_checked": "2026-11-22",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-22"
+    "first_seen": "2026-11-22",
+    "item": false
   },
   {
     "retailer": "Williams Sonoma",
@@ -8562,7 +8974,8 @@
     "last_checked": "2026-11-22",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-22"
+    "first_seen": "2026-11-22",
+    "item": false
   },
   {
     "retailer": "Fangamer",
@@ -8580,7 +8993,8 @@
     "last_checked": "2026-11-22",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-22"
+    "first_seen": "2026-11-22",
+    "item": false
   },
   {
     "retailer": "Klassy Network",
@@ -8598,7 +9012,8 @@
     "last_checked": "2026-11-22",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-22"
+    "first_seen": "2026-11-22",
+    "item": false
   },
   {
     "retailer": "THE-ARE",
@@ -8616,7 +9031,8 @@
     "last_checked": "2026-11-22",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-22"
+    "first_seen": "2026-11-22",
+    "item": false
   },
   {
     "retailer": "P.J. Salvage",
@@ -8634,7 +9050,8 @@
     "last_checked": "2026-11-22",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-22"
+    "first_seen": "2026-11-22",
+    "item": false
   },
   {
     "retailer": "Böhme",
@@ -8652,7 +9069,8 @@
     "last_checked": "2026-11-22",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-22"
+    "first_seen": "2026-11-22",
+    "item": false
   },
   {
     "retailer": "Liaison the Label",
@@ -8670,7 +9088,8 @@
     "last_checked": "2026-11-22",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-22"
+    "first_seen": "2026-11-22",
+    "item": false
   },
   {
     "retailer": "Motel",
@@ -8688,7 +9107,8 @@
     "last_checked": "2026-11-22",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-22"
+    "first_seen": "2026-11-22",
+    "item": false
   },
   {
     "retailer": "ILIA Beauty",
@@ -8706,7 +9126,8 @@
     "last_checked": "2026-11-22",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-22"
+    "first_seen": "2026-11-22",
+    "item": false
   },
   {
     "retailer": "CurrentBody",
@@ -8724,7 +9145,8 @@
     "last_checked": "2026-11-22",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-22"
+    "first_seen": "2026-11-22",
+    "item": false
   },
   {
     "retailer": "Salt & Stone",
@@ -8742,7 +9164,8 @@
     "last_checked": "2026-11-22",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-22"
+    "first_seen": "2026-11-22",
+    "item": false
   },
   {
     "retailer": "Guerlain",
@@ -8761,7 +9184,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-22",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Jo Malone London",
@@ -8779,7 +9203,8 @@
     "last_checked": "2026-11-22",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-22"
+    "first_seen": "2026-11-22",
+    "item": false
   },
   {
     "retailer": "Miaou",
@@ -8797,7 +9222,8 @@
     "last_checked": "2026-11-22",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-22"
+    "first_seen": "2026-11-22",
+    "item": false
   },
   {
     "retailer": "The North Face",
@@ -8816,26 +9242,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-22",
-    "image": null
-  },
-  {
-    "retailer": "The North Face",
-    "via": null,
-    "category": "Athleisure",
-    "title": "Women's Cragmont Fleece Jacket, 30% off",
-    "discount_pct": 30,
-    "original_price": 180,
-    "sale_price": 126,
-    "code": null,
-    "starts": null,
-    "ends": null,
-    "link": "https://www.thenorthface.com/en-us/black-friday",
-    "source": "https://www.thenorthface.com/en-us/black-friday",
-    "last_checked": "2026-11-22",
-    "notes": null,
-    "found_by": "ai",
-    "first_seen": "2026-11-22",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "The North Face",
@@ -8854,7 +9262,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-22",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Dissh",
@@ -8873,7 +9282,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-22",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Dissh",
@@ -8892,7 +9302,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-22",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Forme",
@@ -8910,7 +9321,8 @@
     "last_checked": "2026-11-22",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-22"
+    "first_seen": "2026-11-22",
+    "item": false
   },
   {
     "retailer": "Mate the Label",
@@ -8928,7 +9340,8 @@
     "last_checked": "2026-11-22",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-22"
+    "first_seen": "2026-11-22",
+    "item": false
   },
   {
     "retailer": "F. Miller",
@@ -8946,7 +9359,8 @@
     "last_checked": "2026-11-22",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-22"
+    "first_seen": "2026-11-22",
+    "item": false
   },
   {
     "retailer": "Oiselle",
@@ -8964,7 +9378,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "Timex",
@@ -8982,7 +9397,8 @@
     "last_checked": "2026-11-22",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-22"
+    "first_seen": "2026-11-22",
+    "item": false
   },
   {
     "retailer": "Coach",
@@ -9000,7 +9416,8 @@
     "last_checked": "2026-11-22",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-22"
+    "first_seen": "2026-11-22",
+    "item": false
   },
   {
     "retailer": "Coach Outlet",
@@ -9018,7 +9435,8 @@
     "last_checked": "2026-11-22",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-22"
+    "first_seen": "2026-11-22",
+    "item": false
   },
   {
     "retailer": "New Balance",
@@ -9036,7 +9454,8 @@
     "last_checked": "2026-11-22",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-22"
+    "first_seen": "2026-11-22",
+    "item": false
   },
   {
     "retailer": "Nordstrom",
@@ -9054,7 +9473,8 @@
     "last_checked": "2026-11-22",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-22"
+    "first_seen": "2026-11-22",
+    "item": false
   },
   {
     "retailer": "Rothy's",
@@ -9072,7 +9492,8 @@
     "last_checked": "2026-11-22",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-22"
+    "first_seen": "2026-11-22",
+    "item": true
   },
   {
     "retailer": "Cécred",
@@ -9090,7 +9511,8 @@
     "last_checked": "2026-11-22",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-22"
+    "first_seen": "2026-11-22",
+    "item": false
   },
   {
     "retailer": "Alpyn Beauty",
@@ -9108,7 +9530,8 @@
     "last_checked": "2026-11-22",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-22"
+    "first_seen": "2026-11-22",
+    "item": false
   },
   {
     "retailer": "Olive & June",
@@ -9126,7 +9549,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-22"
+    "first_seen": "2026-11-22",
+    "item": false
   },
   {
     "retailer": "Paula's Choice",
@@ -9144,7 +9568,8 @@
     "last_checked": "2026-11-22",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-22"
+    "first_seen": "2026-11-22",
+    "item": false
   },
   {
     "retailer": "LG",
@@ -9163,7 +9588,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-22",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "TCL",
@@ -9182,7 +9608,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-22",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Google",
@@ -9201,7 +9628,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-22",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Samsung",
@@ -9220,7 +9648,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-22",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Our Place",
@@ -9239,7 +9668,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-22",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Best Buy",
@@ -9257,7 +9687,8 @@
     "last_checked": "2026-11-22",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-22"
+    "first_seen": "2026-11-22",
+    "item": false
   },
   {
     "retailer": "Crate & Barrel",
@@ -9275,7 +9706,8 @@
     "last_checked": "2026-11-22",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-22"
+    "first_seen": "2026-11-22",
+    "item": false
   },
   {
     "retailer": "LEGO",
@@ -9294,7 +9726,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-22",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "LEGO",
@@ -9313,7 +9746,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-22",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "LEGO",
@@ -9332,7 +9766,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-22",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "LEGO",
@@ -9351,7 +9786,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-22",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "LEGO",
@@ -9370,7 +9806,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-22",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Goldbelly",
@@ -9388,7 +9825,8 @@
     "last_checked": "2026-11-22",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-22"
+    "first_seen": "2026-11-22",
+    "item": false
   },
   {
     "retailer": "YETI",
@@ -9407,7 +9845,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-22",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Patagonia",
@@ -9426,7 +9865,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-22",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "REI",
@@ -9444,7 +9884,8 @@
     "last_checked": "2026-11-22",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-22"
+    "first_seen": "2026-11-22",
+    "item": false
   },
   {
     "retailer": "Suunto",
@@ -9462,7 +9903,8 @@
     "last_checked": "2026-11-22",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-22"
+    "first_seen": "2026-11-22",
+    "item": false
   },
   {
     "retailer": "Rumpl",
@@ -9480,7 +9922,8 @@
     "last_checked": "2026-11-22",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-22"
+    "first_seen": "2026-11-22",
+    "item": false
   },
   {
     "retailer": "Laneige",
@@ -9498,7 +9941,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "Laura Geller",
@@ -9516,7 +9960,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "Medik8",
@@ -9534,7 +9979,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "Juliette Has a Gun",
@@ -9552,7 +9998,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "Maison Louis Marie",
@@ -9570,7 +10017,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "REFY Beauty",
@@ -9588,7 +10036,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "Prequel",
@@ -9606,7 +10055,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "Hello Molly",
@@ -9624,7 +10074,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "Noyz",
@@ -9643,7 +10094,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-24",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Lululemon",
@@ -9661,7 +10113,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "Alo",
@@ -9679,7 +10132,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "Nike",
@@ -9697,7 +10151,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "Adidas",
@@ -9715,7 +10170,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "Bose",
@@ -9733,7 +10189,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "Oura",
@@ -9751,7 +10208,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "Missacc",
@@ -9769,7 +10227,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "Jay Butler",
@@ -9787,7 +10246,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "Ana Luisa",
@@ -9805,7 +10265,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "Freya",
@@ -9823,7 +10284,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "Merrell",
@@ -9842,7 +10304,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-24",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Allbirds",
@@ -9861,7 +10324,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-24",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Timberland PRO",
@@ -9880,7 +10344,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-24",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Salomon",
@@ -9899,7 +10364,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-24",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Coach",
@@ -9918,7 +10384,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-24",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Coach",
@@ -9937,7 +10404,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-24",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Coach",
@@ -9956,7 +10424,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-24",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Nike",
@@ -9975,7 +10444,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-24",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Murad",
@@ -9993,7 +10463,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "Dr. Jart+",
@@ -10011,7 +10482,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "BABOR",
@@ -10029,7 +10501,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "Touchland",
@@ -10047,7 +10520,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "Shark Beauty",
@@ -10065,25 +10539,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
-  },
-  {
-    "retailer": "Costco",
-    "via": null,
-    "category": "Baking & Food",
-    "title": "Kirkland Signature Cranberry Walnut Round Bread $2 off",
-    "discount_pct": null,
-    "original_price": 9,
-    "sale_price": null,
-    "code": null,
-    "starts": "2026-11-27",
-    "ends": "2026-11-30",
-    "link": "https://www.chowhound.com/2321513/black-friday-deals-you-shouldnt-miss-costco-2026/",
-    "source": "https://www.chowhound.com/2321513/black-friday-deals-you-shouldnt-miss-costco-2026/",
-    "last_checked": "2026-11-24",
-    "notes": null,
-    "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "Dabble & Dollop",
@@ -10101,7 +10558,8 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   },
   {
     "retailer": "Sea to Summit",
@@ -10120,7 +10578,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-24",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Sea to Summit",
@@ -10139,7 +10598,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-24",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Sea to Summit",
@@ -10158,7 +10618,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-24",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "YETI",
@@ -10177,7 +10638,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-24",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "YETI",
@@ -10196,7 +10658,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-24",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "YETI",
@@ -10215,7 +10678,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-24",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Rooftop tent maker 23Zero",
@@ -10234,7 +10698,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-24",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Warner Bros.",
@@ -10253,7 +10718,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-24",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Sony Pictures",
@@ -10272,7 +10738,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-24",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Silent Hill",
@@ -10291,7 +10758,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-24",
-    "image": null
+    "image": null,
+    "item": true
   },
   {
     "retailer": "Funko",
@@ -10309,6 +10777,7 @@
     "last_checked": "2026-11-24",
     "notes": null,
     "found_by": "ai",
-    "first_seen": "2026-11-24"
+    "first_seen": "2026-11-24",
+    "item": false
   }
 ]

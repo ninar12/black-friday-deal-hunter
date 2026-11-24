@@ -51,19 +51,19 @@ async function pool(items, n, fn) {
 
 // Pictures are only shown on single items (deals with a sale price).
 const { shopUrl } = await import("../lib/shop.js");
-const items = deals.filter((d) => d.sale_price != null);
+const items = deals.filter((d) => d.item || d.sale_price != null);
 // Drop pictures that came from pages Shop doesn't go to (news articles), unless Google Shopping found them.
 for (const d of items) if (d.image && !d.image_tried && shopUrl(d, sites) !== d.link) d.image = null;
 
 // 1. Free: when Shop goes to the product's own page, read that page once for
 //    its preview picture and to check the sale price is really on it.
 //    (Other pages, like news articles, are never used for pictures.)
-const own = items.filter((d) => d.link && shopUrl(d, sites) === d.link && (d.image === undefined || d.price_ok === undefined));
+const own = items.filter((d) => d.link && shopUrl(d, sites) === d.link && (d.image === undefined || (d.sale_price != null && d.price_ok === undefined)));
 await pool(own, 16, async (d) => {
   const p = await getPage(d.link);
   if (!p) { if (d.image === undefined) d.image = null; return; } // blocked: can't tell either way
   if (d.image === undefined) d.image = pick(p.html, p.url);
-  d.price_ok = showsPrice(p.html, d.sale_price);
+  if (d.sale_price != null) d.price_ok = showsPrice(p.html, d.sale_price);
 });
 for (const d of items) if (d.image === undefined) d.image = null;
 console.log(`product pages: ${own.filter((d) => d.image).length} of ${own.length} had a picture; ${own.filter((d) => d.price_ok === false).length} prices not found on the page`);
@@ -88,6 +88,6 @@ if (process.env.SERPER_API_KEY) {
   console.log(`Google Shopping: ${need.filter((d) => d.image).length} of ${need.length} found a picture`);
 }
 // Sale cards don't show pictures any more.
-for (const d of deals) if (d.sale_price == null) delete d.image;
+for (const d of deals) if (!d.item && d.sale_price == null) delete d.image;
 
 fs.writeFileSync(DEALS, JSON.stringify(deals, null, 2) + "\n");
