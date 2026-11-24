@@ -1872,7 +1872,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "item": true
+    "item": true,
+    "image": null
   },
   {
     "retailer": "Best Buy",
@@ -1891,7 +1892,8 @@
     "found_by": "ai",
     "via": null,
     "first_seen": "2026-11-20",
-    "item": true
+    "item": true,
+    "image": null
   },
   {
     "retailer": "Campmor",
@@ -2182,7 +2184,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "item": true
+    "item": true,
+    "image": null
   },
   {
     "retailer": "Banana Republic",
@@ -2469,7 +2472,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "item": true
+    "item": true,
+    "image": null
   },
   {
     "retailer": "Stringys",
@@ -2774,7 +2778,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "item": true
+    "item": true,
+    "image": null
   },
   {
     "retailer": "Brandy Melville",
@@ -4804,7 +4809,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "item": true
+    "item": true,
+    "image": null
   },
   {
     "retailer": "Owala",
@@ -4899,7 +4905,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "item": true
+    "item": true,
+    "image": null
   },
   {
     "retailer": "The Criterion Collection",
@@ -5518,7 +5525,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "item": true
+    "item": true,
+    "image": null
   },
   {
     "retailer": "Levi's",
@@ -6310,7 +6318,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "item": true
+    "item": true,
+    "image": null
   },
   {
     "retailer": "Maison Margiela",
@@ -6329,7 +6338,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "item": true
+    "item": true,
+    "image": null
   },
   {
     "retailer": "BIODANCE",
@@ -6348,7 +6358,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "item": true
+    "item": true,
+    "image": null
   },
   {
     "retailer": "Clinique",
@@ -6367,7 +6378,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "item": true
+    "item": true,
+    "image": null
   },
   {
     "retailer": "CeraVe",
@@ -6386,7 +6398,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "item": true
+    "item": true,
+    "image": null
   },
   {
     "retailer": "Burt's Bees",
@@ -6424,7 +6437,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "item": true
+    "item": true,
+    "image": null
   },
   {
     "retailer": "Amazon",
@@ -8612,7 +8626,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-21",
-    "item": true
+    "item": true,
+    "image": null
   },
   {
     "retailer": "Harry & David",
@@ -9493,7 +9508,8 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-22",
-    "item": true
+    "item": true,
+    "image": null
   },
   {
     "retailer": "Cécred",
@@ -10779,5 +10795,24 @@
     "found_by": "ai",
     "first_seen": "2026-11-24",
     "item": false
+  },
+  {
+    "retailer": "CSB",
+    "via": null,
+    "category": "Athleisure",
+    "title": "CSB Black Friday Sale: up to 50% off select styles",
+    "item": false,
+    "discount_pct": 50,
+    "original_price": null,
+    "sale_price": null,
+    "code": null,
+    "starts": "2026-11-25",
+    "ends": null,
+    "link": "https://www.shopcsb.com/collections/black-friday",
+    "source": "https://www.shopcsb.com/pages/black-friday-sale-sign-up",
+    "last_checked": "2026-11-24",
+    "notes": null,
+    "found_by": "ai",
+    "first_seen": "2026-11-24"
   }
 ]
