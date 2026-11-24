@@ -10833,5 +10833,24 @@
     "notes": null,
     "found_by": "ai",
     "first_seen": "2026-11-24"
+  },
+  {
+    "retailer": "2nd Street",
+    "via": null,
+    "category": "Fashion",
+    "title": "Black Friday Sale: up to 20% off select styles, online only",
+    "discount_pct": 20,
+    "original_price": null,
+    "sale_price": null,
+    "code": null,
+    "starts": null,
+    "ends": "2026-11-30",
+    "link": "https://ec.2ndstreetusa.com/",
+    "source": "https://ec.2ndstreetusa.com/",
+    "last_checked": "2026-11-24",
+    "notes": "Added by hand from the 2nd Street online store homepage.",
+    "found_by": "hand",
+    "first_seen": "2026-11-24",
+    "item": false
   }
 ]
