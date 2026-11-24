@@ -5,6 +5,7 @@ import fs from "node:fs";
 import path from "node:path";
 import hidden from "@/data/hidden.json";
 import { makeIsHidden } from "@/lib/hidden.mjs";
+import { verifyDeals } from "@/lib/verify.mjs";
 
 const isHidden = makeIsHidden(hidden);
 
@@ -46,7 +47,9 @@ async function runSearch(q, exclude = []) {
     seen.add(k); out.push(d);
   }
   const norm = getNormalizer();
-  return dedupeItems(out.map(norm)).filter((d) => !isHidden(d));
+  // Open each source page and make sure item prices are really printed there (made-up ones are dropped).
+  const checked = await verifyDeals(out.filter((d) => !isHidden(d)), { timeoutMs: 5000 });
+  return dedupeItems(checked.map(norm)).filter((d) => !isHidden(d));
 }
 const cache = new Map();
 const TTL = 12 * 60 * 60 * 1000;

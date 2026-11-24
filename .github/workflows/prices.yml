@@ -1,0 +1,30 @@
+name: Check saved prices
+# Free (no AI): opens each saved single-item deal's source page and removes prices
+# that aren't printed there. The daily hunt does the same; this runs it on demand.
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: deal-hunt
+  cancel-in-progress: false
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: node scripts/check-prices.mjs
+      - name: Commit
+        run: |
+          git config user.name "deal-hunter-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/
+          git diff --cached --quiet && exit 0
+          git commit -m "Price check $(date -u +%F)"
+          for i in 1 2 3 4; do
+            git pull --rebase -X theirs origin main && git push && exit 0
+            sleep $((i * 5))
+          done
+          exit 1
