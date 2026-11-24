@@ -3,5 +3,11 @@
     "retailer": "KitchenAid",
     "title_contains": "major appliances",
     "reason": "Nina: percent was wrong (2026-11-20)"
+  },
+  {
+    "retailer": "Barefoot Dreams",
+    "via": "Amazon",
+    "sale_price": 54,
+    "reason": "Nina: $54 (was $180, -70%) not real; Amazon list is $158, best recent price about $75 (2026-11-24)"
   }
 ]

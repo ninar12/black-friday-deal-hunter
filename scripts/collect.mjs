@@ -5,6 +5,7 @@
 import fs from "node:fs";
 import { findDeals, CATEGORIES, usage } from "../lib/claude.mjs";
 import { makeNormalizer, isJunk, dedupe, dedupeItems, onePerBrand } from "../lib/normalize.mjs";
+import { makeIsHidden } from "../lib/hidden.mjs";
 
 const DEALS = "data/deals.json";
 const BRANDS = "data/brands.csv";          // edited by people
@@ -72,7 +73,7 @@ const found = await pool(tasks, PARALLEL);
 
 // Deals Nina has marked wrong are never re-added.
 const hidden = fs.existsSync("data/hidden.json") ? JSON.parse(fs.readFileSync("data/hidden.json", "utf8")) : [];
-const isHidden = (d) => hidden.some((h) => d.retailer.toLowerCase() === h.retailer.toLowerCase() && (!h.title_contains || d.title.toLowerCase().includes(h.title_contains.toLowerCase())));
+const isHidden = makeIsHidden(hidden);
 for (let i = found.length - 1; i >= 0; i--) if (isHidden(found[i])) found.splice(i, 1);
 for (const r of new Set(JSON.parse(fs.readFileSync(DEALS, "utf8")).map((d) => d.retailer))) if (!brands.some((b) => b.brand.toLowerCase() === String(r).toLowerCase())) brands.push({ brand: r });
 const normalize = makeNormalizer(brands);

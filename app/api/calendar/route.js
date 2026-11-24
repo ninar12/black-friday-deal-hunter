@@ -2,6 +2,7 @@
 // Calendar apps re-fetch it on their own, so new sales show up without email.
 import deals from "@/data/deals.json";
 import hidden from "@/data/hidden.json";
+import { makeIsHidden } from "@/lib/hidden.mjs";
 
 export const dynamic = "force-dynamic";
 
@@ -14,8 +15,8 @@ const fold = (l) => l.length <= 74 ? l : l.match(/.{1,73}/g).join("\r\n ");
 export function GET(req) {
   const brands = new URL(req.url).searchParams.get("brands") || "";
   const want = new Set(brands.toLowerCase().split(",").map((b) => b.trim()).filter(Boolean).slice(0, 100));
-  const hide = new Set((Array.isArray(hidden) ? hidden : []).map((h) => String(h.retailer || h).toLowerCase()));
-  const mine = deals.filter((d) => want.has(String(d.retailer).toLowerCase()) && !hide.has(String(d.retailer).toLowerCase()));
+  const isHidden = makeIsHidden(hidden);
+  const mine = deals.filter((d) => want.has(String(d.retailer).toLowerCase()) && !isHidden(d));
   const stamp = new Date().toISOString().replace(/[-:]/g, "").slice(0, 15) + "Z";
   const lines = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Black Friday Hunter//EN", "CALSCALE:GREGORIAN", "METHOD:PUBLISH",
     "X-WR-CALNAME:My brands on sale", "REFRESH-INTERVAL;VALUE=DURATION:PT6H", "X-PUBLISHED-TTL:PT6H"];
