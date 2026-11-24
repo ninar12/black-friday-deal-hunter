@@ -473,7 +473,7 @@ export default function DealsApp({ initialDeals, sites = {}, picks = [], images 
                   // The store's page doesn't show this price any more: don't print a wrong number.
                   ? <p className="offer">{headline(d)}<span className="price-note">{d.sale_price == null ? "Check the price at the store" : "See today’s price at the store"}</span></p>
                   : <p className="offer">{money(d.sale_price)}{d.original_price && <s>{money(d.original_price)}</s>}{d.discount_pct ? <span className="pct">−{d.discount_pct}%</span> : null}
-                      <span className="price-note">{d.price_ok ? "Price checked on the store’s page" : `Price as of ${fmtDay(d.last_checked || today)}`}</span></p>)
+                      <span className="price-note">{d.price_ok ? "Price checked on the store’s page" : d.price_checked ? `Price checked ${fmtDay(d.price_checked)}` : `Price as of ${fmtDay(d.last_checked || today)}`}</span></p>)
                 : <p className="offer">{headline(d)}</p>}
             </div>
             <h3 className={!isItem(d) && addsInfo(d) ? "" : "quiet"}><a className="stretch" href={shopUrl(d, sites)} target="_blank" rel="noopener noreferrer sponsored"><DealTitle d={d} /></a></h3>

@@ -6,6 +6,7 @@ import fs from "node:fs";
 import { findDeals, CATEGORIES, usage } from "../lib/claude.mjs";
 import { makeNormalizer, isJunk, dedupe, dedupeItems, onePerBrand } from "../lib/normalize.mjs";
 import { makeIsHidden } from "../lib/hidden.mjs";
+import { verifyDeals, verifyStats } from "../lib/verify.mjs";
 
 const DEALS = "data/deals.json";
 const BRANDS = "data/brands.csv";          // edited by people
@@ -89,7 +90,11 @@ for (const d of found) {
 }
 // Drop deals that ended more than 2 days ago.
 const cutoff = new Date(Date.now() - 2 * 864e5).toISOString().slice(0, 10);
-const merged = dedupeItems(onePerBrand(dedupe([...byKey.values()].filter((d) => (!d.ends || d.ends >= cutoff) && !isHidden(d) && !isJunk(d)))));
+// Price check: every single-item price (new or saved) must be printed on its source page.
+// Prices that are already checked aren't opened again.
+const checked = await verifyDeals([...byKey.values()].filter((d) => (!d.ends || d.ends >= cutoff) && !isHidden(d) && !isJunk(d)));
+console.log(`Price check: ${verifyStats.ok} confirmed, ${verifyStats.made_up} made-up prices dropped, ${verifyStats.unopened} pages wouldn't open (price hidden).`);
+const merged = dedupeItems(onePerBrand(dedupe(checked)));
 fs.writeFileSync(DEALS, JSON.stringify(merged, null, 2) + "\n");
 
 const known = new Set(brands.map((b) => b.brand.toLowerCase()));
