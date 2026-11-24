@@ -3,6 +3,10 @@ import { findDeals, lastRun } from "@/lib/claude.mjs";
 import { makeNormalizer, dedupeItems } from "@/lib/normalize.mjs";
 import fs from "node:fs";
 import path from "node:path";
+import hidden from "@/data/hidden.json";
+import { makeIsHidden } from "@/lib/hidden.mjs";
+
+const isHidden = makeIsHidden(hidden);
 
 // Same brand/category clean-up as the daily hunt, so search cards read the same way.
 let normalize;
@@ -42,7 +46,7 @@ async function runSearch(q, exclude = []) {
     seen.add(k); out.push(d);
   }
   const norm = getNormalizer();
-  return dedupeItems(out.map(norm));
+  return dedupeItems(out.map(norm)).filter((d) => !isHidden(d));
 }
 const cache = new Map();
 const TTL = 12 * 60 * 60 * 1000;
