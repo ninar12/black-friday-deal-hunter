@@ -11692,5 +11692,25 @@
     "found_by": "ai",
     "first_seen": "2026-11-24",
     "image": null
+  },
+  {
+    "retailer": "BNTO",
+    "via": null,
+    "category": "Fashion",
+    "title": "BFCM Final Finds: up to 90% off new and pre-loved pieces, all sales final",
+    "discount_pct": 90,
+    "original_price": null,
+    "sale_price": null,
+    "code": null,
+    "starts": null,
+    "ends": null,
+    "link": "https://www.bnto.com/page/bfcm-final-finds",
+    "source": "https://www.bnto.com/page/bfcm-final-finds",
+    "last_checked": "2026-11-25",
+    "notes": "Added by hand from the BNTO Final Finds page. Condition may vary and cannot be selected.",
+    "found_by": "hand",
+    "first_seen": "2026-11-25",
+    "item": false,
+    "image": null
   }
 ]
